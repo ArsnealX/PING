@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="NotoSansHans-Regular.otf">
+            <string>NotoSansHans-Regular</string>
+        </mutableArray>
+        <mutableArray key="NotoSansHans-Thin-Windows.otf">
+            <string>NotoSansHans-Thin</string>
+            <string>NotoSansHans-Thin</string>
+            <string>NotoSansHans-Thin</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ratingViewController" customModule="Ping" customModuleProvider="target">
+            <connections>
+                <outlet property="HardButton" destination="Pw4-JP-kUS" id="egA-ie-0dh"/>
+                <outlet property="InnovationButton" destination="jQZ-NS-Rhe" id="kG1-Qn-8xe"/>
+                <outlet property="SuperButton" destination="d4b-fK-KnF" id="W2w-b6-63D"/>
+                <outlet property="normalButton" destination="K9z-QE-e6A" id="Dja-gv-IRV"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="voO-2y-AMA">
+                    <rect key="frame" x="170" y="160" width="260" height="280"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="PING" translatesAutoresizingMaskIntoConstraints="NO" id="El8-Xk-viG">
+                            <rect key="frame" x="0.0" y="0.0" width="260" height="120"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="120" id="RPg-ZW-lLY"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请评价您的工作" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUu-17-yF2">
+                            <rect key="frame" x="8" y="90" width="98" height="14"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="NotoSansHans-Regular" family="Noto Sans S Chinese" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzH-xY-hx0">
+                            <rect key="frame" x="0.0" y="128" width="260" height="100"/>
+                            <subviews>
+                                <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9z-QE-e6A">
+                                    <rect key="frame" x="28" y="7" width="48" height="85"/>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="48" id="3a2-LE-uS1"/>
+                                        <constraint firstAttribute="height" constant="85" id="M1X-T9-5QY"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="NotoSansHans-Thin" family="Noto Sans S Chinese" pointSize="12"/>
+                                    <inset key="titleEdgeInsets" minX="-48" minY="60" maxX="0.0" maxY="0.0"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="-15" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="正常" image="Normal">
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="Normal_selected">
+                                        <color key="titleColor" red="0.32156862749999998" green="0.75686274509999996" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="didSelectedRadioButton:" destination="-1" eventType="touchUpInside" id="psH-aN-qel"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pw4-JP-kUS">
+                                    <rect key="frame" x="106" y="7" width="48" height="85"/>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="48" id="cB5-9I-TBi"/>
+                                        <constraint firstAttribute="height" constant="85" id="vpk-aL-6Ph"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="NotoSansHans-Thin" family="Noto Sans S Chinese" pointSize="12"/>
+                                    <inset key="titleEdgeInsets" minX="-40" minY="60" maxX="0.0" maxY="0.0"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="-15" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="突破" image="Hard">
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" image="Hard_selected">
+                                        <color key="titleColor" red="0.32156862749999998" green="0.75686274509999996" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="didSelectedRadioButton:" destination="-1" eventType="touchUpInside" id="AGG-KN-okc"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1003" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4b-fK-KnF">
+                                    <rect key="frame" x="184" y="7" width="48" height="85"/>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="85" id="0ey-oa-OuB"/>
+                                        <constraint firstAttribute="width" constant="48" id="MwC-b9-dhr"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="NotoSansHans-Thin" family="Noto Sans S Chinese" pointSize="12"/>
+                                    <inset key="titleEdgeInsets" minX="-52" minY="60" maxX="0.0" maxY="0.0"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="-15" maxX="0.0" maxY="0.0"/>
+                                    <state key="normal" title="超神" image="Super">
+                                        <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <state key="selected" title="超神" image="Super_selected">
+                                        <color key="titleColor" red="0.32156862749999998" green="0.75686274509999996" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="didSelectedRadioButton:" destination="-1" eventType="touchUpInside" id="TDI-bb-Avc"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <animations/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="d4b-fK-KnF" firstAttribute="leading" secondItem="Pw4-JP-kUS" secondAttribute="trailing" id="0yk-JM-dg4"/>
+                                <constraint firstItem="Pw4-JP-kUS" firstAttribute="leading" secondItem="K9z-QE-e6A" secondAttribute="trailing" constant="30" id="3c8-v2-Yuq"/>
+                                <constraint firstItem="Pw4-JP-kUS" firstAttribute="centerX" secondItem="tzH-xY-hx0" secondAttribute="centerX" id="CIl-Sv-gjD"/>
+                                <constraint firstItem="d4b-fK-KnF" firstAttribute="centerY" secondItem="tzH-xY-hx0" secondAttribute="centerY" id="J42-gD-zrw"/>
+                                <constraint firstItem="Pw4-JP-kUS" firstAttribute="centerY" secondItem="tzH-xY-hx0" secondAttribute="centerY" id="fKn-k7-rD5"/>
+                                <constraint firstAttribute="height" constant="100" id="giG-CI-bNt"/>
+                                <constraint firstItem="d4b-fK-KnF" firstAttribute="leading" secondItem="Pw4-JP-kUS" secondAttribute="trailing" constant="30" id="xqG-Ci-fgT"/>
+                                <constraint firstItem="K9z-QE-e6A" firstAttribute="centerY" secondItem="tzH-xY-hx0" secondAttribute="centerY" id="zg9-vm-g6T"/>
+                            </constraints>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="0yk-JM-dg4"/>
+                                </mask>
+                            </variation>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Rectangle 1 + Line" translatesAutoresizingMaskIntoConstraints="NO" id="tER-bd-sdc">
+                            <rect key="frame" x="8" y="228" width="244" height="18"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="eGT-Bg-hAP"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gf3-n4-AtF">
+                            <rect key="frame" x="222" y="242" width="30" height="30"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="4fU-K8-RoM"/>
+                                <constraint firstAttribute="width" constant="30" id="vtL-x9-pUc"/>
+                            </constraints>
+                            <state key="normal" title="发送">
+                                <color key="titleColor" red="0.32156862749999998" green="0.75686274509999996" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="didPressSendButton:" destination="-1" eventType="touchUpInside" id="Kdo-UR-gSy"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2D-O0-g78">
+                            <rect key="frame" x="237" y="8" width="15" height="15"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="9SS-QU-che"/>
+                                <constraint firstAttribute="width" constant="15" id="a4C-ZF-PH8"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="close"/>
+                            <connections>
+                                <action selector="didPressCloseButton:" destination="-1" eventType="touchUpInside" id="pFr-bI-gpB"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQZ-NS-Rhe">
+                            <rect key="frame" x="8" y="242" width="70" height="30"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="70" id="GDE-aR-oOG"/>
+                                <constraint firstAttribute="height" constant="30" id="Xrl-9H-XO3"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <inset key="imageEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="创新" image="Innovation">
+                                <color key="titleColor" red="0.73192762870855144" green="0.73192762870855144" blue="0.73192762870855144" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <state key="selected" image="Innovation_selected">
+                                <color key="titleColor" red="0.32156862749999998" green="0.75686274509999996" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <connections>
+                                <action selector="didPressInnovationButton:" destination="-1" eventType="touchUpInside" id="dzw-yO-kPe"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <animations/>
+                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="dUu-17-yF2" firstAttribute="leading" secondItem="voO-2y-AMA" secondAttribute="leading" constant="8" id="0lS-gF-Gbo"/>
+                        <constraint firstAttribute="trailing" secondItem="tER-bd-sdc" secondAttribute="trailing" constant="8" id="1NX-Ls-bJM"/>
+                        <constraint firstItem="jQZ-NS-Rhe" firstAttribute="leading" secondItem="voO-2y-AMA" secondAttribute="leading" constant="8" id="4qa-zm-yC4"/>
+                        <constraint firstItem="tER-bd-sdc" firstAttribute="leading" secondItem="voO-2y-AMA" secondAttribute="leading" constant="8" id="94s-ko-dsd"/>
+                        <constraint firstAttribute="trailing" secondItem="tzH-xY-hx0" secondAttribute="trailing" id="Hwf-DU-qy0"/>
+                        <constraint firstAttribute="trailing" secondItem="El8-Xk-viG" secondAttribute="trailing" id="Hxo-Wn-xUW"/>
+                        <constraint firstItem="tER-bd-sdc" firstAttribute="top" secondItem="tzH-xY-hx0" secondAttribute="bottom" id="LuX-ht-JFX"/>
+                        <constraint firstItem="tzH-xY-hx0" firstAttribute="leading" secondItem="voO-2y-AMA" secondAttribute="leading" id="VGy-zy-hhU"/>
+                        <constraint firstAttribute="trailing" secondItem="Gf3-n4-AtF" secondAttribute="trailing" constant="8" id="VpZ-k9-Mkz"/>
+                        <constraint firstAttribute="height" constant="280" id="YoW-SM-Vti"/>
+                        <constraint firstItem="tzH-xY-hx0" firstAttribute="top" secondItem="El8-Xk-viG" secondAttribute="bottom" constant="8" id="bJF-lw-lzO"/>
+                        <constraint firstItem="El8-Xk-viG" firstAttribute="top" secondItem="voO-2y-AMA" secondAttribute="top" id="dgT-5a-SYm"/>
+                        <constraint firstAttribute="bottom" secondItem="Gf3-n4-AtF" secondAttribute="bottom" constant="8" id="h7l-2h-9B6"/>
+                        <constraint firstAttribute="bottom" secondItem="jQZ-NS-Rhe" secondAttribute="bottom" constant="8" id="kFI-y0-RI0"/>
+                        <constraint firstAttribute="width" constant="260" id="nN5-vn-7UU"/>
+                        <constraint firstItem="b2D-O0-g78" firstAttribute="top" secondItem="voO-2y-AMA" secondAttribute="top" constant="8" id="pQq-kB-iCr"/>
+                        <constraint firstItem="El8-Xk-viG" firstAttribute="leading" secondItem="voO-2y-AMA" secondAttribute="leading" id="tOu-9f-8RL"/>
+                        <constraint firstAttribute="trailing" secondItem="b2D-O0-g78" secondAttribute="trailing" constant="8" id="yVu-ah-iN3"/>
+                        <constraint firstItem="dUu-17-yF2" firstAttribute="top" secondItem="voO-2y-AMA" secondAttribute="top" constant="90" id="ysI-jw-1jg"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <animations/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="voO-2y-AMA" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8ug-Pm-plu"/>
+                <constraint firstItem="voO-2y-AMA" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Aj4-wc-hhx"/>
+            </constraints>
+            <point key="canvasLocation" x="418" y="358"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Hard" width="48" height="43"/>
+        <image name="Hard_selected" width="48" height="43"/>
+        <image name="Innovation" width="13" height="13"/>
+        <image name="Innovation_selected" width="13" height="13"/>
+        <image name="Normal" width="48" height="43"/>
+        <image name="Normal_selected" width="48" height="43"/>
+        <image name="PING" width="1280" height="618"/>
+        <image name="Rectangle 1 + Line" width="461" height="174"/>
+        <image name="Super" width="54" height="45"/>
+        <image name="Super_selected" width="54" height="45"/>
+        <image name="close" width="16" height="16"/>
+    </resources>
+</document>

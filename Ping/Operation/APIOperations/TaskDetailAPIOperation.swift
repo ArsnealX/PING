@@ -1,0 +1,16 @@
+//
+//  TaskDetailAPIOperation.swift
+//  Ping
+//
+//  Created by Joshua Xiong on 8/24/15.
+//  Copyright (c) 2015 Joshua Xiong. All rights reserved.
+//
+
+import Foundation
+
+class TaskDetailAPIOperation: NetworkOperation {
+    override init() {
+        super.init()
+        self.cmd = CMD_FETCH_TASK_DETAIL
+    }
+}
