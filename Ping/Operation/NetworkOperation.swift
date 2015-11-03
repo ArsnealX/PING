@@ -12,7 +12,7 @@ import SwiftyJSON
 
 protocol APICallBackDelegate: class {
     func networkOperationCompletionHandler(Operation: NetworkOperation) -> ()
-    func networkOperationErrorHandler(error: ErrorType!) -> ()
+    func networkOperationErrorHandler() -> ()
 }
 
 //protocol APIDataReformer {
@@ -29,8 +29,9 @@ class NetworkOperation : Operation {
     let URLString: String
     var cmd: String
     var timestamp: String
-    var hasError: Bool
     var resultJSON: JSON?
+
+    private var hasError: Bool
     weak var delegate: APICallBackDelegate?
 
 
@@ -59,25 +60,37 @@ class NetworkOperation : Operation {
             .responseJSON { response in
 
                 if response.result.isSuccess {
-                    let JSONResultValue = JSON(response.result.value!)
-                    let JSONStatusCode = JSONResultValue["state"].int
-                    if JSONStatusCode == 200 {
-                        self.resultJSON = JSONResultValue["result"]
-                        self.hasError = false
+                    if let responseValue = response.result.value {
+                        let JSONResultValue = JSON(responseValue)
+                        if let JSONStatusCode = JSONResultValue["state"].int {
+                            if JSONStatusCode == 200 {
+                                self.resultJSON = JSONResultValue["result"]
+                                self.hasError = false
+                            }else {
+                                PNErrorHandling.showWarningOfStatusCode(JSONStatusCode)
+                                self.hasError = true
+                            }
+                        }else {
+                            self.hasError = true
+                        }
                     }else {
-                        PNErrorHandling.showWarningOfStatusCode(JSONStatusCode!)
                         self.hasError = true
                     }
-                    self.delegate?.networkOperationCompletionHandler(self)
-
-                    print("----------------Network Response For CMD:" + self.cmd + "----------------")
+                    print("\n\n***Network Response For CMD:" + self.cmd)
                     print(response.result.value)
                 } else {
-                    self.delegate?.networkOperationErrorHandler(response.result.error)
-                    print("----------------Network Error For CMD:" + self.cmd + "----------------")
+                    self.hasError = true
+                    print("\n\n***Network Error For CMD:" + self.cmd)
                     print(response.result.error)
                     print(response.result.debugDescription)
                 }
+                
+                if self.hasError {
+                    self.delegate?.networkOperationErrorHandler()
+                }else {
+                    self.delegate?.networkOperationCompletionHandler(self)
+                }
+                
                 //Operation Completed
                 self.completeOperation()
                 isExecuting = false
@@ -98,7 +111,7 @@ class NetworkOperation : Operation {
     }
     
     func unwarpToken() -> String {
-        if let token = APP_DEFULT_STORE.stringForKey("user_token") {
+        if let token = APP_DEFULT_STORE.stringForKey(kUserToken) {
             return token
         }else {
             return "0"
@@ -115,9 +128,9 @@ class NetworkOperation : Operation {
                                            "cmd":cmd,
                                         "tokens":unwarpToken(),
                                           "para":apiParameters()]
-        print("----------------Network Check String For CMD:" + cmd + "----------------")
+        print("\n\n***Network Check String For CMD:" + cmd)
         print(checkString)
-        print("----------------Network Parameters For CMD:" + cmd + "----------------")
+        print("\n\n***Network Parameters For CMD:" + cmd)
         print(para)
         return para
     }

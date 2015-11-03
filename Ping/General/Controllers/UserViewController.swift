@@ -54,7 +54,7 @@ class UserViewController: UIViewController {
     }
 
     func logout() {
-        APP_DEFULT_STORE.setObject(nil, forKey: "user_token")
+        APP_DEFULT_STORE.setObject(nil, forKey: kUserToken)
         goToMainVC()
     }
     

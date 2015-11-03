@@ -64,12 +64,7 @@ class LoginAndRegisterViewController: UIViewController, APICallBackDelegate {
     
     //MARK:DELEGATE AND DATASOURCE
     
-    func networkOperationCompletionHandler(Operation: NetworkOperation) {
-        guard !Operation.hasError else {
-            self.changeButtonStatus()
-            return
-        }
-        
+    func networkOperationCompletionHandler(Operation: NetworkOperation) {        
         if Operation.isKindOfClass(AccountIsRegAPIOperation) {
             let op = Operation as! AccountIsRegAPIOperation
             if op.isReg() {
@@ -79,11 +74,11 @@ class LoginAndRegisterViewController: UIViewController, APICallBackDelegate {
             }
         }else if Operation.isKindOfClass(LoginAPIOperation) {
             let op = Operation as! LoginAPIOperation
-            APP_DEFULT_STORE.setObject(op.getToken(), forKey: "user_token")
+            APP_DEFULT_STORE.setObject(op.getToken(), forKey: kUserToken)
             goToMainVC()
         }else if Operation.isKindOfClass(RegisterAPIOperation) {
             let op = Operation as! RegisterAPIOperation
-            APP_DEFULT_STORE.setObject(op.getToken(), forKey: "user_token")
+            APP_DEFULT_STORE.setObject(op.getToken(), forKey: kUserToken)
             nextBtnStatus = .confirmNicknameStatus
         }else {
             goToMainVC()
@@ -97,7 +92,7 @@ class LoginAndRegisterViewController: UIViewController, APICallBackDelegate {
         }
     }
     
-    func networkOperationErrorHandler(error: ErrorType!) {
+    func networkOperationErrorHandler() {
         changeButtonStatus()
         return
     }
@@ -112,6 +107,7 @@ class LoginAndRegisterViewController: UIViewController, APICallBackDelegate {
     
     @IBAction func nextButtonPressed(sender: UIButton) {
         var operation:NetworkOperation
+        //TODO:check empty situation of text field
         if nextBtnStatus == .nextStatus {
             //check phone number input
             if JXTools.cellPhoneNumberValidator(userInfoTextField.text!) {

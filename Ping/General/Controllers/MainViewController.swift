@@ -43,9 +43,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         tasksTableView.dataSource = self
         tasksTableView.delegate = self
-        let fetchTaskListOperation = TaskListAPIOperation(withTeamID: "1", startIndex: "1", endIndex: "20")
-        fetchTaskListOperation.delegate = self
-        mainQueue.addOperation(fetchTaskListOperation)
+        if let teamId = APP_DEFULT_STORE.stringForKey(kTeamId) {
+            let fetchTaskListOperation = TaskListAPIOperation(withTeamID:teamId, startIndex: "1", endIndex: "20")
+            fetchTaskListOperation.delegate = self
+            mainQueue.addOperation(fetchTaskListOperation)
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -56,14 +58,16 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     //MARK:DELEGATE AND DATASOURCE
     
-    func networkOperationCompletionHandler(Operation: NetworkOperation) {
-        let op = Operation as! TaskListAPIOperation
-        taskListArray = op.getListArray()
-        print(op.getListArray())
-        tasksTableView.reloadData()
+    func networkOperationCompletionHandler(Operation: NetworkOperation) {        
+        if Operation.isKindOfClass(TaskListAPIOperation) {
+            let op = Operation as! TaskListAPIOperation
+            taskListArray = op.getListArray()
+            print(op.getListArray())
+            tasksTableView.reloadData()
+        }
     }
     
-    func networkOperationErrorHandler(error: ErrorType!) {
+    func networkOperationErrorHandler() {
         return
     }
     
@@ -72,19 +76,17 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(taskListArray.count)
-//        return taskListArray.count
-        return 1
+        return taskListArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellId = "tasksTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? tasksTableViewCell
-//        cell?.setContent(taskListArray[indexPath.row])
+        cell?.setContent(taskListArray[indexPath.row])
         cell?.selectionStyle = UITableViewCellSelectionStyle.Default
         
 //        Demo Code
-        DemoCode.MainViewControllerDemoCode(cell, indexPath: indexPath)
+//        DemoCode.MainViewControllerDemoCode(cell, indexPath: indexPath)
         return cell!
     }
     
