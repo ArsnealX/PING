@@ -73,89 +73,17 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(taskListArray.count)
-//        return taskListArray.count
-        return 9
+        return taskListArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellId = "tasksTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? tasksTableViewCell
-
-        if indexPath.row == 0 {
-            cell?.avatarImageView.image = UIImage(named: "testAvatar_6")
-            cell?.nameLabel.text = "熊敬开"
-            cell?.contentLabel.text = "今天：1.数据填充 2.字段修改"
-            cell?.dateLabel.text = "07.23"
-            cell?.statusLabel.text = "审核中"
-            cell?.statusLabel.textColor = APP_THEME_COLOR
-        }else if indexPath.row == 1 {
-            cell?.avatarImageView.image = UIImage(named: "testAvatar_6")
-            cell?.nameLabel.text = "熊敬开"
-            cell?.contentLabel.text = "今天：1.数据填充 2.字段修改"
-            cell?.dateLabel.text = "07.23"
-            cell?.statusLabel.text = "审核中"
-            cell?.statusLabel.textColor = APP_THEME_COLOR
-        }else if indexPath.row == 2 {
-            cell?.avatarImageView.image = UIImage(named: "testAvatar_6")
-            cell?.nameLabel.text = "熊敬开"
-            cell?.contentLabel.text = "今天：1.数据填充 2.字段修改"
-            cell?.dateLabel.text = "07.23"
-            cell?.statusLabel.text = "审核中"
-            cell?.statusLabel.textColor = APP_THEME_COLOR
-        }else if indexPath.row == 3 {
-            cell?.avatarImageView.image = UIImage(named: "testAvatar_6")
-            cell?.nameLabel.text = "熊敬开"
-            cell?.contentLabel.text = "今天：1.数据填充 2.字段修改"
-            cell?.dateLabel.text = "07.23"
-            cell?.statusLabel.text = "审核中"
-            cell?.statusLabel.textColor = APP_THEME_COLOR
-        }else if indexPath.row == 4 {
-            cell?.avatarImageView.image = UIImage(named: "testAvatar_6")
-            cell?.nameLabel.text = "熊敬开"
-            cell?.contentLabel.text = "今天：1.数据填充 2.字段修改"
-            cell?.dateLabel.text = "07.23"
-            cell?.statusLabel.text = "审核中"
-            cell?.statusLabel.textColor = APP_THEME_COLOR
-        }else if indexPath.row == 5 {
-            cell?.avatarImageView.image = UIImage(named: "testAvatar_6")
-            cell?.nameLabel.text = "熊敬开"
-            cell?.contentLabel.text = "今天：1.数据填充 2.字段修改"
-            cell?.dateLabel.text = "07.23"
-            cell?.statusLabel.text = "审核中"
-            cell?.statusLabel.textColor = APP_THEME_COLOR
-        }else if indexPath.row == 6 {
-            cell?.avatarImageView.image = UIImage(named: "testAvatar_6")
-            cell?.nameLabel.text = "熊敬开"
-            cell?.contentLabel.text = "今天：1.数据填充 2.字段修改"
-            cell?.dateLabel.text = "07.23"
-            cell?.statusLabel.text = "审核中"
-            cell?.statusLabel.textColor = APP_THEME_COLOR
-        }else if indexPath.row == 7 {
-            cell?.avatarImageView.image = UIImage(named: "testAvatar_6")
-            cell?.nameLabel.text = "熊敬开"
-            cell?.contentLabel.text = "今天：1.数据填充 2.字段修改"
-            cell?.dateLabel.text = "07.23"
-            cell?.statusLabel.text = "审核中"
-            cell?.statusLabel.textColor = APP_THEME_COLOR
-        }else if indexPath.row == 8 {
-            cell?.avatarImageView.image = UIImage(named: "testAvatar_6")
-            cell?.nameLabel.text = "熊敬开"
-            cell?.contentLabel.text = "今天：1.数据填充 2.字段修改"
-            cell?.dateLabel.text = "07.23"
-            cell?.statusLabel.text = "审核中"
-            cell?.statusLabel.textColor = APP_THEME_COLOR
-        }else {
-            cell?.avatarImageView.image = UIImage(named: "testAvatar_9")
-            cell?.nameLabel.text = "笑丘"
-            cell?.contentLabel.text = "1、小区项目，整体进度正常，下周4交付，周5验收，预计绝大部分功能和流程都ok。 "
-            cell?.dateLabel.text = "07.24"
-            cell?.statusLabel.text = "已通过"
-            cell?.statusLabel.textColor = APP_PASS_COLOR
-        }
-        
-        
-//        cell?.setContent(taskListArray[indexPath.row])
+        cell?.setContent(taskListArray[indexPath.row])
         cell?.selectionStyle = UITableViewCellSelectionStyle.Default
+        
+//        Demo Code
+//        DemoCode.MainViewControllerDemoCode(cell, indexPath: indexPath)
         return cell!
     }
     
@@ -178,9 +106,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let reviewNav = UINavigationController(rootViewController: addReviewVC)
         PTools.configNavigationController(reviewNav, tabBarIconName: nil, needTabBar: false)
         self.presentViewController(reviewNav, animated: true, completion: nil)
-//        self.hidesBottomBarWhenPushed = true;
-//        self.navigationController?.pushViewController(addReviewVC, animated: true)
-//        self.hidesBottomBarWhenPushed = false;
     }
     
     func reachabilityStatusChanged(notification: NSNotification) {

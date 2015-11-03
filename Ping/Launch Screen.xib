@@ -57,7 +57,7 @@
                         </label>
                     </subviews>
                     <animations/>
-                    <color key="backgroundColor" red="0.32156862749999998" green="0.75686274509999996" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="0.14509803921568629" green="0.69019607843137254" blue="0.45490196078431372" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="trailingMargin" secondItem="rQk-oK-TjN" secondAttribute="trailing" constant="225" id="0wT-WK-8vR"/>

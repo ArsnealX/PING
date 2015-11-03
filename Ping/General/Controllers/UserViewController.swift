@@ -28,7 +28,7 @@ class UserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = "熊敬开"
+        nameLabel.text = "熊一"
         avatarImage.layer.masksToBounds = true
         avatarImage.layer.cornerRadius = 15
         let avatarImageViewTapRecognizer = UITapGestureRecognizer(target: self, action: "tapAvatarImageView")

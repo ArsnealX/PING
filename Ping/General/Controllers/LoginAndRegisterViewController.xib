@@ -120,7 +120,7 @@
                 </label>
             </subviews>
             <animations/>
-            <color key="backgroundColor" red="0.32156862749999998" green="0.75686274509999996" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" red="0.1450980392" green="0.69019607839999997" blue="0.4549019608" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="NcH-d4-SKH" secondAttribute="trailing" constant="30" id="0qX-XM-78u"/>
                 <constraint firstItem="2pR-PK-elH" firstAttribute="top" secondItem="NcH-d4-SKH" secondAttribute="bottom" constant="10" id="1hz-u0-zqb"/>

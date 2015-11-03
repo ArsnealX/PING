@@ -69,6 +69,7 @@
 		42EF11C71BAAC50800D6504A /* APICmdList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF11C61BAAC50800D6504A /* APICmdList.swift */; };
 		42FD093C1B60EDEE00046F40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FD093B1B60EDEE00046F40 /* AppDelegate.swift */; };
 		42FD09561B60EE9A00046F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42FD09551B60EE9A00046F40 /* Assets.xcassets */; };
+		CD0E8B501BE860E0003C2758 /* DemoCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0E8B4F1BE860E0003C2758 /* DemoCode.swift */; };
 		EB42AFBD1BE0A69C006EE260 /* TaskDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42AFBC1BE0A69C006EE260 /* TaskDetailModel.swift */; };
 		EBF21E3D1BE1BC8A00F6CF59 /* APIMarco.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF21E3C1BE1BC8A00F6CF59 /* APIMarco.swift */; };
 /* End PBXBuildFile section */
@@ -139,6 +140,7 @@
 		42FD093B1B60EDEE00046F40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42FD09471B60EDEF00046F40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42FD09551B60EE9A00046F40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CD0E8B4F1BE860E0003C2758 /* DemoCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCode.swift; sourceTree = "<group>"; };
 		DDFCD60E232C4D260F17A0F3 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB42AFBC1BE0A69C006EE260 /* TaskDetailModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDetailModel.swift; sourceTree = "<group>"; };
 		EBF21E3C1BE1BC8A00F6CF59 /* APIMarco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIMarco.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				4249805C1B6B53EA00454858 /* JXTools.swift */,
 				42423C9E1BAFDEEE00166839 /* PTools.swift */,
 				42432B791BB0F2D2005F0B85 /* PNErrorHandling.swift */,
+				CD0E8B4F1BE860E0003C2758 /* DemoCode.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -552,6 +555,7 @@
 				42801B431B8B0F54008D4AC9 /* SetUsernameAPIOperation.swift in Sources */,
 				42801B331B8B0B62008D4AC9 /* CreateTaskAPIOperation.swift in Sources */,
 				42B0925D1B8AC1E0002F22E5 /* Operation.swift in Sources */,
+				CD0E8B501BE860E0003C2758 /* DemoCode.swift in Sources */,
 				429A5D771B6F729500384989 /* RatingViewController.swift in Sources */,
 				42801B3D1B8B0DA6008D4AC9 /* MyPointAPIOperation.swift in Sources */,
 				42B0925F1B8AC333002F22E5 /* NetworkOperation.swift in Sources */,
