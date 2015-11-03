@@ -38,6 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //start network status monitor
         SSASwiftReachability.sharedManager?.startMonitoring()
         
+        //v1.0 team code
+        APP_DEFULT_STORE.setObject("1", forKey: kTeamId)
+        
         var launchedFromShortCut = false
         //check for shortcutitem
         if #available(iOS 9.0, *) {
@@ -69,7 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         switch shortCutType {
             case ShortcutType.addNewReview.type :
-                if APP_DEFULT_STORE.objectForKey("userInfo") != nil {
+                if let _ = APP_DEFULT_STORE.objectForKey(kUserToken) {
                     //Get root navigation viewcontroller and its first controller
                     let rootTabBarViewController = window!.rootViewController as? UITabBarController
                     let rootViewController = rootTabBarViewController?.viewControllers?.first as! UINavigationController
@@ -119,10 +122,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //set root view controller
         let lRVC = LoginAndRegisterViewController(tabBarController: tabBarController)
         
-        if APP_DEFULT_STORE.objectForKey("user_token") == nil {
-            window?.rootViewController = lRVC
-        }else {
+        if let _ = APP_DEFULT_STORE.objectForKey(kUserToken) {
             window?.rootViewController = tabBarController
+        }else {
+            window?.rootViewController = lRVC
         }
     }
 

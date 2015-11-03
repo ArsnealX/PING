@@ -11,3 +11,5 @@ import Foundation
 let kAccountId = "accound_id"
 let kPassword = "password"
 let kUsername = "user_name"
+let kUserToken = "user_token"
+let kTeamId = "team_id"
