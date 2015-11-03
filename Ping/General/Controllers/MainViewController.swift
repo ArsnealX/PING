@@ -73,17 +73,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print(taskListArray.count)
-        return taskListArray.count
+//        return taskListArray.count
+        return 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellId = "tasksTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? tasksTableViewCell
-        cell?.setContent(taskListArray[indexPath.row])
+//        cell?.setContent(taskListArray[indexPath.row])
         cell?.selectionStyle = UITableViewCellSelectionStyle.Default
         
 //        Demo Code
-//        DemoCode.MainViewControllerDemoCode(cell, indexPath: indexPath)
+        DemoCode.MainViewControllerDemoCode(cell, indexPath: indexPath)
         return cell!
     }
     
