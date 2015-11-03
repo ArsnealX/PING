@@ -98,7 +98,7 @@ class LoginAndRegisterViewController: UIViewController, APICallBackDelegate {
     }
     
     func networkOperationErrorHandler(error: ErrorType!) {
-        removeNetworkIndicator()
+        changeButtonStatus()
         return
     }
     
@@ -162,7 +162,9 @@ class LoginAndRegisterViewController: UIViewController, APICallBackDelegate {
     
     func changeButtonStatus() {
         //keyboard type setting must before user interaction enabling
-        if nextBtnStatus == .loginStatus {
+        if nextBtnStatus == .nextStatus {
+            nextButton.setTitle("下一步", forState: UIControlState.Normal)
+        }else if nextBtnStatus == .loginStatus {
             nextButton.setTitle("登录", forState: UIControlState.Normal)
             userInfoTextField.placeholder = "请输入密码"
             userInfoTextField.secureTextEntry = true
