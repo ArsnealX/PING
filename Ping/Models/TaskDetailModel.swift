@@ -9,6 +9,13 @@
 import UIKit
 
 class TaskDetailModel: NSObject {
+    //    "task_id":"工作任务id",
+    //    "heads_img":, "头像",
+    //    "user_name":"用户名称",
+    //    "create_timestamp":"创建时间戳",
+    //    "task_state":"工作任务状态（2:审核中，6:已通过，5:未通过）",
+    //    "task_content":"工作任务内容",
+    //    "is_read":"阅读状态，0未读、1已读"
 
     var taskID:String
     var headsImgURL:String
