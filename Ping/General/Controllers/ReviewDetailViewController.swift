@@ -8,9 +8,11 @@
 
 import UIKit
 
-class reviewDetailViewController: UIViewController {
+class reviewDetailViewController: UIViewController, APICallBackDelegate {
     @IBOutlet weak var passButton: UIButton!
     @IBOutlet weak var notPassButton: UIButton!
+    
+    var taskId:String!
     
     let mainQueue: NSOperationQueue = NSOperationQueue()
     
@@ -18,9 +20,10 @@ class reviewDetailViewController: UIViewController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
-    convenience init() {
+    convenience init(taskId: String) {
         let nibNameOrNil:String? = "ReviewDetailViewController"
         self.init(nibName: nibNameOrNil, bundle: nil)
+        self.taskId = taskId
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -30,6 +33,9 @@ class reviewDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let operation = TaskDetailAPIOperation(withTaskId: taskId)
+        operation.delegate = self
+        mainQueue.addOperation(operation)
         // Do any additional setup after loading the view.
     }
     
@@ -40,12 +46,27 @@ class reviewDetailViewController: UIViewController {
 
     
     //MARK:DELEGATE AND DATASOURCE
+    func networkOperationCompletionHandler(Operation: NetworkOperation) {
+        if Operation.isKindOfClass(TaskDetailAPIOperation) {
+            let op = Operation as! TaskDetailAPIOperation
+            configViewsWithDataSource(op.getMoreInfo())
+        }
+    }
+    
+    func networkOperationErrorHandler() {
+        return
+    }
+    
     
     
     //MARK:EVENT RESPONDER
     
     
     //MARK:PRIVATE METHOD
+    func configViewsWithDataSource(dataSource:TaskMoreInfoModel) {
+        print(dataSource)
+    }
+    
     func configUI() {
         self.title = "某某某"
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()

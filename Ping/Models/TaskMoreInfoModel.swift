@@ -27,11 +27,11 @@ class TaskMoreInfoModel: NSObject {
     var taskContent:String
     var userAuditName:String
     var taskCopyTo:Array<String>
-    var userAttr:Int
+    var userAttr:String
     var workState:String
     var workInnovate:String
     
-    init(taskState:String, headsImgUrl:String, userName:String, createTimeStamp:String, taskContent:String, userAuditName:String, taskCopyTo:Array<String>, userAttr:Int, workState:String, workInnovate:String) {
+    init(taskState:String, headsImgUrl:String, userName:String, createTimeStamp:String, taskContent:String, userAuditName:String, taskCopyTo:Array<String>, userAttr:String, workState:String, workInnovate:String) {
         self.taskState = taskState
         self.headsImgUrl = headsImgUrl
         self.userName = userName

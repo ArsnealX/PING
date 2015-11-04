@@ -69,7 +69,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         guard let shortCutType = shortcutItem.type as String? else { return false }
         
-        
         switch shortCutType {
             case ShortcutType.addNewReview.type :
                 if let _ = APP_DEFULT_STORE.objectForKey(kUserToken) {

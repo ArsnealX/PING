@@ -95,7 +95,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let reviewDetailVC = reviewDetailViewController()
+        let taskId = taskListArray[indexPath.row].taskID
+        let reviewDetailVC = reviewDetailViewController(taskId: taskId)
         self.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(reviewDetailVC, animated: true)
         self.hidesBottomBarWhenPushed = false
