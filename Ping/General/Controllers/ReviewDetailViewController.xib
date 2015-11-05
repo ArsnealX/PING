@@ -5,11 +5,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="NotoSansHans-DemiLight.otf">
-            <string>NotoSansHans-DemiLight</string>
-            <string>NotoSansHans-DemiLight</string>
-        </mutableArray>
         <mutableArray key="NotoSansHans-Light.otf">
+            <string>NotoSansHans-Light</string>
+            <string>NotoSansHans-Light</string>
             <string>NotoSansHans-Light</string>
             <string>NotoSansHans-Light</string>
             <string>NotoSansHans-Light</string>
@@ -23,8 +21,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="reviewDetailViewController" customModule="Ping" customModuleProvider="target">
             <connections>
+                <outlet property="ccNamesLabel" destination="SGM-9S-6P6" id="4wl-zo-0Sh"/>
+                <outlet property="innovationLabel" destination="na0-mM-R4G" id="iRY-tv-E3a"/>
                 <outlet property="notPassButton" destination="bw7-xF-04d" id="f36-FO-kqL"/>
                 <outlet property="passButton" destination="Z9i-Aa-Iyd" id="4vI-wv-d0z"/>
+                <outlet property="reviewerNameLabel" destination="xmV-1R-Q9t" id="Pu9-3F-Wl9"/>
+                <outlet property="selfRatingLabel" destination="oLQ-YV-Oxd" id="ZAn-ym-Vf3"/>
+                <outlet property="taskContentTextView" destination="fou-6N-8Qa" id="Kbk-ZL-MpF"/>
+                <outlet property="taskDateLabel" destination="oLA-Mv-OuW" id="QCT-B0-Wdb"/>
+                <outlet property="taskStatusLabel" destination="PsY-bK-Cf7" id="C8B-cl-ejF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -36,11 +41,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CX2-WP-cuU" userLabel="Anchor View">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XXL-zu-Y1N">
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXL-zu-Y1N">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dme-p7-7fx" userLabel="Content View">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="393"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="288"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JN0-xd-OIF">
                                             <rect key="frame" x="8" y="8" width="584" height="37"/>
@@ -61,8 +66,8 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="SCE-18-BAi"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="NotoSansHans-DemiLight" family="Noto Sans S Chinese" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansHans-Light" family="Noto Sans S Chinese" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -93,7 +98,7 @@
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1P8-S3-xyY">
-                                            <rect key="frame" x="8" y="118" width="584" height="210"/>
+                                            <rect key="frame" x="8" y="118" width="584" height="105"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="工作结果" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JU5-Nt-TXd">
                                                     <rect key="frame" x="8" y="8" width="60" height="15"/>
@@ -110,22 +115,21 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015-08-10 17:20" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLA-Mv-OuW">
-                                                    <rect key="frame" x="462" y="181" width="114" height="21"/>
+                                                    <rect key="frame" x="462.5" y="76" width="113.5" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="NotoSansHans-Light" family="Noto Sans S Chinese" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fou-6N-8Qa">
-                                                    <rect key="frame" x="0.0" y="31" width="584" height="142"/>
+                                                    <rect key="frame" x="0.0" y="31" width="584" height="37"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" name="NotoSansHans-Light" family="Noto Sans S Chinese" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正常" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oLQ-YV-Oxd">
-                                                    <rect key="frame" x="8" y="181" width="30" height="21"/>
+                                                    <rect key="frame" x="8" y="76" width="30" height="21"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="wL8-fT-Ew1"/>
@@ -135,7 +139,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="创新" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="na0-mM-R4G">
-                                                    <rect key="frame" x="46" y="181" width="30" height="21"/>
+                                                    <rect key="frame" x="46" y="76" width="30" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="NotoSansHans-Light" family="Noto Sans S Chinese" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -177,15 +181,15 @@
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGM-9S-6P6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGM-9S-6P6">
                                                     <rect key="frame" x="46" y="8" width="530" height="21"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="EXk-Pc-wme"/>
                                                         <constraint firstAttribute="height" constant="21" id="MJ0-gJ-oC6"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" name="NotoSansHans-DemiLight" family="Noto Sans S Chinese" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansHans-Light" family="Noto Sans S Chinese" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">

@@ -11,6 +11,13 @@ import UIKit
 class reviewDetailViewController: UIViewController, APICallBackDelegate {
     @IBOutlet weak var passButton: UIButton!
     @IBOutlet weak var notPassButton: UIButton!
+    @IBOutlet weak var reviewerNameLabel: UILabel!
+    @IBOutlet weak var ccNamesLabel: UILabel!
+    @IBOutlet weak var taskContentTextView: UITextView!
+    @IBOutlet weak var selfRatingLabel: UILabel!
+    @IBOutlet weak var innovationLabel: UILabel!
+    @IBOutlet weak var taskDateLabel: UILabel!
+    @IBOutlet weak var taskStatusLabel: UILabel!
     
     var taskId:String!
     
@@ -64,7 +71,16 @@ class reviewDetailViewController: UIViewController, APICallBackDelegate {
     
     //MARK:PRIVATE METHOD
     func configViewsWithDataSource(dataSource:TaskMoreInfoModel) {
-        print(dataSource)
+        reviewerNameLabel.text = dataSource.userAuditName
+        var ccNamesString:String = ""
+        for nameString in  dataSource.taskCopyTo {
+            ccNamesString = ccNamesString + nameString
+        }
+        ccNamesLabel.text = ccNamesString
+        taskContentTextView.text = dataSource.taskContent
+        taskStatusLabel.text = dataSource.taskState
+        selfRatingLabel.text = dataSource.workState
+        innovationLabel.text = dataSource.workInnovate
     }
     
     func configUI() {

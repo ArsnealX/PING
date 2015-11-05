@@ -46,7 +46,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VBg-9R-OYe" userLabel="Anchor View">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <subviews>
-                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tqP-YV-t4b">
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqP-YV-t4b">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4at-Kl-x59" userLabel="Content View">
@@ -56,7 +56,7 @@
                                             <rect key="frame" x="8" y="8" width="584" height="37"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="审核" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lnx-YS-86r">
-                                                    <rect key="frame" x="8" y="11" width="30" height="15"/>
+                                                    <rect key="frame" x="8" y="11.5" width="30" height="15"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="J1Y-jt-7MW"/>
@@ -144,7 +144,7 @@
                                             <rect key="frame" x="8" y="63" width="584" height="37"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="抄送" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLg-LO-Htr">
-                                                    <rect key="frame" x="8" y="11" width="30" height="15"/>
+                                                    <rect key="frame" x="8" y="11.5" width="30" height="15"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="W2z-5R-iR2"/>
@@ -274,6 +274,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Rectangle 1 + Line" width="374" height="18"/>
+        <image name="Rectangle 1 + Line" width="374" height="32"/>
     </resources>
 </document>

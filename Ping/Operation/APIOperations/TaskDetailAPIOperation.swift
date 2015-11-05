@@ -25,7 +25,15 @@ class TaskDetailAPIOperation: NetworkOperation {
     }
     
     func getMoreInfo() -> TaskMoreInfoModel {
-        let taskState = resultJSON!["task_state"].stringValue
+        
+        var taskState:String = ""
+        let taskStateCode = resultJSON!["task_state"].stringValue
+        switch taskStateCode {
+            case "1":taskState = "审核中"
+            case "2":taskState = "未通过"
+            case "3":taskState = "已通过"
+            default:break
+        }
         let headsImgUrl = resultJSON!["heads_image"].stringValue
         let userName = resultJSON!["user_name"].stringValue
         let createTimeStamp = resultJSON!["create_timestamp"].stringValue

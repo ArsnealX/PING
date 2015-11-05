@@ -171,8 +171,4 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.navigationItem.rightBarButtonItem = rightItem
     }
     
-    /*
-    
-    
-    */
 }
