@@ -65,7 +65,7 @@ class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollVie
     //MARK:DELEGATE AND DATASOURCE
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        //复制粘贴时隐藏站位文字
+        //复制粘贴时隐藏占位文字
         if (text as NSString).length > 0 {
             textViewPlaceholderLabel.hidden = true
         }
