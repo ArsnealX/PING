@@ -65,7 +65,6 @@ class UserViewController: UIViewController {
         UIView.transitionWithView(loginVC.view, duration: 0.8, options: .TransitionCrossDissolve, animations: {
             let oldState = UIView.areAnimationsEnabled()
             UIView.setAnimationsEnabled(false)
-//            appDelegate.window?.rootViewController = loginVC
             appDelegate.configUI()
             UIView.setAnimationsEnabled(oldState)
             }, completion: nil)
