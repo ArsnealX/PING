@@ -9,17 +9,25 @@
 import UIKit
 
 protocol contactsSelectionDelegate: class{
-    func selectedContactsArray(wordArray:NSMutableArray)
-    func selectedContact(word:String)
+    func selectedContactsArray(selectedArray:Array<TeamMemberModel>)
+    func selectedContact(selected:TeamMemberModel)
 }
 
-class contactsSelectionViewController: UIViewController,UITableViewDataSource, UITableViewDelegate {
+class contactsSelectionViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, APICallBackDelegate {
     @IBOutlet weak var contactsSelectionTableView: UITableView!
+    var contactNameDataSorceArray:Array<TeamMemberModel>
     var lastSelectedIndexPath:NSIndexPath!
-    var contactNameArray:NSMutableArray!
-    var selectionDelegate:contactsSelectionDelegate?
+    var contactNameArray:Array<TeamMemberModel>
+    
+    weak var selectionDelegate:contactsSelectionDelegate?
     var ifSingleSelection:Bool!
+    
+    //Network Operation Queue
+    let mainQueue: NSOperationQueue = NSOperationQueue()
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        contactNameDataSorceArray = [TeamMemberModel]()
+        contactNameArray = [TeamMemberModel]()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -27,7 +35,6 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
         let nibNameOrNil:String? = "ContactsSelectionViewController"
         self.init(nibName: nibNameOrNil, bundle: nil)
         self.ifSingleSelection = ifSS
-        contactNameArray = NSMutableArray(capacity: 0)
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -39,6 +46,10 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
         contactsSelectionTableView?.registerNib(UINib(nibName: "contactSelectionTableViewCell", bundle: nil), forCellReuseIdentifier: "contactSelectionTableViewCell")
         contactsSelectionTableView?.dataSource = self
         contactsSelectionTableView?.delegate = self
+        let queryTeamMemberAPIOperation = QueryTeamMemberAPIOperation()
+        queryTeamMemberAPIOperation.delegate = self
+        mainQueue.addOperation(queryTeamMemberAPIOperation)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -51,12 +62,25 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK:DATASOURCE AND DELEGATE
+    func networkOperationCompletionHandler(Operation: NetworkOperation) {
+        if Operation.isKindOfClass(QueryTeamMemberAPIOperation) {
+            let op = Operation as! QueryTeamMemberAPIOperation
+            contactNameDataSorceArray = op.getTeamMemberList()
+            contactsSelectionTableView.reloadData()
+        }
+    }
+    
+    func networkOperationErrorHandler() {
+        return
+    }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return contactNameDataSorceArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -97,10 +121,7 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
         if !selectionStatus {
             cell?.checkMarkImageView.hidden = false
             cell?.isCellSelected = true
-            //test code
-            let cellNameString = (cell?.nameLabel.text)!
-            print(cellNameString)
-            contactNameArray.addObject(cellNameString)
+            contactNameArray.append(contactNameDataSorceArray[indexPath.row])
         }else {
             cell?.checkMarkImageView.hidden = true
             cell?.isCellSelected = false
@@ -109,7 +130,7 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
     
     func confirmName() { //single selection
         if ((selectionDelegate) != nil) {
-            selectionDelegate?.selectedContact(contactNameArray.firstObject as! String)
+            selectionDelegate?.selectedContact(contactNameArray.first!)
         }
     }
     
@@ -125,7 +146,6 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
             let rightItem = UIBarButtonItem(title: "confirm", style: UIBarButtonItemStyle.Plain, target: self, action: "confirmNames")
             rightItem.image = UIImage(named: "check")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
             self.navigationItem.rightBarButtonItem = rightItem
-
         }else {
             self.title = "审核人"
         }

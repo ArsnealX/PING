@@ -103,12 +103,12 @@ class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollVie
         wordsCountLabel.text = String(leftWords)
     }
     
-    func selectedContactsArray(wordArray:NSMutableArray) {
+    func selectedContactsArray(selectedArray:Array<TeamMemberModel>) {
         
     }
     
-    func selectedContact(word:String) {
-        reviewerNameLabel.text = word
+    func selectedContact(selected:TeamMemberModel) {
+        reviewerNameLabel.text = selected.userName
     }
     
     func didCompleteRating() {
