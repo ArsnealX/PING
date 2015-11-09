@@ -104,7 +104,11 @@ class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollVie
     }
     
     func selectedContactsArray(selectedArray:Array<TeamMemberModel>) {
-        
+        var namesString:String = ""
+        for singleMember in selectedArray {
+            namesString = namesString + singleMember.userName + " "
+        }
+        ccNamesLabel.text = namesString
     }
     
     func selectedContact(selected:TeamMemberModel) {

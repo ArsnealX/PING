@@ -86,7 +86,7 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellId = "contactSelectionTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? contactSelectionTableViewCell
-        cell?.nameLabel.text = "熊"
+        cell?.setContent(contactNameDataSorceArray[indexPath.row])
         cell?.selectionStyle = UITableViewCellSelectionStyle.Default
         return cell!
     }
@@ -138,6 +138,7 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
         if ((selectionDelegate) != nil) {
             selectionDelegate?.selectedContactsArray(contactNameArray)
         }
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
     func configUI() {

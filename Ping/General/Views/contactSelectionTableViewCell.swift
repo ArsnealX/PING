@@ -28,4 +28,9 @@ class contactSelectionTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setContent(model:TeamMemberModel) {
+        avatarImageView.kf_setImageWithURL(NSURL(string: model.headImgUrl)!, placeholderImage: UIImage(named: "Image_Placeholder"))
+        nameLabel.text = model.userName
+    }
+    
 }
