@@ -15,7 +15,7 @@ protocol contactsSelectionDelegate: class{
 
 class contactsSelectionViewController: UIViewController,UITableViewDataSource, UITableViewDelegate, APICallBackDelegate {
     @IBOutlet weak var contactsSelectionTableView: UITableView!
-    var contactNameDataSorceArray:Array<TeamMemberModel>
+    var contactNameDataSourceArray:Array<TeamMemberModel>
     var lastSelectedIndexPath:NSIndexPath!
     var contactNameArray:Array<TeamMemberModel>
     
@@ -26,7 +26,7 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
     let mainQueue: NSOperationQueue = NSOperationQueue()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        contactNameDataSorceArray = [TeamMemberModel]()
+        contactNameDataSourceArray = [TeamMemberModel]()
         contactNameArray = [TeamMemberModel]()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
@@ -66,7 +66,7 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
     func networkOperationCompletionHandler(Operation: NetworkOperation) {
         if Operation.isKindOfClass(QueryTeamMemberAPIOperation) {
             let op = Operation as! QueryTeamMemberAPIOperation
-            contactNameDataSorceArray = op.getTeamMemberList()
+            contactNameDataSourceArray = op.getTeamMemberList()
             contactsSelectionTableView.reloadData()
         }
     }
@@ -80,13 +80,13 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contactNameDataSorceArray.count
+        return contactNameDataSourceArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellId = "contactSelectionTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? contactSelectionTableViewCell
-        cell?.setContent(contactNameDataSorceArray[indexPath.row])
+        cell?.setContent(contactNameDataSourceArray[indexPath.row])
         cell?.selectionStyle = UITableViewCellSelectionStyle.Default
         return cell!
     }
@@ -97,40 +97,50 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if !ifSingleSelection {
-            configSelectionStyleForTableViewAtIndexPath(tableView, indexPath: indexPath)
+            let indexPaths = [indexPath]
+            if contactNameDataSourceArray[indexPath.row].selected {
+                contactNameDataSourceArray[indexPath.row].selected = false
+                contactNameArray.removeAtIndex(contactNameDataSourceArray[indexPath.row].index)
+            }else {
+                contactNameDataSourceArray[indexPath.row].selected = true
+                contactNameArray.append(contactNameDataSourceArray[indexPath.row])
+                contactNameDataSourceArray[indexPath.row].index = contactNameArray.count - 1
+            }
+            tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
         }else {//single selection
-            configSelectionStyleForTableViewAtIndexPath(tableView, indexPath: indexPath)
+            var indexPaths = [indexPath]
             if (lastSelectedIndexPath != nil) {
-                let lastCell = tableView.cellForRowAtIndexPath(lastSelectedIndexPath) as? contactSelectionTableViewCell
-                let lastSelectionStatus = (lastCell?.isCellSelected)!
-                if lastSelectionStatus {
-                    lastCell?.checkMarkImageView.hidden = true
-                    lastCell?.isCellSelected = false
+                contactNameDataSourceArray[lastSelectedIndexPath.row].selected = false
+                if indexPath != lastSelectedIndexPath {
+                    indexPaths.append(lastSelectedIndexPath)
                 }
             }
+            contactNameDataSourceArray[indexPath.row].selected = true
             lastSelectedIndexPath = indexPath
+            tableView.reloadRowsAtIndexPaths(indexPaths, withRowAnimation: UITableViewRowAnimation.Fade)
+            contactNameArray.append(contactNameDataSourceArray[indexPath.row])
             self.confirmName()
             self.navigationController?.popViewControllerAnimated(true)
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
-    func configSelectionStyleForTableViewAtIndexPath(tableView: UITableView, indexPath: NSIndexPath) {
-        let cell = tableView.cellForRowAtIndexPath(indexPath) as?contactSelectionTableViewCell
-        let selectionStatus = (cell?.isCellSelected)!
-        if !selectionStatus {
-            cell?.checkMarkImageView.hidden = false
-            cell?.isCellSelected = true
-            contactNameArray.append(contactNameDataSorceArray[indexPath.row])
-        }else {
-            cell?.checkMarkImageView.hidden = true
-            cell?.isCellSelected = false
-        }
-    }
+//    func configSelectionStyleForTableViewAtIndexPath(tableView: UITableView, indexPath: NSIndexPath) {
+//        let cell = tableView.cellForRowAtIndexPath(indexPath) as?contactSelectionTableViewCell
+//        let selectionStatus = (cell?.isCellSelected)!
+//        if !selectionStatus {
+//            cell?.checkMarkImageView.hidden = false
+//            cell?.isCellSelected = true
+//            contactNameArray.append(contactNameDataSourceArray[indexPath.row])
+//        }else {
+//            cell?.checkMarkImageView.hidden = true
+//            cell?.isCellSelected = false
+//        }
+//    }
     
     func confirmName() { //single selection
         if ((selectionDelegate) != nil) {
-            selectionDelegate?.selectedContact(contactNameArray.first!)
+            selectionDelegate?.selectedContact(contactNameArray.last!)
         }
     }
     

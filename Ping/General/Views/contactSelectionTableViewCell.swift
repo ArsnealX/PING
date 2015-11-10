@@ -12,14 +12,12 @@ class contactSelectionTableViewCell: UITableViewCell {
     @IBOutlet weak var avatarImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var checkMarkImageView: UIImageView!
-    internal var isCellSelected:Bool!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         avatarImageView.layer.masksToBounds = true
         avatarImageView.layer.cornerRadius = 5
         checkMarkImageView.hidden = true
-        isCellSelected = false
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
@@ -31,6 +29,11 @@ class contactSelectionTableViewCell: UITableViewCell {
     func setContent(model:TeamMemberModel) {
         avatarImageView.kf_setImageWithURL(NSURL(string: model.headImgUrl)!, placeholderImage: UIImage(named: "Image_Placeholder"))
         nameLabel.text = model.userName
+        if !model.selected {
+            checkMarkImageView.hidden = true
+        }else {
+            checkMarkImageView.hidden = false
+        }
     }
     
 }

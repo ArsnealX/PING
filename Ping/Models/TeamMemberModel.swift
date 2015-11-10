@@ -15,6 +15,8 @@ class TeamMemberModel: NSObject {
     var accountId:String
     var userName:String
     var headImgUrl:String
+    var selected:Bool = false
+    var index:Int = 0
     
     init(accountId:String, userName:String, headImgUrl:String) {
         self.accountId = accountId
