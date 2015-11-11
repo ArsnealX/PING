@@ -96,7 +96,7 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if !ifSingleSelection {
+        if !ifSingleSelection {//multiple selection
             let indexPaths = [indexPath]
             if contactNameDataSourceArray[indexPath.row].selected {
                 contactNameDataSourceArray[indexPath.row].selected = false
@@ -124,19 +124,6 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
         }
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
-    
-//    func configSelectionStyleForTableViewAtIndexPath(tableView: UITableView, indexPath: NSIndexPath) {
-//        let cell = tableView.cellForRowAtIndexPath(indexPath) as?contactSelectionTableViewCell
-//        let selectionStatus = (cell?.isCellSelected)!
-//        if !selectionStatus {
-//            cell?.checkMarkImageView.hidden = false
-//            cell?.isCellSelected = true
-//            contactNameArray.append(contactNameDataSourceArray[indexPath.row])
-//        }else {
-//            cell?.checkMarkImageView.hidden = true
-//            cell?.isCellSelected = false
-//        }
-//    }
     
     func confirmName() { //single selection
         if ((selectionDelegate) != nil) {
