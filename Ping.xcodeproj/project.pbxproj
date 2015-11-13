@@ -45,8 +45,10 @@
 		42801B3B1B8B0D5F008D4AC9 /* TeamRankAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42801B3A1B8B0D5F008D4AC9 /* TeamRankAPIOperation.swift */; };
 		42801B3D1B8B0DA6008D4AC9 /* MyPointAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42801B3C1B8B0DA6008D4AC9 /* MyPointAPIOperation.swift */; };
 		42801B3F1B8B0E8B008D4AC9 /* SetReadStateAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42801B3E1B8B0E8B008D4AC9 /* SetReadStateAPIOperation.swift */; };
-		42801B411B8B0F02008D4AC9 /* AccountHistoryAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42801B401B8B0F02008D4AC9 /* AccountHistoryAPIOperation.swift */; };
 		42801B431B8B0F54008D4AC9 /* SetUsernameAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42801B421B8B0F54008D4AC9 /* SetUsernameAPIOperation.swift */; };
+		428984751BF5C7340069679B /* TeamRankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428984741BF5C7340069679B /* TeamRankingModel.swift */; };
+		428984771BF5D2E10069679B /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428984761BF5D2E10069679B /* UserInfoModel.swift */; };
+		4289847B1BF5D48D0069679B /* UserInfoAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4289847A1BF5D48D0069679B /* UserInfoAPIOperation.swift */; };
 		429A5D771B6F729500384989 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429A5D751B6F729500384989 /* RatingViewController.swift */; };
 		429A5D781B6F729500384989 /* RatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 429A5D761B6F729500384989 /* RatingViewController.xib */; };
 		42B0925A1B8ABF89002F22E5 /* PNAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B092591B8ABF89002F22E5 /* PNAPI.swift */; };
@@ -115,8 +117,10 @@
 		42801B3A1B8B0D5F008D4AC9 /* TeamRankAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamRankAPIOperation.swift; sourceTree = "<group>"; };
 		42801B3C1B8B0DA6008D4AC9 /* MyPointAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPointAPIOperation.swift; sourceTree = "<group>"; };
 		42801B3E1B8B0E8B008D4AC9 /* SetReadStateAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetReadStateAPIOperation.swift; sourceTree = "<group>"; };
-		42801B401B8B0F02008D4AC9 /* AccountHistoryAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountHistoryAPIOperation.swift; sourceTree = "<group>"; };
 		42801B421B8B0F54008D4AC9 /* SetUsernameAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUsernameAPIOperation.swift; sourceTree = "<group>"; };
+		428984741BF5C7340069679B /* TeamRankingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamRankingModel.swift; sourceTree = "<group>"; };
+		428984761BF5D2E10069679B /* UserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
+		4289847A1BF5D48D0069679B /* UserInfoAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoAPIOperation.swift; sourceTree = "<group>"; };
 		429A5D751B6F729500384989 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
 		429A5D761B6F729500384989 /* RatingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingViewController.xib; sourceTree = "<group>"; };
 		42B092591B8ABF89002F22E5 /* PNAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNAPI.swift; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 				EB42AFBC1BE0A69C006EE260 /* TaskDetailModel.swift */,
 				CD6648C61BEA02570098FEE8 /* TaskMoreInfoModel.swift */,
 				CDC1F8FE1BF0863C00891C36 /* TeamMemberModel.swift */,
+				428984741BF5C7340069679B /* TeamRankingModel.swift */,
+				428984761BF5D2E10069679B /* UserInfoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -282,8 +288,8 @@
 				42801B3A1B8B0D5F008D4AC9 /* TeamRankAPIOperation.swift */,
 				42801B3C1B8B0DA6008D4AC9 /* MyPointAPIOperation.swift */,
 				42801B3E1B8B0E8B008D4AC9 /* SetReadStateAPIOperation.swift */,
-				42801B401B8B0F02008D4AC9 /* AccountHistoryAPIOperation.swift */,
 				42801B421B8B0F54008D4AC9 /* SetUsernameAPIOperation.swift */,
+				4289847A1BF5D48D0069679B /* UserInfoAPIOperation.swift */,
 			);
 			path = APIOperations;
 			sourceTree = "<group>";
@@ -538,14 +544,16 @@
 			files = (
 				424980601B6B53EA00454858 /* AddReviewViewController.swift in Sources */,
 				424980681B6B53EA00454858 /* contactSelectionTableViewCell.swift in Sources */,
+				4289847B1BF5D48D0069679B /* UserInfoAPIOperation.swift in Sources */,
 				42801B351B8B0BC9008D4AC9 /* AuditTaskAPIOperation.swift in Sources */,
 				42EF11C51BAAC19600D6504A /* SwiftNotice.swift in Sources */,
+				428984751BF5C7340069679B /* TeamRankingModel.swift in Sources */,
 				426225B61B745F5A00DF1819 /* TeamViewController.swift in Sources */,
 				424980621B6B53EA00454858 /* ContactsSelectionViewController.swift in Sources */,
 				4249806A1B6B53EA00454858 /* tasksTableViewCell.swift in Sources */,
+				428984771BF5D2E10069679B /* UserInfoModel.swift in Sources */,
 				42801B2B1B8B0837008D4AC9 /* LoginAPIOperation.swift in Sources */,
 				422A343B1B786128003AB08E /* AvatarImagePickerViewController.swift in Sources */,
-				42801B411B8B0F02008D4AC9 /* AccountHistoryAPIOperation.swift in Sources */,
 				42801B431B8B0F54008D4AC9 /* SetUsernameAPIOperation.swift in Sources */,
 				42801B331B8B0B62008D4AC9 /* CreateTaskAPIOperation.swift in Sources */,
 				42B0925D1B8AC1E0002F22E5 /* Operation.swift in Sources */,

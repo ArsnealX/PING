@@ -8,11 +8,21 @@
 
 import UIKit
 
-class UserViewController: UIViewController {
+class UserViewController: UIViewController, APICallBackDelegate {
 
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var pointLabel: UILabel!
+    
+    //Network Operation Queue
+    let mainQueue: NSOperationQueue = NSOperationQueue()
+    
+    var userInfoDataModel:UserInfoModel
+    var userPoint:String
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        userInfoDataModel = UserInfoModel(userTel: "", userName: "...", headImgUrl: "")
+        userPoint = "-"
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -28,25 +38,45 @@ class UserViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = "熊一"
-        avatarImage.layer.masksToBounds = true
-        avatarImage.layer.cornerRadius = 15
+        
         let avatarImageViewTapRecognizer = UITapGestureRecognizer(target: self, action: "tapAvatarImageView")
         avatarImage.addGestureRecognizer(avatarImageViewTapRecognizer)
-        // Do any additional setup after loading the view.
+        
+        let fetchUserInfoOperation = UserInfoAPIOperation()
+        let fetchUserPointOperation = MyPointAPIOperation(action: .year)
+        fetchUserPointOperation.delegate = self
+        fetchUserInfoOperation.delegate = self
+        mainQueue.addOperation(fetchUserInfoOperation)
+        mainQueue.addOperation(fetchUserPointOperation)
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        let rightItem = UIBarButtonItem(title: "logout", style: UIBarButtonItemStyle.Plain, target: self, action: "logout")
-        rightItem.image = UIImage(named: "exit")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        self.navigationItem.rightBarButtonItem = rightItem
+        self.configUI()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK:DATASOURCE AND DELEGATE
+    func networkOperationCompletionHandler(Operation: NetworkOperation) {
+        if Operation.isKindOfClass(UserInfoAPIOperation) {
+            let op = Operation as! UserInfoAPIOperation
+            userInfoDataModel = op.getUserInfo()
+        }
+        if Operation.isKindOfClass(MyPointAPIOperation) {
+            let op = Operation as! MyPointAPIOperation
+            userPoint = op.getUserPoint()
+        }
+        self.loadData()
+    }
+    
+    func networkOperationErrorHandler() {
+        return
+    }
+    
     
     func tapAvatarImageView() {
         let imagePickerVC = avatarImagePickerViewController()
@@ -69,5 +99,20 @@ class UserViewController: UIViewController {
             UIView.setAnimationsEnabled(oldState)
             }, completion: nil)
         
+    }
+    
+    func loadData() {
+        nameLabel.text = userInfoDataModel.userName
+        avatarImage.kf_setImageWithURL(NSURL(string: userInfoDataModel.headImgUrl)!, placeholderImage: UIImage(named: "Image_Placeholder"))
+        pointLabel.text = userPoint
+    }
+    
+    func configUI() {
+        self.loadData()
+        avatarImage.layer.masksToBounds = true
+        avatarImage.layer.cornerRadius = 15
+        let rightItem = UIBarButtonItem(title: "logout", style: UIBarButtonItemStyle.Plain, target: self, action: "logout")
+        rightItem.image = UIImage(named: "exit")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        self.navigationItem.rightBarButtonItem = rightItem
     }
 }

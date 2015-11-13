@@ -13,4 +13,16 @@ class TeamRankAPIOperation: NetworkOperation {
         super.init()
         self.cmd = CMD_FETCH_TEAM_RANK
     }
+    
+    func getTemaRank() -> Array<TeamRankingModel> {
+        let teamRankingArray = resultJSON?.arrayValue.map{singleRank -> TeamRankingModel in
+            let headImgUrl = singleRank["heads_img"].stringValue
+            let userName = singleRank["user_name"].stringValue
+            let yearPoint = singleRank["year_point"].stringValue
+            let monthPoint = singleRank["month_point"].stringValue
+            let weekPoint = singleRank["week_point"].stringValue
+            return TeamRankingModel(headImgUrl: headImgUrl, userName: userName, yearPoint: yearPoint, monthPoint: monthPoint, weekPoint: weekPoint)
+        }
+        return teamRankingArray!
+    }
 }

@@ -9,8 +9,24 @@
 import Foundation
 
 class MyPointAPIOperation: NetworkOperation {
-    override init() {
+    enum pointAction:String {
+        case year = "year"
+        case month = "month"
+        case week = "week"
+    }
+    
+    private var action:pointAction
+    init(action:pointAction) {
+        self.action = action
         super.init()
         self.cmd = CMD_FETCH_MY_POINT
+    }
+    
+    override func apiParameters() -> [String : AnyObject] {
+        return ["action" : action.rawValue]
+    }
+    
+    func getUserPoint() -> String {
+        return (resultJSON?["point"].stringValue)!
     }
 }

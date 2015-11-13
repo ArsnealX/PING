@@ -8,12 +8,18 @@
 
 import UIKit
 
-class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APICallBackDelegate {
     @IBOutlet weak var teamRankingTableView: UITableView!
     @IBOutlet weak var verticalGreenLine: UIImageView!
     @IBOutlet weak var introductionView: UIView!
     
+    var teamRankingArray:Array<TeamRankingModel>
+    
+    //Network Operation Queue
+    let mainQueue: NSOperationQueue = NSOperationQueue()
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        teamRankingArray = [TeamRankingModel]()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -38,6 +44,24 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.configUI()
+        let fetchTeamRankingOperation = TeamRankAPIOperation()
+        fetchTeamRankingOperation.delegate = self
+        mainQueue.addOperation(fetchTeamRankingOperation)
+        
+    }
+    
+    //MARK:DATASOURCE AND DELEGATE
+    func networkOperationCompletionHandler(Operation: NetworkOperation) {
+        if Operation.isKindOfClass(TeamRankAPIOperation) {
+            let op = Operation as! TeamRankAPIOperation
+            teamRankingArray = op.getTemaRank()
+            teamRankingArray.sortInPlace{$0.weekPoint > $1.weekPoint}
+            teamRankingTableView.reloadData()
+        }
+    }
+    
+    func networkOperationErrorHandler() {
+        return
     }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -45,7 +69,7 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return teamRankingArray.count
     }
         
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -65,11 +89,13 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell?.rankingLabel.textColor = UIColor(red:0, green:0.69, blue:0.45, alpha:1)
         }
 
+        cell?.setContent(teamRankingArray[indexPath.row])
         cell?.selectionStyle = UITableViewCellSelectionStyle.None
         cell?.rankingLabel.text = String(indexPath.row + 1)
         
+        
         //demo code
-        DemoCode.TeamViewControllerDemoCode(cell, indexPath: indexPath)
+//        DemoCode.TeamViewControllerDemoCode(cell, indexPath: indexPath)
         
         return cell!
     }
@@ -87,6 +113,7 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        rightItem.image = UIImage(named: "add")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
 //        self.navigationItem.rightBarButtonItem = rightItem
         self.introductionView.hidden = true
+        teamRankingTableView.tableFooterView = UIView()
     }
     
     

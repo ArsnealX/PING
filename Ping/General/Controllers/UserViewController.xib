@@ -9,6 +9,7 @@
             <string>NotoSansHans-Thin</string>
             <string>NotoSansHans-Thin</string>
             <string>NotoSansHans-Thin</string>
+            <string>NotoSansHans-Thin</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -16,6 +17,7 @@
             <connections>
                 <outlet property="avatarImage" destination="y4E-LJ-2zQ" id="U2R-jy-DyC"/>
                 <outlet property="nameLabel" destination="ZQt-VK-ImL" id="lJ2-qw-coD"/>
+                <outlet property="pointLabel" destination="Jmd-Ly-wC1" id="Mkd-Bb-Ceh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -61,24 +63,48 @@
                         <constraint firstAttribute="height" constant="18" id="KYB-eJ-Zam"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总分：715" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0e9-OH-5Pq">
-                    <rect key="frame" x="261" y="291" width="78" height="17"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="19n-tZ-KAg">
+                    <rect key="frame" x="225" y="273" width="150" height="40"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jmd-Ly-wC1">
+                            <rect key="frame" x="85" y="12" width="27" height="17"/>
+                            <animations/>
+                            <fontDescription key="fontDescription" name="NotoSansHans-Thin" family="Noto Sans S Chinese" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="总分：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Z8-ZV-1FK">
+                            <rect key="frame" x="30" y="11" width="55" height="17"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="55" id="cMc-GA-ANI"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NotoSansHans-Thin" family="Noto Sans S Chinese" pointSize="17"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <animations/>
-                    <fontDescription key="fontDescription" name="NotoSansHans-Thin" family="Noto Sans S Chinese" pointSize="17"/>
-                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="1Z8-ZV-1FK" firstAttribute="centerY" secondItem="19n-tZ-KAg" secondAttribute="centerY" id="CN1-uE-2qx"/>
+                        <constraint firstAttribute="width" constant="150" id="JnG-5M-D9l"/>
+                        <constraint firstItem="Jmd-Ly-wC1" firstAttribute="centerY" secondItem="19n-tZ-KAg" secondAttribute="centerY" id="LO4-rv-nT6"/>
+                        <constraint firstItem="1Z8-ZV-1FK" firstAttribute="leading" secondItem="19n-tZ-KAg" secondAttribute="leading" constant="30" id="Q98-zi-v5S"/>
+                        <constraint firstItem="Jmd-Ly-wC1" firstAttribute="leading" secondItem="1Z8-ZV-1FK" secondAttribute="trailing" id="QW6-oW-cce"/>
+                        <constraint firstAttribute="height" constant="40" id="irx-Cw-eIo"/>
+                    </constraints>
+                </view>
             </subviews>
             <animations/>
             <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="YRi-BA-X7h" firstAttribute="top" secondItem="mCw-uE-bzZ" secondAttribute="bottom" constant="8" id="Ihx-Mx-hLS"/>
-                <constraint firstAttribute="centerX" secondItem="0e9-OH-5Pq" secondAttribute="centerX" id="JYy-Hi-Ape"/>
                 <constraint firstAttribute="centerX" secondItem="mCw-uE-bzZ" secondAttribute="centerX" id="PbT-h5-quV"/>
-                <constraint firstItem="0e9-OH-5Pq" firstAttribute="top" secondItem="ZQt-VK-ImL" secondAttribute="bottom" constant="33" id="SSE-dJ-3Ey"/>
+                <constraint firstItem="19n-tZ-KAg" firstAttribute="top" secondItem="ZQt-VK-ImL" secondAttribute="bottom" constant="15" id="UVb-xP-do6"/>
                 <constraint firstAttribute="trailing" secondItem="YRi-BA-X7h" secondAttribute="trailing" constant="60" id="ev0-FM-Vjw"/>
                 <constraint firstAttribute="centerX" secondItem="y4E-LJ-2zQ" secondAttribute="centerX" id="g3p-kL-ZD2"/>
-                <constraint firstItem="mCw-uE-bzZ" firstAttribute="top" secondItem="0e9-OH-5Pq" secondAttribute="bottom" constant="8" id="mf7-85-8ZQ"/>
+                <constraint firstItem="mCw-uE-bzZ" firstAttribute="top" secondItem="19n-tZ-KAg" secondAttribute="bottom" constant="3" id="iiF-w1-qDG"/>
                 <constraint firstItem="y4E-LJ-2zQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="n7x-Fc-kXW"/>
                 <constraint firstItem="mCw-uE-bzZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="25" id="nPe-tA-3Iy"/>
                 <constraint firstAttribute="centerX" secondItem="ZQt-VK-ImL" secondAttribute="centerX" id="qPj-e4-xgr"/>
@@ -86,6 +112,7 @@
                 <constraint firstAttribute="trailing" secondItem="mCw-uE-bzZ" secondAttribute="trailing" constant="25" id="ubV-ra-fzd"/>
                 <constraint firstItem="YRi-BA-X7h" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="60" id="vHQ-l5-czt"/>
                 <constraint firstAttribute="centerX" secondItem="YRi-BA-X7h" secondAttribute="centerX" id="xGy-xm-R3J"/>
+                <constraint firstItem="19n-tZ-KAg" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="z2j-oz-WQV"/>
             </constraints>
         </view>
     </objects>

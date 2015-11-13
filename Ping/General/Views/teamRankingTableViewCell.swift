@@ -32,4 +32,15 @@ class teamRankingTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setContent(model:TeamRankingModel) {
+        avatarImageView.kf_setImageWithURL(NSURL(string: model.headImgUrl)!, placeholderImage: UIImage(named: "Image_Placeholder"))
+        nameLabel.text = model.userName
+        if model.monthPoint == "0" {
+            addScoreLabel.text = ""
+        }else {
+            addScoreLabel.text = "+"+model.monthPoint
+        }
+        scoreLabel.text = model.yearPoint
+    }
+    
 }
