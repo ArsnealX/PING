@@ -9,7 +9,7 @@
 import UIKit
 
 protocol ratingViewControllerDelegate: class {
-    func didCompleteRating()
+    func didCompleteRating(state:String, innovation:String)
 }
 
 class ratingViewController: UIViewController {
@@ -20,11 +20,16 @@ class ratingViewController: UIViewController {
     @IBOutlet weak var InnovationButton: UIButton!
 
     weak var delegate:ratingViewControllerDelegate?
+
+    var workState:String
+    var workInnovation:String
     
     var selectedButtonTag:Int
     
     override init(nibName  nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         selectedButtonTag = 1001
+        workState = "1"
+        workInnovation = "0"
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -55,6 +60,7 @@ class ratingViewController: UIViewController {
     
     @IBAction func didSelectedRadioButton(sender: UIButton) {
         selectedButtonTag = switchRadioButton(sender, selectedTag: selectedButtonTag, superView: self.view)
+        workState = "\(selectedButtonTag - 1000)"
     }
     
     @IBAction func didPressCloseButton(sender: UIButton) {
@@ -65,12 +71,15 @@ class ratingViewController: UIViewController {
         sender.selected = !sender.selected
         if sender.selected {
             //record the status
+            workInnovation = "1"
+        }else {
+            workInnovation = "0"
         }
     }
     
     @IBAction func didPressSendButton(sender: UIButton) {
         closeRatingViewController()
-        self.delegate?.didCompleteRating()
+        self.delegate?.didCompleteRating(workState, innovation: workInnovation)
     }
     
     

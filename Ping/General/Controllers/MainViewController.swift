@@ -43,17 +43,18 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         tasksTableView.dataSource = self
         tasksTableView.delegate = self
-        if let teamId = APP_DEFULT_STORE.stringForKey(kTeamId) {
-            let fetchTaskListOperation = TaskListAPIOperation(withTeamID:teamId, startIndex: "1", endIndex: "20")
-            fetchTaskListOperation.delegate = self
-            mainQueue.addOperation(fetchTaskListOperation)
-        }
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         configUI()
         showNetworkStatus()
+        if let teamId = APP_DEFULT_STORE.stringForKey(kTeamId) {
+            let fetchTaskListOperation = TaskListAPIOperation(withTeamID:teamId, startIndex: "0", endIndex: "20")
+            fetchTaskListOperation.delegate = self
+            mainQueue.addOperation(fetchTaskListOperation)
+        }
     }
     
     //MARK:DELEGATE AND DATASOURCE

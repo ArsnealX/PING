@@ -8,7 +8,7 @@
 
 import UIKit
 
-class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate, contactsSelectionDelegate, ratingViewControllerDelegate {
+class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate, contactsSelectionDelegate, ratingViewControllerDelegate, APICallBackDelegate {
     //审核人label
     @IBOutlet weak var reviewerNameLabel: UILabel!
     @IBOutlet weak var reviewerNameLabelContainer: UIView!
@@ -26,9 +26,17 @@ class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollVie
     @IBOutlet weak var textViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollViewSpaceToBottomConstraint: NSLayoutConstraint!
     
+    var reviewerIDString:String
+    var ccNamesStringArray:Array<String>
+    
+    //Network Operation Queue
+    let mainQueue: NSOperationQueue = NSOperationQueue()
+    
     let maxWords = 100
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+        self.reviewerIDString = ""
+        self.ccNamesStringArray = []
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -109,14 +117,28 @@ class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollVie
             namesString = namesString + singleMember.userName + " "
         }
         ccNamesLabel.text = namesString
+        ccNamesStringArray = selectedArray.map({ (teamMember) -> String in
+            return teamMember.accountId
+        })
     }
     
     func selectedContact(selected:TeamMemberModel) {
         reviewerNameLabel.text = selected.userName
+        reviewerIDString = selected.accountId
     }
     
-    func didCompleteRating() {
+    func didCompleteRating(state: String, innovation: String) {
+        let createTaskOperation = CreateTaskAPIOperation(userAuditId: reviewerIDString, taskCopyTo: ccNamesStringArray, taskContent: contentTextView.text, workState: state, workInnovate: innovation)
+        createTaskOperation.delegate = self
+        mainQueue.addOperation(createTaskOperation)
+    }
+    
+    func networkOperationCompletionHandler(Operation: NetworkOperation) {
         closeReview()
+    }
+    
+    func networkOperationErrorHandler() {
+        return
     }
     
     //MARK:EVENT RESPONDER
@@ -149,7 +171,7 @@ class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollVie
     func keyboardWasShown(aNotification:NSNotification) {
         self.moveTextViewForKeyboard(aNotification, up: true)
         //将scrollView滑动到输入焦点位置
-        scrollView.setContentOffset(CGPointMake(0, textViewContainer.frame.origin.y +                 contentTextView.caretRectForPosition(contentTextView.selectedTextRange!.start).origin.y - 16.0), animated: false)
+        scrollView.setContentOffset(CGPointMake(0, textViewContainer.frame.origin.y + contentTextView.caretRectForPosition(contentTextView.selectedTextRange!.start).origin.y - 16.0), animated: false)
     }
     
     func keyboardWillBeHidden(aNotification:NSNotification) {
