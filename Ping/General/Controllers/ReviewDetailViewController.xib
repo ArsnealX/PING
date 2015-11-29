@@ -23,6 +23,7 @@
             <connections>
                 <outlet property="ccNamesLabel" destination="SGM-9S-6P6" id="4wl-zo-0Sh"/>
                 <outlet property="innovationLabel" destination="na0-mM-R4G" id="iRY-tv-E3a"/>
+                <outlet property="mainScrollView" destination="XXL-zu-Y1N" id="Gam-rR-ajv"/>
                 <outlet property="notPassButton" destination="bw7-xF-04d" id="f36-FO-kqL"/>
                 <outlet property="passButton" destination="Z9i-Aa-Iyd" id="4vI-wv-d0z"/>
                 <outlet property="reviewControlContainerView" destination="eqR-VT-687" id="yIi-oZ-Toi"/>

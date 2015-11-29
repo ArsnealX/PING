@@ -49,6 +49,7 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
         let queryTeamMemberAPIOperation = QueryTeamMemberAPIOperation()
         queryTeamMemberAPIOperation.delegate = self
         mainQueue.addOperation(queryTeamMemberAPIOperation)
+        self.pleaseWait()
         
     }
     
@@ -67,11 +68,13 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
         if Operation.isKindOfClass(QueryTeamMemberAPIOperation) {
             let op = Operation as! QueryTeamMemberAPIOperation
             contactNameDataSourceArray = op.getTeamMemberList()
+            self.clearAllNotice()
             contactsSelectionTableView.reloadData()
         }
     }
     
     func networkOperationErrorHandler() {
+        self.noticeError("出错了!", autoClear: true)
         return
     }
     
@@ -147,6 +150,7 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
         }else {
             self.title = "审核人"
         }
+        contactsSelectionTableView.tableFooterView = UIView()
         self.edgesForExtendedLayout = UIRectEdge.None
                 contactsSelectionTableView?.separatorInset = UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 10)
     }

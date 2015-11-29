@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PullToRefresh
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APICallBackDelegate {
     @IBOutlet weak var tasksTableView: UITableView!
@@ -43,18 +44,22 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         tasksTableView.dataSource = self
         tasksTableView.delegate = self
-        
+        let refresher = PullToRefresh()
+        tasksTableView.addPullToRefresh(refresher, action: {
+            if let teamId = APP_DEFULT_STORE.stringForKey(kTeamId) {
+                let fetchTaskListOperation = TaskListAPIOperation(withTeamID:teamId, startIndex: "0", endIndex: "20")
+                fetchTaskListOperation.delegate = self
+                self.mainQueue.addOperation(fetchTaskListOperation)
+            }
+        })
+        tasksTableView.startRefreshing()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         configUI()
         showNetworkStatus()
-        if let teamId = APP_DEFULT_STORE.stringForKey(kTeamId) {
-            let fetchTaskListOperation = TaskListAPIOperation(withTeamID:teamId, startIndex: "0", endIndex: "20")
-            fetchTaskListOperation.delegate = self
-            mainQueue.addOperation(fetchTaskListOperation)
-        }
+        
     }
     
     //MARK:DELEGATE AND DATASOURCE
@@ -64,11 +69,13 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let op = Operation as! TaskListAPIOperation
             taskListArray = op.getListArray()
             print(op.getListArray())
+            tasksTableView.endRefreshing()
             tasksTableView.reloadData()
         }
     }
     
     func networkOperationErrorHandler() {
+        self.noticeError("出错了!", autoClear: true)
         return
     }
     

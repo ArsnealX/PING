@@ -9,6 +9,7 @@
 import UIKit
 
 class reviewDetailViewController: UIViewController, APICallBackDelegate {
+    @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var passButton: UIButton!
     @IBOutlet weak var notPassButton: UIButton!
     @IBOutlet weak var reviewerNameLabel: UILabel!
@@ -41,10 +42,11 @@ class reviewDetailViewController: UIViewController, APICallBackDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        reviewControlContainerView.hidden = true;
+
         let operation = TaskDetailAPIOperation(withTaskId: taskId)
         operation.delegate = self
         mainQueue.addOperation(operation)
+        self.pleaseWait()
         // Do any additional setup after loading the view.
     }
     
@@ -58,11 +60,13 @@ class reviewDetailViewController: UIViewController, APICallBackDelegate {
     func networkOperationCompletionHandler(Operation: NetworkOperation) {
         if Operation.isKindOfClass(TaskDetailAPIOperation) {
             let op = Operation as! TaskDetailAPIOperation
+            self.clearAllNotice()
             configViewsWithDataSource(op.getMoreInfo())
         }
     }
     
     func networkOperationErrorHandler() {
+        self.noticeError("出错了!", autoClear: true)
         return
     }
     
@@ -85,6 +89,7 @@ class reviewDetailViewController: UIViewController, APICallBackDelegate {
     //MARK:PRIVATE METHOD
     func configViewsWithDataSource(dataSource:TaskMoreInfoModel) {
         print("\(dataSource)")
+        mainScrollView.hidden = false
         reviewerNameLabel.text = dataSource.userAuditName
         var ccNamesString:String = ""
         for nameString in  dataSource.taskCopyTo {
@@ -107,8 +112,8 @@ class reviewDetailViewController: UIViewController, APICallBackDelegate {
     func configUI() {
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.edgesForExtendedLayout = UIRectEdge.None
-        //remove back button title
-        UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffsetMake(0, -60), forBarMetrics: UIBarMetrics.Default)
+        reviewControlContainerView.hidden = true
+        mainScrollView.hidden = true
         //setup button style
         buttonStyleConfig(passButton)
         buttonStyleConfig(notPassButton)
