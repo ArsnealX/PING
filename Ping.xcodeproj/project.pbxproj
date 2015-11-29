@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00AF64F985FE8A7300F32883 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFCD60E232C4D260F17A0F3 /* Pods.framework */; };
+		00AF64F985FE8A7300F32883 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFCD60E232C4D260F17A0F3 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4203AEC01BA675B8006413A3 /* AccountIsRegAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4203AEBF1BA675B8006413A3 /* AccountIsRegAPIOperation.swift */; };
 		4203AEC21BA6C4B1006413A3 /* RegisterAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4203AEC11BA6C4B1006413A3 /* RegisterAPIOperation.swift */; };
 		422A343B1B786128003AB08E /* AvatarImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A343A1B786128003AB08E /* AvatarImagePickerViewController.swift */; };
@@ -488,7 +488,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Fabric/Fabric.framework/run\" 2b6c0eb97c54de394c494506089662ec045c2525 4aa20c073c2fed3f3f1b0d63961daad4cf852e3d546055cf83308b1fe31bd947";
+			shellScript = "./Pods/Fabric.framework/run 2b6c0eb97c54de394c494506089662ec045c2525 4aa20c073c2fed3f3f1b0d63961daad4cf852e3d546055cf83308b1fe31bd947";
 		};
 		8C45EA9D150B1F0568A1EA14 /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -684,7 +684,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = Ping/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -704,7 +706,9 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
+				ENABLE_BITCODE = YES;
 				INFOPLIST_FILE = Ping/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

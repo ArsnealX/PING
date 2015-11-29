@@ -41,7 +41,6 @@ class tasksTableViewCell: UITableViewCell {
             isReadImageView.hidden = false
         }
         
-        print("shfshdfjhsdjfkhsldkfjhldjfhsld \(model.taskState)");
         if model.taskState == "1" {
             statusLabel.textColor = APP_THEME_COLOR
             statusLabel.text = "审核中"
