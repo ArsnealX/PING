@@ -41,10 +41,11 @@ class tasksTableViewCell: UITableViewCell {
             isReadImageView.hidden = false
         }
         
-        if model.taskState == "2" {
+        print("shfshdfjhsdjfkhsldkfjhldjfhsld \(model.taskState)");
+        if model.taskState == "1" {
             statusLabel.textColor = APP_THEME_COLOR
             statusLabel.text = "审核中"
-        }else if model.taskState == "6" {
+        }else if model.taskState == "2" {
             statusLabel.textColor = APP_PASS_COLOR
             statusLabel.text = "已通过"
         }else {

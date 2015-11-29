@@ -31,7 +31,7 @@ class TaskListAPIOperation: NetworkOperation {
             let headsImg = singleTaskJSON["heads_img"].stringValue
             let userName = singleTaskJSON["user_name"].stringValue
             let createTimeStamp = singleTaskJSON["create_timestamp"].stringValue
-            let taskState = singleTaskJSON["create_timestamp"].stringValue
+            let taskState = singleTaskJSON["task_state"].stringValue
             let taskContent = singleTaskJSON["task_content"].stringValue
             let isReadString = singleTaskJSON["is_read"].stringValue
             var isRead:Bool = true

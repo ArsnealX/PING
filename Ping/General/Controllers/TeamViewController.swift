@@ -55,7 +55,7 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if Operation.isKindOfClass(TeamRankAPIOperation) {
             let op = Operation as! TeamRankAPIOperation
             teamRankingArray = op.getTemaRank()
-            teamRankingArray.sortInPlace{$0.weekPoint > $1.weekPoint}
+            teamRankingArray = teamRankingArray.sort{Int($0.weekPoint) > Int($1.weekPoint)}
             teamRankingTableView.reloadData()
         }
     }

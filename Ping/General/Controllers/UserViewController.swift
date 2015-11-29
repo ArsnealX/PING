@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserViewController: UIViewController, APICallBackDelegate {
+class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -77,10 +77,37 @@ class UserViewController: UIViewController, APICallBackDelegate {
         return
     }
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        picker.dismissViewControllerAnimated(true, completion: nil)
+//        let pickedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+    }
     
     func tapAvatarImageView() {
         let imagePickerVC = avatarImagePickerViewController()
-        self.presentViewController(imagePickerVC, animated: true, completion: nil)
+        let alertController = UIAlertController(title: "上传您的头像", message: "", preferredStyle: .ActionSheet)
+        let pickLibrary = UIAlertAction(title: "选择照片上传", style: .Default, handler: { (action) -> Void in
+            imagePickerVC.delegate = self
+            imagePickerVC.editing = true
+            imagePickerVC.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            self.presentViewController(imagePickerVC, animated: true, completion: nil)
+        })
+        let cancel = UIAlertAction(title: "取消", style: .Cancel, handler: { (action) -> Void in
+        })
+        let  pickCamera = UIAlertAction(title: "拍摄照片上传", style: .Default) { (action) -> Void in
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+                imagePickerVC.delegate = self
+                imagePickerVC.editing = true
+                imagePickerVC.sourceType = UIImagePickerControllerSourceType.Camera
+                imagePickerVC.cameraDevice = UIImagePickerControllerCameraDevice.Rear
+                self.presentViewController(imagePickerVC, animated: true, completion: nil)
+            }
+        }
+        
+        alertController.addAction(pickLibrary)
+        alertController.addAction(cancel)
+        alertController.addAction(pickCamera)
+        
+        presentViewController(alertController, animated: true, completion: nil)
     }
 
     func logout() {

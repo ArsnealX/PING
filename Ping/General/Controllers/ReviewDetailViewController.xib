@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="NotoSansHans-Light.otf">
@@ -25,6 +25,7 @@
                 <outlet property="innovationLabel" destination="na0-mM-R4G" id="iRY-tv-E3a"/>
                 <outlet property="notPassButton" destination="bw7-xF-04d" id="f36-FO-kqL"/>
                 <outlet property="passButton" destination="Z9i-Aa-Iyd" id="4vI-wv-d0z"/>
+                <outlet property="reviewControlContainerView" destination="eqR-VT-687" id="yIi-oZ-Toi"/>
                 <outlet property="reviewerNameLabel" destination="xmV-1R-Q9t" id="Pu9-3F-Wl9"/>
                 <outlet property="selfRatingLabel" destination="oLQ-YV-Oxd" id="ZAn-ym-Vf3"/>
                 <outlet property="taskContentTextView" destination="fou-6N-8Qa" id="Kbk-ZL-MpF"/>
@@ -265,6 +266,9 @@
                                     <state key="normal" image="passButton">
                                         <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
+                                    <connections>
+                                        <action selector="pass:" destination="-1" eventType="touchUpInside" id="bMO-J3-BwW"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bw7-xF-04d">
                                     <rect key="frame" x="35" y="17" width="45" height="45"/>
@@ -273,6 +277,9 @@
                                         <constraint firstAttribute="width" constant="45" id="tOK-Ki-xSx"/>
                                     </constraints>
                                     <state key="normal" image="notPassButton"/>
+                                    <connections>
+                                        <action selector="noPass:" destination="-1" eventType="touchUpInside" id="mgo-tt-rH9"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <animations/>

@@ -20,8 +20,6 @@ class PTools: NSObject {
         navController.navigationBar.barStyle = UIBarStyle.BlackTranslucent
         //tab bar button image
         if needTabBar {
-            navController.tabBarItem.imageInsets = UIEdgeInsetsMake(5, 0, -5, 0)
-            navController.tabBarItem.titlePositionAdjustment = UIOffsetMake(0, 20)
             navController.tabBarItem.selectedImage = UIImage(named: tabBarIconName!)?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
             navController.tabBarItem.image = UIImage(named: tabBarIconName!+"_white")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         }
