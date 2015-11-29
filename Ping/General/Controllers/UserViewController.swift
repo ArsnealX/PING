@@ -79,26 +79,35 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: nil)
-//        let pickedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+            let pickedImage = image
+            if let jpegData = UIImageJPEGRepresentation(pickedImage, 80) {
+                let imageUploadOperation = AvatarUploadOperation(avatarImageData: jpegData)
+                mainQueue.addOperation(imageUploadOperation)
+            }
+            
+        }
     }
+    
+
     
     func tapAvatarImageView() {
         let imagePickerVC = avatarImagePickerViewController()
         let alertController = UIAlertController(title: "上传您的头像", message: "", preferredStyle: .ActionSheet)
         let pickLibrary = UIAlertAction(title: "选择照片上传", style: .Default, handler: { (action) -> Void in
-            imagePickerVC.delegate = self
-            imagePickerVC.editing = true
             imagePickerVC.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+            imagePickerVC.delegate = self
+            imagePickerVC.allowsEditing = true
             self.presentViewController(imagePickerVC, animated: true, completion: nil)
         })
         let cancel = UIAlertAction(title: "取消", style: .Cancel, handler: { (action) -> Void in
         })
         let  pickCamera = UIAlertAction(title: "拍摄照片上传", style: .Default) { (action) -> Void in
             if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
-                imagePickerVC.delegate = self
-                imagePickerVC.editing = true
                 imagePickerVC.sourceType = UIImagePickerControllerSourceType.Camera
                 imagePickerVC.cameraDevice = UIImagePickerControllerCameraDevice.Rear
+                imagePickerVC.delegate = self
+                imagePickerVC.allowsEditing = true
                 self.presentViewController(imagePickerVC, animated: true, completion: nil)
             }
         }
@@ -138,7 +147,7 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
         self.loadData()
         avatarImage.layer.masksToBounds = true
         avatarImage.layer.cornerRadius = 15
-        let rightItem = UIBarButtonItem(title: "logout", style: UIBarButtonItemStyle.Plain, target: self, action: "logout")
+        let rightItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: "logout")
         rightItem.image = UIImage(named: "exit")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         self.navigationItem.rightBarButtonItem = rightItem
     }

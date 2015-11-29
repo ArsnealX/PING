@@ -64,6 +64,8 @@
 		42C7B1001B82D52B00AF72F4 /* NotoSansHans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42C7B0F81B82D52B00AF72F4 /* NotoSansHans-Medium.otf */; };
 		42C7B1011B82D52B00AF72F4 /* NotoSansHans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42C7B0F91B82D52B00AF72F4 /* NotoSansHans-Regular.otf */; };
 		42C7B1021B82D52B00AF72F4 /* NotoSansHans-Thin-Windows.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42C7B0FA1B82D52B00AF72F4 /* NotoSansHans-Thin-Windows.otf */; };
+		42CFAEB61C0B575D007C061A /* ImageUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CFAEB51C0B575D007C061A /* ImageUploadOperation.swift */; };
+		42CFAEB81C0B5C90007C061A /* AvatarUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CFAEB71C0B5C90007C061A /* AvatarUploadOperation.swift */; };
 		42D80B901B6B742800898074 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D80B8F1B6B742800898074 /* Launch Screen.xib */; };
 		42EF11C21BAAACFE00D6504A /* SSASwiftReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF11C11BAAACFE00D6504A /* SSASwiftReachability.swift */; };
 		42EF11C51BAAC19600D6504A /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF11C41BAAC19600D6504A /* SwiftNotice.swift */; };
@@ -136,6 +138,8 @@
 		42C7B0F81B82D52B00AF72F4 /* NotoSansHans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-Medium.otf"; sourceTree = "<group>"; };
 		42C7B0F91B82D52B00AF72F4 /* NotoSansHans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-Regular.otf"; sourceTree = "<group>"; };
 		42C7B0FA1B82D52B00AF72F4 /* NotoSansHans-Thin-Windows.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-Thin-Windows.otf"; sourceTree = "<group>"; };
+		42CFAEB51C0B575D007C061A /* ImageUploadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploadOperation.swift; sourceTree = "<group>"; };
+		42CFAEB71C0B5C90007C061A /* AvatarUploadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarUploadOperation.swift; sourceTree = "<group>"; };
 		42D80B8F1B6B742800898074 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		42EF11C11BAAACFE00D6504A /* SSASwiftReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSASwiftReachability.swift; sourceTree = "<group>"; };
 		42EF11C41BAAC19600D6504A /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
@@ -267,6 +271,7 @@
 			children = (
 				42B0925C1B8AC1E0002F22E5 /* Operation.swift */,
 				42B0925E1B8AC333002F22E5 /* NetworkOperation.swift */,
+				42CFAEB51C0B575D007C061A /* ImageUploadOperation.swift */,
 				42B092601B8AC3BF002F22E5 /* APIOperations */,
 			);
 			path = Operation;
@@ -290,6 +295,7 @@
 				42801B3E1B8B0E8B008D4AC9 /* SetReadStateAPIOperation.swift */,
 				42801B421B8B0F54008D4AC9 /* SetUsernameAPIOperation.swift */,
 				4289847A1BF5D48D0069679B /* UserInfoAPIOperation.swift */,
+				42CFAEB71C0B5C90007C061A /* AvatarUploadOperation.swift */,
 			);
 			path = APIOperations;
 			sourceTree = "<group>";
@@ -550,6 +556,7 @@
 				428984751BF5C7340069679B /* TeamRankingModel.swift in Sources */,
 				426225B61B745F5A00DF1819 /* TeamViewController.swift in Sources */,
 				424980621B6B53EA00454858 /* ContactsSelectionViewController.swift in Sources */,
+				42CFAEB61C0B575D007C061A /* ImageUploadOperation.swift in Sources */,
 				4249806A1B6B53EA00454858 /* tasksTableViewCell.swift in Sources */,
 				428984771BF5D2E10069679B /* UserInfoModel.swift in Sources */,
 				42801B2B1B8B0837008D4AC9 /* LoginAPIOperation.swift in Sources */,
@@ -584,6 +591,7 @@
 				4203AEC21BA6C4B1006413A3 /* RegisterAPIOperation.swift in Sources */,
 				422A343E1B787AEC003AB08E /* ReviewDetailViewController.swift in Sources */,
 				42EF11C21BAAACFE00D6504A /* SSASwiftReachability.swift in Sources */,
+				42CFAEB81C0B5C90007C061A /* AvatarUploadOperation.swift in Sources */,
 				4203AEC01BA675B8006413A3 /* AccountIsRegAPIOperation.swift in Sources */,
 				42801B311B8B0ACE008D4AC9 /* TaskDetailAPIOperation.swift in Sources */,
 				42801B2F1B8B0A33008D4AC9 /* TaskListAPIOperation.swift in Sources */,
