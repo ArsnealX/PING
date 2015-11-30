@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImageUploadCallBackDelegate {
 
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -41,13 +41,7 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
         
         let avatarImageViewTapRecognizer = UITapGestureRecognizer(target: self, action: "tapAvatarImageView")
         avatarImage.addGestureRecognizer(avatarImageViewTapRecognizer)
-        
-        let fetchUserInfoOperation = UserInfoAPIOperation()
-        let fetchUserPointOperation = MyPointAPIOperation(action: .year)
-        fetchUserPointOperation.delegate = self
-        fetchUserInfoOperation.delegate = self
-        mainQueue.addOperation(fetchUserInfoOperation)
-        mainQueue.addOperation(fetchUserPointOperation)
+        self.refetchUserInfo()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -58,6 +52,15 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func refetchUserInfo() {
+        let fetchUserInfoOperation = UserInfoAPIOperation()
+        let fetchUserPointOperation = MyPointAPIOperation(action: .year)
+        fetchUserPointOperation.delegate = self
+        fetchUserInfoOperation.delegate = self
+        mainQueue.addOperation(fetchUserInfoOperation)
+        mainQueue.addOperation(fetchUserPointOperation)
     }
     
     //MARK:DATASOURCE AND DELEGATE
@@ -83,13 +86,20 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
             let pickedImage = image
             if let jpegData = UIImageJPEGRepresentation(pickedImage, 80) {
                 let imageUploadOperation = AvatarUploadOperation(avatarImageData: jpegData)
+                imageUploadOperation.delegate = self
                 mainQueue.addOperation(imageUploadOperation)
             }
             
         }
     }
     
-
+    func imageUploadOperationCompletionHandler() {
+        self.refetchUserInfo()
+    }
+    
+    func imageUploadOperationErrorHandler() {
+        return
+    }
     
     func tapAvatarImageView() {
         let imagePickerVC = avatarImagePickerViewController()
@@ -116,7 +126,7 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
         alertController.addAction(cancel)
         alertController.addAction(pickCamera)
         
-        presentViewController(alertController, animated: true, completion: nil)
+        self.navigationController!.presentViewController(alertController, animated: true, completion: nil)
     }
 
     func logout() {
@@ -147,7 +157,8 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
         self.loadData()
         avatarImage.layer.masksToBounds = true
         avatarImage.layer.cornerRadius = 15
-        let rightItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: "logout")
+        let rightItem = UIBarButtonItem(title: "logout", style: UIBarButtonItemStyle.Plain, target: self, action: "logout")
+        rightItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.clearColor()], forState: .Normal)
         rightItem.image = UIImage(named: "exit")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         self.navigationItem.rightBarButtonItem = rightItem
     }

@@ -8,11 +8,17 @@
 
 import UIKit
 import Alamofire
+protocol ImageUploadCallBackDelegate: class {
+    func imageUploadOperationCompletionHandler() -> ()
+    func imageUploadOperationErrorHandler() -> ()
+}
 
 class ImageUploadOperation: Operation {
     var fileData:NSData
     private let URLString:String
-    
+
+    weak var delegate: ImageUploadCallBackDelegate?
+
     override init() {
         URLString = SERVER_IMAGE_BASE_API
         fileData = NSData()
@@ -21,19 +27,25 @@ class ImageUploadOperation: Operation {
     
     override func main() {
         print(URLString + self.unwarpToken())
-        Alamofire.upload(.POST, URLString + self.unwarpToken(), data: fileData)
-//            .progress { bytesWritten, totalBytesWritten, totalBytesExpectedToWrite in
-//                print(totalBytesWritten)
-//                
-//                // This closure is NOT called on the main queue for performance
-//                // reasons. To update your ui, dispatch to the main queue.
-//                dispatch_async(dispatch_get_main_queue()) {
-//                    print("Total bytes written on main queue: \(totalBytesWritten)")
-//                }
-//            }
-            .responseJSON { response in
-                debugPrint(response)
-        }
+        Alamofire.upload(
+            .POST,
+            URLString + self.unwarpToken(),
+            multipartFormData: { multipartFormData in
+                multipartFormData.appendBodyPart(data: self.fileData, name: "imageData")
+            },
+            encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .Success(let upload, _, _):
+                    upload.responseJSON { response in
+                        debugPrint(response)
+                    self.delegate?.imageUploadOperationCompletionHandler()
+                    }
+                case .Failure(let encodingError):
+                    print(encodingError)
+                    self.delegate?.imageUploadOperationErrorHandler()
+                }
+            }
+        )
     }
         
     func unwarpToken() -> String {

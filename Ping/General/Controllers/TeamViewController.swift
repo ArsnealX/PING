@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PullToRefresh
 
 class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APICallBackDelegate {
     @IBOutlet weak var teamRankingTableView: UITableView!
@@ -39,15 +40,18 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
         teamRankingTableView?.delegate = self
 //        teamRankingTableView?.separatorStyle = .None
         teamRankingTableView.separatorInset = UIEdgeInsets(top: 0,left: 65,bottom: 0,right: 0)
+        let refresher = PullToRefresh()
+        teamRankingTableView.addPullToRefresh(refresher, action: {
+            let fetchTeamRankingOperation = TeamRankAPIOperation()
+            fetchTeamRankingOperation.delegate = self
+            self.mainQueue.addOperation(fetchTeamRankingOperation)
+        })
+        teamRankingTableView.startRefreshing()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.configUI()
-        let fetchTeamRankingOperation = TeamRankAPIOperation()
-        fetchTeamRankingOperation.delegate = self
-        mainQueue.addOperation(fetchTeamRankingOperation)
-        
     }
     
     //MARK:DATASOURCE AND DELEGATE
@@ -55,12 +59,15 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if Operation.isKindOfClass(TeamRankAPIOperation) {
             let op = Operation as! TeamRankAPIOperation
             teamRankingArray = op.getTemaRank()
-            teamRankingArray = teamRankingArray.sort{Int($0.weekPoint) > Int($1.weekPoint)}
+            teamRankingArray = teamRankingArray.sort{Int($0.yearPoint) > Int($1.yearPoint)}
+            teamRankingTableView.endRefreshing()
             teamRankingTableView.reloadData()
         }
     }
     
     func networkOperationErrorHandler() {
+        teamRankingTableView.endRefreshing()
+        self.noticeError("出错了!", autoClear: true)
         return
     }
     
@@ -105,7 +112,7 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func configUI() {
-        self.navigationItem.title = "PING团队"
+        self.navigationItem.title = "客聚科技"
         self.edgesForExtendedLayout = UIRectEdge.None
         
         //v2.0 function

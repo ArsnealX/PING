@@ -47,7 +47,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let refresher = PullToRefresh()
         tasksTableView.addPullToRefresh(refresher, action: {
             if let teamId = APP_DEFULT_STORE.stringForKey(kTeamId) {
-                let fetchTaskListOperation = TaskListAPIOperation(withTeamID:teamId, startIndex: "0", endIndex: "20")
+                let fetchTaskListOperation = TaskListAPIOperation(withTeamID:teamId, startIndex: "0", endIndex: "100")
                 fetchTaskListOperation.delegate = self
                 self.mainQueue.addOperation(fetchTaskListOperation)
             }
@@ -75,6 +75,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func networkOperationErrorHandler() {
+        tasksTableView.endRefreshing()
         self.noticeError("出错了!", autoClear: true)
         return
     }
