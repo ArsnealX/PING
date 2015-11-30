@@ -429,7 +429,7 @@
 				TargetAttributes = {
 					42FD09371B60EDEE00046F40 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = QWUHER89D3;
+						DevelopmentTeam = N952TXHX9S;
 					};
 				};
 			};
@@ -698,7 +698,7 @@
 				INFOPLIST_FILE = Ping/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.itinnox.Ping;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iping.Ping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ping/Ping-Bridging-Header.h";
@@ -720,7 +720,7 @@
 				INFOPLIST_FILE = Ping/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.itinnox.Ping;
+				PRODUCT_BUNDLE_IDENTIFIER = com.iping.Ping;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ping/Ping-Bridging-Header.h";

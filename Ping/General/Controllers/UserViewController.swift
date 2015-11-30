@@ -94,7 +94,7 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
     }
     
     func imageUploadOperationCompletionHandler() {
-        self.refetchUserInfo()
+//        self.refetchUserInfo()
     }
     
     func imageUploadOperationErrorHandler() {
@@ -149,7 +149,8 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
     
     func loadData() {
         nameLabel.text = userInfoDataModel.userName
-        avatarImage.kf_setImageWithURL(NSURL(string: userInfoDataModel.headImgUrl)!, placeholderImage: UIImage(named: "Image_Placeholder"))
+        avatarImage.kf_setImageWithURL(NSURL(string: userInfoDataModel.headImgUrl)!, placeholderImage: UIImage(named: "Image_Placeholder"),
+            optionsInfo: [.Options(.ForceRefresh)])
         pointLabel.text = userPoint
     }
     
