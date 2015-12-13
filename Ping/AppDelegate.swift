@@ -94,7 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func configUI() {
         UIFont.fontNamesForFamilyName("NotoSansHans")
-        let mainVC = MainViewController()
+        let mainVC = MainPageViewController()
         let teamVC = TeamViewController()
         let userVC  = UserViewController()
         let mainNavigationController = UINavigationController(rootViewController: mainVC)

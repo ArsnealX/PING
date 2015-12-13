@@ -29,7 +29,7 @@ class ImageUploadOperation: Operation {
         print(URLString + self.unwarpToken())
         Alamofire.upload(
             .POST,
-            URLString + self.unwarpToken(),
+            URLString + self.unwarpToken() + "?v=\(JXTools.timestampGenerator())",
             multipartFormData: { multipartFormData in
                 multipartFormData.appendBodyPart(data: self.fileData, name: "imageData")
             },

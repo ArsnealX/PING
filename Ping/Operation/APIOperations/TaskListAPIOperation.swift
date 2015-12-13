@@ -9,12 +9,12 @@
 import Foundation
 
 class TaskListAPIOperation: NetworkOperation {
-    private var team_id:String
+    private var task_role_state:String
     private var task_start_index:String
     private var task_end_index:String
     
-    init(withTeamID teamID:String, startIndex:String, endIndex: String) {
-        team_id = teamID
+    init(withTaskRoleState taskRoleState:String, startIndex:String, endIndex: String) {
+        task_role_state = taskRoleState
         task_start_index = startIndex
         task_end_index = endIndex
         super.init()
@@ -22,7 +22,7 @@ class TaskListAPIOperation: NetworkOperation {
     }
     
     override func apiParameters() -> [String : AnyObject] {
-        return ["team_id" : team_id, "task_start_index" : task_start_index, "task_end_index" : task_end_index]
+        return ["task_role_state" : task_role_state, "task_start_index" : task_start_index, "task_end_index" : task_end_index]
     }
         
     func getListArray() -> Array<TaskDetailModel> {

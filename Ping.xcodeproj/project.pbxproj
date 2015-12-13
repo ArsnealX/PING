@@ -67,6 +67,7 @@
 		42CFAEB61C0B575D007C061A /* ImageUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CFAEB51C0B575D007C061A /* ImageUploadOperation.swift */; };
 		42CFAEB81C0B5C90007C061A /* AvatarUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CFAEB71C0B5C90007C061A /* AvatarUploadOperation.swift */; };
 		42D80B901B6B742800898074 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D80B8F1B6B742800898074 /* Launch Screen.xib */; };
+		42EAF4DA1C1DD603001D6597 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EAF4D91C1DD603001D6597 /* MainPageViewController.swift */; };
 		42EF11C21BAAACFE00D6504A /* SSASwiftReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF11C11BAAACFE00D6504A /* SSASwiftReachability.swift */; };
 		42EF11C51BAAC19600D6504A /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF11C41BAAC19600D6504A /* SwiftNotice.swift */; };
 		42EF11C71BAAC50800D6504A /* APICmdList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF11C61BAAC50800D6504A /* APICmdList.swift */; };
@@ -141,6 +142,7 @@
 		42CFAEB51C0B575D007C061A /* ImageUploadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploadOperation.swift; sourceTree = "<group>"; };
 		42CFAEB71C0B5C90007C061A /* AvatarUploadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarUploadOperation.swift; sourceTree = "<group>"; };
 		42D80B8F1B6B742800898074 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		42EAF4D91C1DD603001D6597 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		42EF11C11BAAACFE00D6504A /* SSASwiftReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSASwiftReachability.swift; sourceTree = "<group>"; };
 		42EF11C41BAAC19600D6504A /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		42EF11C61BAAC50800D6504A /* APICmdList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICmdList.swift; sourceTree = "<group>"; };
@@ -206,6 +208,7 @@
 				426225BC1B74B8BE00DF1819 /* UserViewController.swift */,
 				426225BD1B74B8BE00DF1819 /* UserViewController.xib */,
 				422A343A1B786128003AB08E /* AvatarImagePickerViewController.swift */,
+				42EAF4D91C1DD603001D6597 /* MainPageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -429,7 +432,7 @@
 				TargetAttributes = {
 					42FD09371B60EDEE00046F40 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = N952TXHX9S;
+						DevelopmentTeam = 7E85ABYGEY;
 					};
 				};
 			};
@@ -556,6 +559,7 @@
 				428984751BF5C7340069679B /* TeamRankingModel.swift in Sources */,
 				426225B61B745F5A00DF1819 /* TeamViewController.swift in Sources */,
 				424980621B6B53EA00454858 /* ContactsSelectionViewController.swift in Sources */,
+				42EAF4DA1C1DD603001D6597 /* MainPageViewController.swift in Sources */,
 				42CFAEB61C0B575D007C061A /* ImageUploadOperation.swift in Sources */,
 				4249806A1B6B53EA00454858 /* tasksTableViewCell.swift in Sources */,
 				428984771BF5D2E10069679B /* UserInfoModel.swift in Sources */,
@@ -619,7 +623,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jingkai Xiong (2DR7QLRS7M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jingkai Xiong (2DR7QLRS7M)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -663,7 +668,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jingkai Xiong (2DR7QLRS7M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jingkai Xiong (2DR7QLRS7M)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -689,16 +695,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jingkai Xiong (2DR7QLRS7M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jingkai Xiong (2DR7QLRS7M)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Ping/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iping.Ping;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingWork.PING;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ping/Ping-Bridging-Header.h";
@@ -712,15 +718,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jingkai Xiong (2DR7QLRS7M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jingkai Xiong (2DR7QLRS7M)";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = YES;
-				ENABLE_BITCODE = YES;
+				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = Ping/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.iping.Ping;
+				PRODUCT_BUNDLE_IDENTIFIER = com.pingWork.PING;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ping/Ping-Bridging-Header.h";

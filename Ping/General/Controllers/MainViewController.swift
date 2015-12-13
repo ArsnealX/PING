@@ -13,6 +13,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tasksTableView: UITableView!
     
     var taskListArray:Array<TaskDetailModel>
+    var taskType:String = "1"
+    var pageIndex:Int = 1
     
     //network reachability
     var isNetworkReachable:Bool!
@@ -27,9 +29,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         isNetworkReachable = true
     }
     
-    convenience init() {
+    convenience init(withType type:String, index:Int) {
         let nibNameOrNil:String? = "MainViewController"
         self.init(nibName: nibNameOrNil, bundle: nil)
+        taskType = type
+        pageIndex = index
     }
     
     required init(coder aDecoder: NSCoder) {
@@ -44,14 +48,12 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         tasksTableView.dataSource = self
         tasksTableView.delegate = self
-        let refresher = PullToRefresh()
-        tasksTableView.addPullToRefresh(refresher, action: {
-            if let teamId = APP_DEFULT_STORE.stringForKey(kTeamId) {
-                let fetchTaskListOperation = TaskListAPIOperation(withTeamID:teamId, startIndex: "0", endIndex: "100")
-                fetchTaskListOperation.delegate = self
-                self.mainQueue.addOperation(fetchTaskListOperation)
-            }
-        })
+//        let refresher = PullToRefresh()
+//        tasksTableView.addPullToRefresh(refresher, action: {
+//            let fetchTaskListOperation = TaskListAPIOperation(withTaskRoleState: self.taskType, startIndex: "0", endIndex: "99");
+//            fetchTaskListOperation.delegate = self
+//            self.mainQueue.addOperation(fetchTaskListOperation)
+//        })
         tasksTableView.startRefreshing()
     }
     
@@ -113,14 +115,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     //MARK:EVENT RESPONDER
-    
-    func addReview() {
-        let addReviewVC = addReviewViewController()
-        let reviewNav = UINavigationController(rootViewController: addReviewVC)
-        PTools.configNavigationController(reviewNav, tabBarIconName: nil, needTabBar: false)
-        self.presentViewController(reviewNav, animated: true, completion: nil)
-    }
-    
+        
     func reachabilityStatusChanged(notification: NSNotification) {
         if let info = notification.userInfo {
             if let s = info[reachabilityNotificationStatusItem] {
@@ -174,10 +169,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         //hide rest separate lines
         tasksTableView.tableFooterView = UIView()
         
-        //add write review button
-        let rightItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: "addReview")
-        rightItem.image = UIImage(named: "add")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        self.navigationItem.rightBarButtonItem = rightItem
+        
     }
     
 }
