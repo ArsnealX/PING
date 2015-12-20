@@ -11,6 +11,9 @@ import UIKit
 class MainPageViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
     var viewControllersArray:Array<UIViewController> = []
+    var currentButtonIndex = 0
+    let pageVC = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +48,18 @@ class MainPageViewController: UIViewController, UIPageViewControllerDataSource, 
         return nil
     }
     
+    func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        guard completed else {
+            return
+        }
+        let oldSwitchButton = self.view.viewWithTag(currentButtonIndex + 100) as! UIButton
+        oldSwitchButton.selected = false
+        currentButtonIndex = viewControllersArray.indexOf((pageViewController.viewControllers?.last)!)!
+        let newSwitchButton = self.view.viewWithTag(currentButtonIndex + 100) as! UIButton
+        newSwitchButton.selected = true
+        print(currentButtonIndex)
+    }
+    
     func addReview() {
         let addReviewVC = addReviewViewController()
         let reviewNav = UINavigationController(rootViewController: addReviewVC)
@@ -53,17 +68,82 @@ class MainPageViewController: UIViewController, UIPageViewControllerDataSource, 
     }
     
     func loadPageViewController() {
-        let pageViewContainerView = UIView(frame: CGRectMake(0, 55, SCREEN_WIDTH!, SCREEN_HEIGHT! - 55))
+        loadSwitchView()
+        let pageViewContainerView = UIView(frame: CGRectMake(0, 40, SCREEN_WIDTH!, SCREEN_HEIGHT! - 40))
         self.view.addSubview(pageViewContainerView)
-        let pageViewController = UIPageViewController(transitionStyle: .Scroll, navigationOrientation: .Horizontal, options: nil)
-        pageViewController.delegate = self;
-        pageViewController.dataSource = self;
-        pageViewController.view.backgroundColor = UIColor.clearColor()
+        pageVC.delegate = self;
+        pageVC.dataSource = self;
+        pageVC.view.backgroundColor = UIColor.clearColor()
         let startViewControllers = [viewControllersArray[0]]
-        self.addChildViewController(pageViewController)
-        pageViewContainerView.addSubview(pageViewController.view)
-        pageViewController.didMoveToParentViewController(self)
-        pageViewController.setViewControllers(startViewControllers, direction: .Reverse, animated: false, completion: nil)
+        self.addChildViewController(pageVC)
+        pageViewContainerView.addSubview(pageVC.view)
+        pageVC.didMoveToParentViewController(self)
+        pageVC.setViewControllers(startViewControllers, direction: .Reverse, animated: false, completion: nil)
+    }
+    
+    func switchButton(sender:UIButton) {
+        let oldSwitchButton = self.view.viewWithTag(currentButtonIndex + 100) as! UIButton
+        oldSwitchButton.selected = false
+        sender.selected = true;
+        currentButtonIndex = sender.tag - 100;
+        let startViewControllers = [viewControllersArray[currentButtonIndex]]
+        pageVC.setViewControllers(startViewControllers, direction: .Reverse, animated: true, completion: nil)
+    }
+    
+    func loadSwitchView() {
+        let createdButton = UIButton(frame: CGRectMake(0 ,0 , 50 , 25))
+        let reviewButton = UIButton(frame: CGRectMake(0 ,0 , 50 , 25))
+        let ccButton = UIButton(frame: CGRectMake(0 ,0 , 50 , 25))
+        let fontSize:CGFloat = 14
+        createdButton.setTitle("创建", forState: .Normal)
+        createdButton.titleLabel?.font = UIFont.systemFontOfSize(fontSize)
+        createdButton.setTitleColor(UIColor(red:0.59, green:0.59, blue:0.59, alpha:1), forState: .Normal)
+        createdButton.setTitleColor(UIColor.whiteColor(), forState: .Selected)
+        createdButton.setBackgroundImage(JXTools.getImageWithColor(APP_THEME_COLOR, size: CGSizeMake(50, 20)), forState: .Selected)
+        createdButton.setBackgroundImage(JXTools.getImageWithColor(UIColor.clearColor(), size: CGSizeMake(50, 20)), forState: .Normal)
+        createdButton.center = CGPointMake(SCREEN_WIDTH! * 0.15, 20)
+        createdButton.tag = 100;
+        createdButton.layer.cornerRadius = 5
+        createdButton.layer.masksToBounds = true
+        createdButton.addTarget(self, action: "switchButton:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        reviewButton.setTitle("审核", forState: .Normal)
+        reviewButton.titleLabel?.font = UIFont.systemFontOfSize(fontSize)
+        reviewButton.setTitleColor(UIColor(red:0.59, green:0.59, blue:0.59, alpha:1), forState: .Normal)
+        reviewButton.setTitleColor(UIColor.whiteColor(), forState: .Selected)
+        reviewButton.titleLabel?.textColor = UIColor.whiteColor()
+        reviewButton.setBackgroundImage(JXTools.getImageWithColor(APP_THEME_COLOR, size: CGSizeMake(50, 20)), forState: .Selected)
+        reviewButton.setBackgroundImage(JXTools.getImageWithColor(UIColor.clearColor(), size: CGSizeMake(50, 20)), forState: .Normal)
+        reviewButton.center = CGPointMake(SCREEN_WIDTH! / 2, 20)
+        reviewButton.tag = 101
+        reviewButton.layer.cornerRadius = 5
+        reviewButton.layer.masksToBounds = true
+        reviewButton.addTarget(self, action: "switchButton:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        
+        ccButton.setTitle("抄收", forState: .Normal)
+        ccButton.titleLabel?.font = UIFont.systemFontOfSize(fontSize)
+        ccButton.setTitleColor(UIColor(red:0.59, green:0.59, blue:0.59, alpha:1), forState: .Normal)
+        ccButton.setTitleColor(UIColor.whiteColor(), forState: .Selected)
+        ccButton.titleLabel?.textColor = UIColor.whiteColor()
+        ccButton.setBackgroundImage(JXTools.getImageWithColor(APP_THEME_COLOR, size: CGSizeMake(50, 20)), forState: .Selected)
+        ccButton.setBackgroundImage(JXTools.getImageWithColor(UIColor.clearColor(), size: CGSizeMake(50, 20)), forState: .Normal)
+        ccButton.center = CGPointMake(SCREEN_WIDTH! * 0.85, 20)
+        ccButton.tag = 102;
+        ccButton.layer.cornerRadius = 5
+        ccButton.layer.masksToBounds = true
+        ccButton.addTarget(self, action: "switchButton:", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        let containerView = UIView(frame: CGRectMake(0, 0, SCREEN_WIDTH!, 40))
+        containerView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1)
+        containerView.addSubview(createdButton)
+        containerView.addSubview(reviewButton)
+        containerView.addSubview(ccButton)
+        
+        createdButton.selected = true
+        currentButtonIndex = 0
+        
+        self.view.addSubview(containerView)
     }
     
     func configUI() {
@@ -73,6 +153,7 @@ class MainPageViewController: UIViewController, UIPageViewControllerDataSource, 
         let rightItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: "addReview")
         rightItem.image = UIImage(named: "add")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         self.navigationItem.rightBarButtonItem = rightItem
+        self.view.backgroundColor = APP_GREY_COLCR
     }
     
 }

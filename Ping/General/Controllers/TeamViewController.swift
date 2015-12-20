@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PullToRefresh
+import Refresher
 
 class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APICallBackDelegate {
     @IBOutlet weak var teamRankingTableView: UITableView!
@@ -40,13 +40,13 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
         teamRankingTableView?.delegate = self
 //        teamRankingTableView?.separatorStyle = .None
         teamRankingTableView.separatorInset = UIEdgeInsets(top: 0,left: 65,bottom: 0,right: 0)
-        let refresher = PullToRefresh()
-        teamRankingTableView.addPullToRefresh(refresher, action: {
+        let pacmanAnimator = PacmanAnimator(frame: CGRectMake(0, 0, SCREEN_WIDTH!, 80))
+        teamRankingTableView.addPullToRefreshWithAction ({
             let fetchTeamRankingOperation = TeamRankAPIOperation()
             fetchTeamRankingOperation.delegate = self
             self.mainQueue.addOperation(fetchTeamRankingOperation)
-        })
-        teamRankingTableView.startRefreshing()
+        }, withAnimator: pacmanAnimator)
+        teamRankingTableView.startPullToRefresh()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -60,13 +60,13 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let op = Operation as! TeamRankAPIOperation
             teamRankingArray = op.getTemaRank()
             teamRankingArray = teamRankingArray.sort{Int($0.yearPoint) > Int($1.yearPoint)}
-            teamRankingTableView.endRefreshing()
-            teamRankingTableView.reloadData()
+            teamRankingTableView.stopPullToRefresh()
+            reloadTableView()
         }
     }
     
     func networkOperationErrorHandler() {
-        teamRankingTableView.endRefreshing()
+        teamRankingTableView.stopPullToRefresh()
         self.noticeError("出错了!", autoClear: true)
         return
     }
@@ -120,9 +120,18 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        rightItem.image = UIImage(named: "add")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
 //        self.navigationItem.rightBarButtonItem = rightItem
         self.introductionView.hidden = true
+        self.verticalGreenLine.hidden = true
         teamRankingTableView.tableFooterView = UIView()
     }
     
+    func reloadTableView() {
+        teamRankingTableView.reloadData()
+        if  teamRankingArray.count > 0 {
+            self.verticalGreenLine.hidden = false
+        }else {
+            self.verticalGreenLine.hidden = true
+        }
+    }
     
     
     func addReview() {

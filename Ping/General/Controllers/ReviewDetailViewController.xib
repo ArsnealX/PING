@@ -102,13 +102,6 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1P8-S3-xyY">
                                             <rect key="frame" x="8" y="118" width="584" height="105"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="工作结果" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JU5-Nt-TXd">
-                                                    <rect key="frame" x="8" y="8" width="60" height="15"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" name="NotoSansHans-Light" family="Noto Sans S Chinese" pointSize="15"/>
-                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="审核中" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PsY-bK-Cf7">
                                                     <rect key="frame" x="531" y="8" width="45" height="15"/>
                                                     <animations/>
@@ -124,7 +117,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fou-6N-8Qa">
-                                                    <rect key="frame" x="0.0" y="31" width="584" height="37"/>
+                                                    <rect key="frame" x="4" y="31" width="572" height="37"/>
                                                     <animations/>
                                                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <fontDescription key="fontDescription" name="NotoSansHans-Light" family="Noto Sans S Chinese" pointSize="14"/>
@@ -147,6 +140,13 @@
                                                     <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="工作结果" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JU5-Nt-TXd">
+                                                    <rect key="frame" x="8" y="8" width="60" height="15"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="NotoSansHans-Light" family="Noto Sans S Chinese" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -155,11 +155,11 @@
                                                 <constraint firstItem="na0-mM-R4G" firstAttribute="leading" secondItem="oLQ-YV-Oxd" secondAttribute="trailing" constant="8" id="2jU-mA-gIR"/>
                                                 <constraint firstAttribute="trailing" secondItem="oLA-Mv-OuW" secondAttribute="trailing" constant="8" id="DVi-wl-r2S"/>
                                                 <constraint firstItem="na0-mM-R4G" firstAttribute="top" secondItem="fou-6N-8Qa" secondAttribute="bottom" constant="8" id="Hw1-kQ-ih6"/>
-                                                <constraint firstAttribute="trailing" secondItem="fou-6N-8Qa" secondAttribute="trailing" id="Jfl-iq-v9m"/>
+                                                <constraint firstAttribute="trailing" secondItem="fou-6N-8Qa" secondAttribute="trailing" constant="8" id="Jfl-iq-v9m"/>
                                                 <constraint firstAttribute="bottom" secondItem="na0-mM-R4G" secondAttribute="bottom" constant="8" id="NtR-cO-v8t"/>
                                                 <constraint firstItem="JU5-Nt-TXd" firstAttribute="top" secondItem="1P8-S3-xyY" secondAttribute="top" constant="8" id="Q1c-wN-lGp"/>
                                                 <constraint firstItem="fou-6N-8Qa" firstAttribute="top" secondItem="JU5-Nt-TXd" secondAttribute="bottom" constant="8" id="VUJ-Kf-Nu8"/>
-                                                <constraint firstItem="fou-6N-8Qa" firstAttribute="leading" secondItem="1P8-S3-xyY" secondAttribute="leading" id="VVm-lx-j5M"/>
+                                                <constraint firstItem="fou-6N-8Qa" firstAttribute="leading" secondItem="1P8-S3-xyY" secondAttribute="leading" constant="4" id="VVm-lx-j5M"/>
                                                 <constraint firstItem="fou-6N-8Qa" firstAttribute="top" secondItem="PsY-bK-Cf7" secondAttribute="bottom" constant="8" id="Yed-Zd-ym9"/>
                                                 <constraint firstItem="oLQ-YV-Oxd" firstAttribute="leading" secondItem="1P8-S3-xyY" secondAttribute="leading" constant="8" id="fR2-y9-DFJ"/>
                                                 <constraint firstItem="oLA-Mv-OuW" firstAttribute="top" secondItem="fou-6N-8Qa" secondAttribute="bottom" constant="8" id="lSZ-mB-dJP"/>

@@ -7,6 +7,9 @@
 //
 
 import UIKit
+//protocol AddReviewCompletedDeletgate : class {
+//    func addReviewComplete()
+//}
 
 class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate, contactsSelectionDelegate, ratingViewControllerDelegate, APICallBackDelegate {
     //审核人label
@@ -21,7 +24,8 @@ class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollVie
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textViewContainer: UIView!
     
-    
+//    weak var delegate: AddReviewCompletedDeletgate?
+
     @IBOutlet weak var wordsCountLabelSpaceToBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var textViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollViewSpaceToBottomConstraint: NSLayoutConstraint!
@@ -135,6 +139,7 @@ class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollVie
     
     func networkOperationCompletionHandler(Operation: NetworkOperation) {
         closeReview()
+//        self.delegate!.addReviewComplete()
     }
     
     func networkOperationErrorHandler() {

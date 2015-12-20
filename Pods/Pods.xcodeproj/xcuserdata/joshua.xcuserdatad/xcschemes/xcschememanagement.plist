@@ -24,7 +24,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>PullToRefresher.xcscheme</key>
+		<key>Refresher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,32 +37,32 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0316E8DF3A016BDD5DCCC003589F1E7A</key>
+		<key>0E4AD42D9F528330731FC6EC045B3B41</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>083868C88254CDEF7DA2C5E9AED9BEBD</key>
+		<key>23EA52B1A1A338F1ED605B6A4AFD21F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>43E62A95E4D6B55709A31E79F529DDA6</key>
+		<key>5BA352A245A179F52003122DC46DF261</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6FDC0A626ABBC89CD4494A7CC4C94E6D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B1B2142C6EF725E090FD0C77DC0561E5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C610CA6D2B1B7878B8C341E26FD273FE</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F81323E01E1C31B086D3CF05F72723EB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

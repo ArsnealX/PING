@@ -66,7 +66,7 @@ class JXTools: NSObject {
         let time: NSTimeInterval = (timestamp as NSString).doubleValue
         let date = NSDate(timeIntervalSince1970: time)
         let formatter = NSDateFormatter()
-        formatter.dateFormat = "MM.dd"
+        formatter.dateFormat = "MM.dd  HH:MM"
         return formatter.stringFromDate(date)
     }
     
@@ -94,5 +94,15 @@ class JXTools: NSObject {
              return true
         }
         return false
+    }
+    
+    class func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
+        let rect = CGRectMake(0, 0, size.width, size.height)
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        color.setFill()
+        UIRectFill(rect)
+        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image
     }
 }

@@ -13,6 +13,7 @@
 		422A343B1B786128003AB08E /* AvatarImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A343A1B786128003AB08E /* AvatarImagePickerViewController.swift */; };
 		422A343E1B787AEC003AB08E /* ReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A343C1B787AEC003AB08E /* ReviewDetailViewController.swift */; };
 		422A343F1B787AEC003AB08E /* ReviewDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 422A343D1B787AEC003AB08E /* ReviewDetailViewController.xib */; };
+		422CB7851C26D33900011A91 /* PacmanAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422CB7841C26D33900011A91 /* PacmanAnimator.swift */; };
 		42423C9F1BAFDEEE00166839 /* PTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42423C9E1BAFDEEE00166839 /* PTools.swift */; };
 		42432B7A1BB0F2D2005F0B85 /* PNErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42432B791BB0F2D2005F0B85 /* PNErrorHandling.swift */; };
 		4245681E1B799DD6005E5AAD /* LoginAndRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245681C1B799DD6005E5AAD /* LoginAndRegisterViewController.swift */; };
@@ -57,13 +58,9 @@
 		42BD004B1B8AE19600E56669 /* Swift+MD5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BD004A1B8AE19600E56669 /* Swift+MD5.swift */; };
 		42C3C8CA1B7456030091237F /* appMarco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C3C8C91B7456030091237F /* appMarco.swift */; };
 		42C7B0FB1B82D52B00AF72F4 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 42C7B0F31B82D52B00AF72F4 /* LICENSE */; };
-		42C7B0FC1B82D52B00AF72F4 /* NotoSansHans-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42C7B0F41B82D52B00AF72F4 /* NotoSansHans-Black.otf */; };
-		42C7B0FD1B82D52B00AF72F4 /* NotoSansHans-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42C7B0F51B82D52B00AF72F4 /* NotoSansHans-Bold.otf */; };
-		42C7B0FE1B82D52B00AF72F4 /* NotoSansHans-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42C7B0F61B82D52B00AF72F4 /* NotoSansHans-DemiLight.otf */; };
 		42C7B0FF1B82D52B00AF72F4 /* NotoSansHans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42C7B0F71B82D52B00AF72F4 /* NotoSansHans-Light.otf */; };
 		42C7B1001B82D52B00AF72F4 /* NotoSansHans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42C7B0F81B82D52B00AF72F4 /* NotoSansHans-Medium.otf */; };
 		42C7B1011B82D52B00AF72F4 /* NotoSansHans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42C7B0F91B82D52B00AF72F4 /* NotoSansHans-Regular.otf */; };
-		42C7B1021B82D52B00AF72F4 /* NotoSansHans-Thin-Windows.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42C7B0FA1B82D52B00AF72F4 /* NotoSansHans-Thin-Windows.otf */; };
 		42CFAEB61C0B575D007C061A /* ImageUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CFAEB51C0B575D007C061A /* ImageUploadOperation.swift */; };
 		42CFAEB81C0B5C90007C061A /* AvatarUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CFAEB71C0B5C90007C061A /* AvatarUploadOperation.swift */; };
 		42D80B901B6B742800898074 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D80B8F1B6B742800898074 /* Launch Screen.xib */; };
@@ -87,6 +84,7 @@
 		422A343A1B786128003AB08E /* AvatarImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImagePickerViewController.swift; sourceTree = "<group>"; };
 		422A343C1B787AEC003AB08E /* ReviewDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewDetailViewController.swift; sourceTree = "<group>"; };
 		422A343D1B787AEC003AB08E /* ReviewDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewDetailViewController.xib; sourceTree = "<group>"; };
+		422CB7841C26D33900011A91 /* PacmanAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacmanAnimator.swift; sourceTree = "<group>"; };
 		42423C9E1BAFDEEE00166839 /* PTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTools.swift; sourceTree = "<group>"; };
 		42432B791BB0F2D2005F0B85 /* PNErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNErrorHandling.swift; sourceTree = "<group>"; };
 		4245681C1B799DD6005E5AAD /* LoginAndRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAndRegisterViewController.swift; sourceTree = "<group>"; };
@@ -132,13 +130,9 @@
 		42BD004A1B8AE19600E56669 /* Swift+MD5.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Swift+MD5.swift"; sourceTree = "<group>"; };
 		42C3C8C91B7456030091237F /* appMarco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = appMarco.swift; sourceTree = "<group>"; };
 		42C7B0F31B82D52B00AF72F4 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		42C7B0F41B82D52B00AF72F4 /* NotoSansHans-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-Black.otf"; sourceTree = "<group>"; };
-		42C7B0F51B82D52B00AF72F4 /* NotoSansHans-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-Bold.otf"; sourceTree = "<group>"; };
-		42C7B0F61B82D52B00AF72F4 /* NotoSansHans-DemiLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-DemiLight.otf"; sourceTree = "<group>"; };
 		42C7B0F71B82D52B00AF72F4 /* NotoSansHans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-Light.otf"; sourceTree = "<group>"; };
 		42C7B0F81B82D52B00AF72F4 /* NotoSansHans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-Medium.otf"; sourceTree = "<group>"; };
 		42C7B0F91B82D52B00AF72F4 /* NotoSansHans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-Regular.otf"; sourceTree = "<group>"; };
-		42C7B0FA1B82D52B00AF72F4 /* NotoSansHans-Thin-Windows.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-Thin-Windows.otf"; sourceTree = "<group>"; };
 		42CFAEB51C0B575D007C061A /* ImageUploadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploadOperation.swift; sourceTree = "<group>"; };
 		42CFAEB71C0B5C90007C061A /* AvatarUploadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarUploadOperation.swift; sourceTree = "<group>"; };
 		42D80B8F1B6B742800898074 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
@@ -179,6 +173,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		422CB7831C26D32B00011A91 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				422CB7841C26D33900011A91 /* PacmanAnimator.swift */,
+			);
+			name = Animator;
+			sourceTree = "<group>";
+		};
 		4249804C1B6B53EA00454858 /* General */ = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +195,7 @@
 			children = (
 				4245681C1B799DD6005E5AAD /* LoginAndRegisterViewController.swift */,
 				4245681D1B799DD6005E5AAD /* LoginAndRegisterViewController.xib */,
+				42EAF4D91C1DD603001D6597 /* MainPageViewController.swift */,
 				424980521B6B53EA00454858 /* MainViewController.swift */,
 				424980531B6B53EA00454858 /* MainViewController.xib */,
 				4249804E1B6B53EA00454858 /* AddReviewViewController.swift */,
@@ -208,7 +211,6 @@
 				426225BC1B74B8BE00DF1819 /* UserViewController.swift */,
 				426225BD1B74B8BE00DF1819 /* UserViewController.xib */,
 				422A343A1B786128003AB08E /* AvatarImagePickerViewController.swift */,
-				42EAF4D91C1DD603001D6597 /* MainPageViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -323,13 +325,9 @@
 			isa = PBXGroup;
 			children = (
 				42C7B0F31B82D52B00AF72F4 /* LICENSE */,
-				42C7B0F41B82D52B00AF72F4 /* NotoSansHans-Black.otf */,
-				42C7B0F51B82D52B00AF72F4 /* NotoSansHans-Bold.otf */,
-				42C7B0F61B82D52B00AF72F4 /* NotoSansHans-DemiLight.otf */,
 				42C7B0F71B82D52B00AF72F4 /* NotoSansHans-Light.otf */,
 				42C7B0F81B82D52B00AF72F4 /* NotoSansHans-Medium.otf */,
 				42C7B0F91B82D52B00AF72F4 /* NotoSansHans-Regular.otf */,
-				42C7B0FA1B82D52B00AF72F4 /* NotoSansHans-Thin-Windows.otf */,
 			);
 			path = NotoSansSChinese;
 			sourceTree = "<group>";
@@ -371,6 +369,7 @@
 		42FD093A1B60EDEE00046F40 /* Ping */ = {
 			isa = PBXGroup;
 			children = (
+				422CB7831C26D32B00011A91 /* Animator */,
 				42B0925B1B8AC1E0002F22E5 /* Operation */,
 				4249804C1B6B53EA00454858 /* General */,
 				4249805B1B6B53EA00454858 /* Helper */,
@@ -467,12 +466,8 @@
 				426225B71B745F5A00DF1819 /* TeamViewController.xib in Resources */,
 				426225BB1B74697500DF1819 /* teamRankingTableViewCell.xib in Resources */,
 				42D80B901B6B742800898074 /* Launch Screen.xib in Resources */,
-				42C7B0FC1B82D52B00AF72F4 /* NotoSansHans-Black.otf in Resources */,
 				42C7B1011B82D52B00AF72F4 /* NotoSansHans-Regular.otf in Resources */,
-				42C7B0FD1B82D52B00AF72F4 /* NotoSansHans-Bold.otf in Resources */,
 				429A5D781B6F729500384989 /* RatingViewController.xib in Resources */,
-				42C7B1021B82D52B00AF72F4 /* NotoSansHans-Thin-Windows.otf in Resources */,
-				42C7B0FE1B82D52B00AF72F4 /* NotoSansHans-DemiLight.otf in Resources */,
 				424980611B6B53EA00454858 /* AddReviewViewController.xib in Resources */,
 				42C7B1001B82D52B00AF72F4 /* NotoSansHans-Medium.otf in Resources */,
 				42C7B0FB1B82D52B00AF72F4 /* LICENSE in Resources */,
@@ -589,6 +584,7 @@
 				42423C9F1BAFDEEE00166839 /* PTools.swift in Sources */,
 				42EF11C71BAAC50800D6504A /* APICmdList.swift in Sources */,
 				4249806C1B6B53EA00454858 /* JXTools.swift in Sources */,
+				422CB7851C26D33900011A91 /* PacmanAnimator.swift in Sources */,
 				EBF21E3D1BE1BC8A00F6CF59 /* APIMarco.swift in Sources */,
 				42801B391B8B0D16008D4AC9 /* CompleteTaskAPIOperation.swift in Sources */,
 				EB42AFBD1BE0A69C006EE260 /* TaskDetailModel.swift in Sources */,

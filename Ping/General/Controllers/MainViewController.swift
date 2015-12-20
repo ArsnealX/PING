@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import PullToRefresh
+import Refresher
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, APICallBackDelegate {
     @IBOutlet weak var tasksTableView: UITableView!
@@ -15,6 +15,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var taskListArray:Array<TaskDetailModel>
     var taskType:String = "1"
     var pageIndex:Int = 1
+    let emptyImageView = UIImageView(frame:CGRectMake(0, 0, 180, 120))
     
     //network reachability
     var isNetworkReachable:Bool!
@@ -48,20 +49,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         tasksTableView.dataSource = self
         tasksTableView.delegate = self
-//        let refresher = PullToRefresh()
-//        tasksTableView.addPullToRefresh(refresher, action: {
-//            let fetchTaskListOperation = TaskListAPIOperation(withTaskRoleState: self.taskType, startIndex: "0", endIndex: "99");
-//            fetchTaskListOperation.delegate = self
-//            self.mainQueue.addOperation(fetchTaskListOperation)
-//        })
-        tasksTableView.startRefreshing()
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         configUI()
         showNetworkStatus()
-        
+        let pacmanAnimator = PacmanAnimator(frame: CGRectMake(0, 0, SCREEN_WIDTH!, 80))
+        tasksTableView.addPullToRefreshWithAction ({
+            let fetchTaskListOperation = TaskListAPIOperation(withTaskRoleState: self.taskType, startIndex: "0", endIndex: "99");
+            fetchTaskListOperation.delegate = self
+            self.mainQueue.addOperation(fetchTaskListOperation)
+            
+            }, withAnimator: pacmanAnimator)
+        tasksTableView.startPullToRefresh()
     }
     
     //MARK:DELEGATE AND DATASOURCE
@@ -71,13 +72,14 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             let op = Operation as! TaskListAPIOperation
             taskListArray = op.getListArray()
             print(op.getListArray())
-            tasksTableView.endRefreshing()
-            tasksTableView.reloadData()
+            tasksTableView.stopPullToRefresh()
+            reloadTableView()
         }
     }
     
     func networkOperationErrorHandler() {
-        tasksTableView.endRefreshing()
+        tasksTableView.stopPullToRefresh()
+
         self.noticeError("出错了!", autoClear: true)
         return
     }
@@ -108,9 +110,8 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let taskId = taskListArray[indexPath.row].taskID
         let reviewDetailVC = reviewDetailViewController(taskId: taskId)
-        self.hidesBottomBarWhenPushed = true
+        reviewDetailVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(reviewDetailVC, animated: true)
-        self.hidesBottomBarWhenPushed = false
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
@@ -168,8 +169,23 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         tasksTableView.separatorInset = UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 10)
         //hide rest separate lines
         tasksTableView.tableFooterView = UIView()
-        
-        
+        showEmptyStatusView()
+    }
+    
+    func reloadTableView() {
+        tasksTableView.reloadData()
+        if taskListArray.count == 0 {
+            emptyImageView.hidden = false
+        }else {
+            emptyImageView.hidden = true
+        }
+    }
+    
+    func showEmptyStatusView() {
+        emptyImageView.kf_setImageWithURL(NSURL(), placeholderImage: UIImage(named: "emtpyStatus"))
+        emptyImageView.center = CGPointMake(SCREEN_WIDTH! / 2, SCREEN_HEIGHT! / 2 - 85);
+        emptyImageView.hidden = true
+        self.view.addSubview(emptyImageView)
     }
     
 }

@@ -13,6 +13,7 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var pointLabel: UILabel!
+    var imageActivityIndicator: UIActivityIndicatorView!
     
     //Network Operation Queue
     let mainQueue: NSOperationQueue = NSOperationQueue()
@@ -23,6 +24,7 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         userInfoDataModel = UserInfoModel(userTel: "", userName: "...", headImgUrl: "")
         userPoint = "-"
+        imageActivityIndicator = UIActivityIndicatorView()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
@@ -74,6 +76,7 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
             userPoint = op.getUserPoint()
         }
         self.loadData()
+        removeNetworkIndicator()
     }
     
     func networkOperationErrorHandler() {
@@ -89,15 +92,17 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
                 imageUploadOperation.delegate = self
                 mainQueue.addOperation(imageUploadOperation)
             }
-            
+            showNetworkIndicatorOnImageView(avatarImage)
         }
     }
     
     func imageUploadOperationCompletionHandler() {
-//        self.refetchUserInfo()
+        self.refetchUserInfo()
+        self.noticeInfo("上传成功", autoClear: true)
     }
     
     func imageUploadOperationErrorHandler() {
+        self.noticeError("出错了!", autoClear: true)
         return
     }
     
@@ -147,10 +152,22 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
         
     }
     
+    func showNetworkIndicatorOnImageView(imageView: UIImageView) {
+        imageActivityIndicator.frame = imageView.frame
+        imageActivityIndicator.userInteractionEnabled = true
+        imageActivityIndicator.activityIndicatorViewStyle = .White
+        self.view.addSubview(imageActivityIndicator)
+        imageActivityIndicator.startAnimating()
+    }
+    
+    func removeNetworkIndicator() {
+        self.imageActivityIndicator.stopAnimating()
+        self.imageActivityIndicator.userInteractionEnabled = false
+    }
+    
     func loadData() {
         nameLabel.text = userInfoDataModel.userName
-        avatarImage.kf_setImageWithURL(NSURL(string: userInfoDataModel.headImgUrl)!, placeholderImage: UIImage(named: "Image_Placeholder"),
-            optionsInfo: [.Options(.ForceRefresh)])
+        avatarImage.kf_setImageWithURL(NSURL(string: userInfoDataModel.headImgUrl)!, placeholderImage: UIImage(named: "Image_Placeholder"))
         pointLabel.text = userPoint
     }
     

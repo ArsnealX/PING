@@ -5,11 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <customFonts key="customFonts">
-        <mutableArray key="NotoSansHans-Thin-Windows.otf">
-            <string>NotoSansHans-Thin</string>
-            <string>NotoSansHans-Thin</string>
-            <string>NotoSansHans-Thin</string>
-            <string>NotoSansHans-Thin</string>
+        <mutableArray key="NotoSansHans-Light.otf">
+            <string>NotoSansHans-Light</string>
+            <string>NotoSansHans-Light</string>
+            <string>NotoSansHans-Light</string>
+            <string>NotoSansHans-Light</string>
         </mutableArray>
     </customFonts>
     <objects>
@@ -35,9 +35,9 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZQt-VK-ImL">
-                    <rect key="frame" x="234" y="233" width="133" height="25"/>
+                    <rect key="frame" x="233" y="233" width="135" height="25"/>
                     <animations/>
-                    <fontDescription key="fontDescription" name="NotoSansHans-Thin" family="Noto Sans S Chinese" pointSize="25"/>
+                    <fontDescription key="fontDescription" name="NotoSansHans-Light" family="Noto Sans S Chinese" pointSize="25"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -47,7 +47,7 @@
                     <constraints>
                         <constraint firstAttribute="width" constant="361" id="f66-pk-qnD"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="NotoSansHans-Thin" family="Noto Sans S Chinese" pointSize="17"/>
+                    <fontDescription key="fontDescription" name="NotoSansHans-Light" family="Noto Sans S Chinese" pointSize="17"/>
                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                     <variation key="default">
@@ -67,9 +67,9 @@
                     <rect key="frame" x="225" y="273" width="150" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jmd-Ly-wC1">
-                            <rect key="frame" x="85" y="12" width="27" height="17"/>
+                            <rect key="frame" x="85" y="12" width="28" height="17"/>
                             <animations/>
-                            <fontDescription key="fontDescription" name="NotoSansHans-Thin" family="Noto Sans S Chinese" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="NotoSansHans-Light" family="Noto Sans S Chinese" pointSize="17"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -79,7 +79,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="55" id="cMc-GA-ANI"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="NotoSansHans-Thin" family="Noto Sans S Chinese" pointSize="17"/>
+                            <fontDescription key="fontDescription" name="NotoSansHans-Light" family="Noto Sans S Chinese" pointSize="17"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
