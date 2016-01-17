@@ -59,17 +59,19 @@
 		42C3C8CA1B7456030091237F /* appMarco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C3C8C91B7456030091237F /* appMarco.swift */; };
 		42C7B0FB1B82D52B00AF72F4 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 42C7B0F31B82D52B00AF72F4 /* LICENSE */; };
 		42C7B0FF1B82D52B00AF72F4 /* NotoSansHans-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42C7B0F71B82D52B00AF72F4 /* NotoSansHans-Light.otf */; };
-		42C7B1001B82D52B00AF72F4 /* NotoSansHans-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42C7B0F81B82D52B00AF72F4 /* NotoSansHans-Medium.otf */; };
 		42C7B1011B82D52B00AF72F4 /* NotoSansHans-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 42C7B0F91B82D52B00AF72F4 /* NotoSansHans-Regular.otf */; };
 		42CFAEB61C0B575D007C061A /* ImageUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CFAEB51C0B575D007C061A /* ImageUploadOperation.swift */; };
 		42CFAEB81C0B5C90007C061A /* AvatarUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CFAEB71C0B5C90007C061A /* AvatarUploadOperation.swift */; };
 		42D80B901B6B742800898074 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D80B8F1B6B742800898074 /* Launch Screen.xib */; };
+		42E28F561C3558C800333180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E28F551C3558C800333180 /* Assets.xcassets */; };
+		42E28F591C355C9D00333180 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E28F571C355C9D00333180 /* SettingsViewController.swift */; };
+		42E28F5A1C355C9D00333180 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E28F581C355C9D00333180 /* SettingsViewController.xib */; };
 		42EAF4DA1C1DD603001D6597 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EAF4D91C1DD603001D6597 /* MainPageViewController.swift */; };
+		42EE17BE1C4A302800BE6D76 /* GetTeamNameAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE17BD1C4A302800BE6D76 /* GetTeamNameAPIOperation.swift */; };
 		42EF11C21BAAACFE00D6504A /* SSASwiftReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF11C11BAAACFE00D6504A /* SSASwiftReachability.swift */; };
 		42EF11C51BAAC19600D6504A /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF11C41BAAC19600D6504A /* SwiftNotice.swift */; };
 		42EF11C71BAAC50800D6504A /* APICmdList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF11C61BAAC50800D6504A /* APICmdList.swift */; };
 		42FD093C1B60EDEE00046F40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FD093B1B60EDEE00046F40 /* AppDelegate.swift */; };
-		42FD09561B60EE9A00046F40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42FD09551B60EE9A00046F40 /* Assets.xcassets */; };
 		CD0E8B501BE860E0003C2758 /* DemoCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD0E8B4F1BE860E0003C2758 /* DemoCode.swift */; };
 		CD6648C71BEA02570098FEE8 /* TaskMoreInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD6648C61BEA02570098FEE8 /* TaskMoreInfoModel.swift */; };
 		CDC1F8FF1BF0863C00891C36 /* TeamMemberModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC1F8FE1BF0863C00891C36 /* TeamMemberModel.swift */; };
@@ -131,19 +133,21 @@
 		42C3C8C91B7456030091237F /* appMarco.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = appMarco.swift; sourceTree = "<group>"; };
 		42C7B0F31B82D52B00AF72F4 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		42C7B0F71B82D52B00AF72F4 /* NotoSansHans-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-Light.otf"; sourceTree = "<group>"; };
-		42C7B0F81B82D52B00AF72F4 /* NotoSansHans-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-Medium.otf"; sourceTree = "<group>"; };
 		42C7B0F91B82D52B00AF72F4 /* NotoSansHans-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansHans-Regular.otf"; sourceTree = "<group>"; };
 		42CFAEB51C0B575D007C061A /* ImageUploadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploadOperation.swift; sourceTree = "<group>"; };
 		42CFAEB71C0B5C90007C061A /* AvatarUploadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarUploadOperation.swift; sourceTree = "<group>"; };
 		42D80B8F1B6B742800898074 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
+		42E28F551C3558C800333180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42E28F571C355C9D00333180 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		42E28F581C355C9D00333180 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		42EAF4D91C1DD603001D6597 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		42EE17BD1C4A302800BE6D76 /* GetTeamNameAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTeamNameAPIOperation.swift; sourceTree = "<group>"; };
 		42EF11C11BAAACFE00D6504A /* SSASwiftReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSASwiftReachability.swift; sourceTree = "<group>"; };
 		42EF11C41BAAC19600D6504A /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		42EF11C61BAAC50800D6504A /* APICmdList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICmdList.swift; sourceTree = "<group>"; };
 		42FD09381B60EDEE00046F40 /* Ping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FD093B1B60EDEE00046F40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42FD09471B60EDEF00046F40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		42FD09551B60EE9A00046F40 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CD0E8B4F1BE860E0003C2758 /* DemoCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCode.swift; sourceTree = "<group>"; };
 		CD6648C61BEA02570098FEE8 /* TaskMoreInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskMoreInfoModel.swift; sourceTree = "<group>"; };
 		CDC1F8FE1BF0863C00891C36 /* TeamMemberModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamMemberModel.swift; sourceTree = "<group>"; };
@@ -211,6 +215,8 @@
 				426225BC1B74B8BE00DF1819 /* UserViewController.swift */,
 				426225BD1B74B8BE00DF1819 /* UserViewController.xib */,
 				422A343A1B786128003AB08E /* AvatarImagePickerViewController.swift */,
+				42E28F571C355C9D00333180 /* SettingsViewController.swift */,
+				42E28F581C355C9D00333180 /* SettingsViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 				4203AEBF1BA675B8006413A3 /* AccountIsRegAPIOperation.swift */,
 				42801B2A1B8B0837008D4AC9 /* LoginAPIOperation.swift */,
 				4203AEC11BA6C4B1006413A3 /* RegisterAPIOperation.swift */,
+				42EE17BD1C4A302800BE6D76 /* GetTeamNameAPIOperation.swift */,
 				42801B2C1B8B0924008D4AC9 /* QueryTeamMemberAPIOperation.swift */,
 				42801B2E1B8B0A33008D4AC9 /* TaskListAPIOperation.swift */,
 				42801B301B8B0ACE008D4AC9 /* TaskDetailAPIOperation.swift */,
@@ -326,7 +333,6 @@
 			children = (
 				42C7B0F31B82D52B00AF72F4 /* LICENSE */,
 				42C7B0F71B82D52B00AF72F4 /* NotoSansHans-Light.otf */,
-				42C7B0F81B82D52B00AF72F4 /* NotoSansHans-Medium.otf */,
 				42C7B0F91B82D52B00AF72F4 /* NotoSansHans-Regular.otf */,
 			);
 			path = NotoSansSChinese;
@@ -378,11 +384,11 @@
 				4249805F1B6B53EA00454858 /* Models */,
 				42C7B0F11B82D52B00AF72F4 /* Resources */,
 				42BD00481B8AD35F00E56669 /* Utilities */,
-				42FD09551B60EE9A00046F40 /* Assets.xcassets */,
 				42FD09471B60EDEF00046F40 /* Info.plist */,
 				42D80B8F1B6B742800898074 /* Launch Screen.xib */,
 				42801B291B8AE5AA008D4AC9 /* Ping-Bridging-Header.h */,
 				42FD093B1B60EDEE00046F40 /* AppDelegate.swift */,
+				42E28F551C3558C800333180 /* Assets.xcassets */,
 			);
 			path = Ping;
 			sourceTree = "<group>";
@@ -466,14 +472,14 @@
 				426225B71B745F5A00DF1819 /* TeamViewController.xib in Resources */,
 				426225BB1B74697500DF1819 /* teamRankingTableViewCell.xib in Resources */,
 				42D80B901B6B742800898074 /* Launch Screen.xib in Resources */,
+				42E28F5A1C355C9D00333180 /* SettingsViewController.xib in Resources */,
 				42C7B1011B82D52B00AF72F4 /* NotoSansHans-Regular.otf in Resources */,
 				429A5D781B6F729500384989 /* RatingViewController.xib in Resources */,
 				424980611B6B53EA00454858 /* AddReviewViewController.xib in Resources */,
-				42C7B1001B82D52B00AF72F4 /* NotoSansHans-Medium.otf in Resources */,
 				42C7B0FB1B82D52B00AF72F4 /* LICENSE in Resources */,
-				42FD09561B60EE9A00046F40 /* Assets.xcassets in Resources */,
 				42C7B0FF1B82D52B00AF72F4 /* NotoSansHans-Light.otf in Resources */,
 				4245681F1B799DD6005E5AAD /* LoginAndRegisterViewController.xib in Resources */,
+				42E28F561C3558C800333180 /* Assets.xcassets in Resources */,
 				422A343F1B787AEC003AB08E /* ReviewDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -575,6 +581,7 @@
 				42801B2D1B8B0924008D4AC9 /* QueryTeamMemberAPIOperation.swift in Sources */,
 				426225BA1B74697500DF1819 /* teamRankingTableViewCell.swift in Sources */,
 				426225BE1B74B8BE00DF1819 /* UserViewController.swift in Sources */,
+				42E28F591C355C9D00333180 /* SettingsViewController.swift in Sources */,
 				42C3C8CA1B7456030091237F /* appMarco.swift in Sources */,
 				42801B3B1B8B0D5F008D4AC9 /* TeamRankAPIOperation.swift in Sources */,
 				42FD093C1B60EDEE00046F40 /* AppDelegate.swift in Sources */,
@@ -596,6 +603,7 @@
 				42801B311B8B0ACE008D4AC9 /* TaskDetailAPIOperation.swift in Sources */,
 				42801B2F1B8B0A33008D4AC9 /* TaskListAPIOperation.swift in Sources */,
 				4245681E1B799DD6005E5AAD /* LoginAndRegisterViewController.swift in Sources */,
+				42EE17BE1C4A302800BE6D76 /* GetTeamNameAPIOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Answers
 
 protocol ratingViewControllerDelegate: class {
     func didCompleteRating(state:String, innovation:String)

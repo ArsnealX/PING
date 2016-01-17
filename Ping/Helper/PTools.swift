@@ -13,7 +13,7 @@ class PTools: NSObject {
     class func configNavigationController(navController : UINavigationController, tabBarIconName : String?, needTabBar: Bool) {
         //navigation bar title style
         let titleColor = UIColor.whiteColor()
-        let textAttributeDict = NSDictionary(objects: [titleColor,APP_NAV_FONT!], forKeys: [NSForegroundColorAttributeName,NSFontAttributeName])
+        let textAttributeDict = NSDictionary(objects: [titleColor], forKeys: [NSForegroundColorAttributeName])
         navController.navigationBar.titleTextAttributes = textAttributeDict as? [String : AnyObject]
         //navigation bar background style
         navController.navigationBar.barTintColor = APP_THEME_COLOR

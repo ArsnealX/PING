@@ -79,9 +79,10 @@ class LoginAndRegisterViewController: UIViewController, APICallBackDelegate {
         }else if Operation.isKindOfClass(RegisterAPIOperation) {
             let op = Operation as! RegisterAPIOperation
             APP_DEFULT_STORE.setObject(op.getToken(), forKey: kUserToken)
-            nextBtnStatus = .confirmNicknameStatus
-        }else {
             goToMainVC()
+//            nextBtnStatus = .confirmNicknameStatus
+        }else {
+//            goToMainVC()
         }
     
         //let activity indicator have more time to display (removeable)
@@ -106,7 +107,7 @@ class LoginAndRegisterViewController: UIViewController, APICallBackDelegate {
     }
     
     @IBAction func nextButtonPressed(sender: UIButton) {
-        var operation:NetworkOperation
+        var operation:NetworkOperation?
         //TODO:check empty situation of text field
         if nextBtnStatus == .nextStatus {
             //check phone number input
@@ -124,18 +125,27 @@ class LoginAndRegisterViewController: UIViewController, APICallBackDelegate {
             //check password input
             if JXTools.passwordValidator(userInfoTextField.text!) {
                 passwordString = userInfoTextField.text
-                operation = RegisterAPIOperation(withPhoneNumber: phoneNumberString!, password: passwordString!)
+//                operation = RegisterAPIOperation(withPhoneNumber: phoneNumberString!, password: passwordString!)
+                let time: NSTimeInterval = 0.5
+                let delay = dispatch_time(DISPATCH_TIME_NOW,Int64(time * Double(NSEC_PER_SEC)))
+                nextBtnStatus = .confirmNicknameStatus
+                dispatch_after(delay, dispatch_get_main_queue()) {
+                    self.changeButtonStatus()
+                }
             }else {
                 JXTools.shakeAnimationForView(userInfoTextField)
                 return
             }
         }else {
             nickName = userInfoTextField.text
-            operation = SetUsernameAPIOperation(withUserName: nickName!)
+            operation = RegisterAPIOperation(withPhoneNumber: phoneNumberString!, password: passwordString!, inviteCode: nickName!)
+//            operation = SetUsernameAPIOperation(withUserName: nickName!)
         }
         
-        operation.delegate = self
-        mainQueue.addOperation(operation)
+        if let _ = operation {
+            operation!.delegate = self
+            mainQueue.addOperation(operation!)
+        }
         showNetworkIndicatorOnButton(sender)
     }
 
@@ -166,15 +176,15 @@ class LoginAndRegisterViewController: UIViewController, APICallBackDelegate {
             userInfoTextField.secureTextEntry = true
             userInfoTextField.keyboardType = .Alphabet
         }else if nextBtnStatus == .registerStatus {
-            nextButton.setTitle("注册", forState: UIControlState.Normal)
+            nextButton.setTitle("确认", forState: UIControlState.Normal)
             userInfoTextField.placeholder = "请输入6位或以上的密码"
             userInfoTextField.secureTextEntry = true
             userInfoTextField.keyboardType = .Alphabet
         }else {
-            nextButton.setTitle("确认", forState: UIControlState.Normal)
-            userInfoTextField.placeholder = "请输入您的姓名"
+            nextButton.setTitle("注册", forState: UIControlState.Normal)
+            userInfoTextField.placeholder = "请输入邀请码"
             userInfoTextField.secureTextEntry = false
-            userInfoTextField.keyboardType = .Default
+            userInfoTextField.keyboardType = .NumberPad
         }
         userInfoTextField.text = ""
         userInfoTextField.userInteractionEnabled = true

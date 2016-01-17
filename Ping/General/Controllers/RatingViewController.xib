@@ -39,8 +39,8 @@
                                 <constraint firstAttribute="height" constant="120" id="RPg-ZW-lLY"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请评价您的工作" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUu-17-yF2">
-                            <rect key="frame" x="8" y="90" width="98" height="14"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="评价我的工作状态" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUu-17-yF2">
+                            <rect key="frame" x="8" y="90" width="112" height="14"/>
                             <animations/>
                             <fontDescription key="fontDescription" name="NotoSansHans-Regular" family="Noto Sans S Chinese" pointSize="14"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -99,10 +99,10 @@
                                     <fontDescription key="fontDescription" name="NotoSansHans-Thin" family="Noto Sans S Chinese" pointSize="12"/>
                                     <inset key="titleEdgeInsets" minX="-52" minY="60" maxX="0.0" maxY="0.0"/>
                                     <inset key="imageEdgeInsets" minX="0.0" minY="-15" maxX="0.0" maxY="0.0"/>
-                                    <state key="normal" title="超神" image="Super">
+                                    <state key="normal" title="爆发" image="Super">
                                         <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
-                                    <state key="selected" title="超神" image="Super_selected">
+                                    <state key="selected" image="Super_selected">
                                         <color key="titleColor" red="0.32156862749999998" green="0.75686274509999996" blue="0.45882352939999999" alpha="1" colorSpace="calibratedRGB"/>
                                     </state>
                                     <connections>
@@ -149,18 +149,6 @@
                                 <action selector="didPressSendButton:" destination="-1" eventType="touchUpInside" id="Kdo-UR-gSy"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2D-O0-g78">
-                            <rect key="frame" x="237" y="8" width="15" height="15"/>
-                            <animations/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="15" id="9SS-QU-che"/>
-                                <constraint firstAttribute="width" constant="15" id="a4C-ZF-PH8"/>
-                            </constraints>
-                            <state key="normal" backgroundImage="close"/>
-                            <connections>
-                                <action selector="didPressCloseButton:" destination="-1" eventType="touchUpInside" id="pFr-bI-gpB"/>
-                            </connections>
-                        </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQZ-NS-Rhe">
                             <rect key="frame" x="8" y="242" width="70" height="30"/>
                             <animations/>
@@ -180,6 +168,26 @@
                                 <action selector="didPressInnovationButton:" destination="-1" eventType="touchUpInside" id="dzw-yO-kPe"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b2D-O0-g78">
+                            <rect key="frame" x="207" y="-22" width="75" height="75"/>
+                            <animations/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="7wA-ns-5L6"/>
+                                <constraint firstAttribute="height" constant="15" id="9SS-QU-che"/>
+                                <constraint firstAttribute="width" constant="15" id="a4C-ZF-PH8"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="jPs-Ow-Wsh"/>
+                            </constraints>
+                            <state key="normal" image="close"/>
+                            <variation key="default">
+                                <mask key="constraints">
+                                    <exclude reference="9SS-QU-che"/>
+                                    <exclude reference="a4C-ZF-PH8"/>
+                                </mask>
+                            </variation>
+                            <connections>
+                                <action selector="didPressCloseButton:" destination="-1" eventType="touchUpInside" id="pFr-bI-gpB"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <animations/>
                     <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -191,6 +199,8 @@
                         <constraint firstAttribute="trailing" secondItem="tzH-xY-hx0" secondAttribute="trailing" id="Hwf-DU-qy0"/>
                         <constraint firstAttribute="trailing" secondItem="El8-Xk-viG" secondAttribute="trailing" id="Hxo-Wn-xUW"/>
                         <constraint firstItem="tER-bd-sdc" firstAttribute="top" secondItem="tzH-xY-hx0" secondAttribute="bottom" id="LuX-ht-JFX"/>
+                        <constraint firstItem="b2D-O0-g78" firstAttribute="top" secondItem="voO-2y-AMA" secondAttribute="top" constant="-22" id="N9o-B2-QST"/>
+                        <constraint firstAttribute="trailing" secondItem="b2D-O0-g78" secondAttribute="trailing" constant="-22" id="Q5V-Ny-mak"/>
                         <constraint firstItem="tzH-xY-hx0" firstAttribute="leading" secondItem="voO-2y-AMA" secondAttribute="leading" id="VGy-zy-hhU"/>
                         <constraint firstAttribute="trailing" secondItem="Gf3-n4-AtF" secondAttribute="trailing" constant="8" id="VpZ-k9-Mkz"/>
                         <constraint firstAttribute="height" constant="280" id="YoW-SM-Vti"/>
@@ -201,9 +211,15 @@
                         <constraint firstAttribute="width" constant="260" id="nN5-vn-7UU"/>
                         <constraint firstItem="b2D-O0-g78" firstAttribute="top" secondItem="voO-2y-AMA" secondAttribute="top" constant="8" id="pQq-kB-iCr"/>
                         <constraint firstItem="El8-Xk-viG" firstAttribute="leading" secondItem="voO-2y-AMA" secondAttribute="leading" id="tOu-9f-8RL"/>
-                        <constraint firstAttribute="trailing" secondItem="b2D-O0-g78" secondAttribute="trailing" constant="8" id="yVu-ah-iN3"/>
+                        <constraint firstAttribute="trailing" secondItem="b2D-O0-g78" secondAttribute="trailing" constant="20" symbolic="YES" id="yVu-ah-iN3"/>
                         <constraint firstItem="dUu-17-yF2" firstAttribute="top" secondItem="voO-2y-AMA" secondAttribute="top" constant="90" id="ysI-jw-1jg"/>
                     </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="pQq-kB-iCr"/>
+                            <exclude reference="yVu-ah-iN3"/>
+                        </mask>
+                    </variation>
                 </view>
             </subviews>
             <animations/>

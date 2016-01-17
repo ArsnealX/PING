@@ -47,8 +47,8 @@ class TaskDetailAPIOperation: NetworkOperation {
         var workState:String = ""
         switch workStateCode {
             case "1":workState = "正常"
-            case "2":workState = "玩命"
-            case "3":workState = "超神"
+            case "2":workState = "突破"
+            case "3":workState = "爆发"
             default:break
         }
         let workInnovateCode = resultJSON!["work_innovate"].stringValue

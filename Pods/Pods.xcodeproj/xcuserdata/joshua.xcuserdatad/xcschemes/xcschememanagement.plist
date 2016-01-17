@@ -7,47 +7,54 @@
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
+			<key>orderHint</key>
+			<integer>1</integer>
 		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
+			<key>orderHint</key>
+			<integer>2</integer>
 		</dict>
 		<key>Locksmith.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
+			<key>orderHint</key>
+			<integer>4</integer>
 		</dict>
 		<key>Refresher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
+			<key>orderHint</key>
+			<integer>5</integer>
 		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
-			<false/>
+			<true/>
+			<key>orderHint</key>
+			<integer>6</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0E4AD42D9F528330731FC6EC045B3B41</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>23EA52B1A1A338F1ED605B6A4AFD21F1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5BA352A245A179F52003122DC46DF261</key>
+		<key>55E65818857E9686710BF6B575CC8B57</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +64,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B1B2142C6EF725E090FD0C77DC0561E5</key>
+		<key>757707D158E691F97579C05A731255E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DC58DBF921B80900D5D53930DA6929E9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

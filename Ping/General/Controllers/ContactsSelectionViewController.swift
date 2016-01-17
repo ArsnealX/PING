@@ -152,6 +152,6 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
         }
         contactsSelectionTableView.tableFooterView = UIView()
         self.edgesForExtendedLayout = UIRectEdge.None
-                contactsSelectionTableView?.separatorInset = UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 10)
+        contactsSelectionTableView?.separatorInset = UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 10)
     }
 }

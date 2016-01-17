@@ -43,6 +43,9 @@ class reviewDetailViewController: UIViewController, APICallBackDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        reviewControlContainerView.hidden = true
+        mainScrollView.hidden = true
+        
         let operation = TaskDetailAPIOperation(withTaskId: taskId)
         operation.delegate = self
         mainQueue.addOperation(operation)
@@ -55,6 +58,10 @@ class reviewDetailViewController: UIViewController, APICallBackDelegate {
         self.configUI()
     }
 
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        NSNotificationCenter.defaultCenter().postNotificationName("detailDisappearing", object: nil)
+    }
     
     //MARK:DELEGATE AND DATASOURCE
     func networkOperationCompletionHandler(Operation: NetworkOperation) {
@@ -112,8 +119,6 @@ class reviewDetailViewController: UIViewController, APICallBackDelegate {
     func configUI() {
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.edgesForExtendedLayout = UIRectEdge.None
-        reviewControlContainerView.hidden = true
-        mainScrollView.hidden = true
         //setup button style
         buttonStyleConfig(passButton)
         buttonStyleConfig(notPassButton)

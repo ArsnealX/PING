@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImageUploadCallBackDelegate {
+class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImageUploadCallBackDelegate, SettingsViewControllerDelegate {
 
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -83,6 +83,10 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
         return
     }
     
+    func didChangeUsername(username: String) {
+        userInfoDataModel.userName = username
+    } 
+
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: nil)
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
@@ -139,6 +143,13 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
         goToMainVC()
     }
     
+    func setting() {
+        let settingsVC = SettingsViewController(withName: nameLabel.text!)
+        settingsVC.delegate = self
+        settingsVC.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(settingsVC, animated: true);
+    }
+    
     func goToMainVC() {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         appDelegate.window?.rootViewController?.modalTransitionStyle = .CrossDissolve
@@ -179,5 +190,10 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
         rightItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.clearColor()], forState: .Normal)
         rightItem.image = UIImage(named: "exit")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         self.navigationItem.rightBarButtonItem = rightItem
+        
+        let leftItem = UIBarButtonItem(title: "setting", style: UIBarButtonItemStyle.Plain, target: self, action: "setting")
+        leftItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.clearColor()], forState: .Normal)
+        leftItem.image = UIImage(named: "setting")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        self.navigationItem.leftBarButtonItem = leftItem
     }
 }

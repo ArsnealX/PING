@@ -126,6 +126,7 @@ class NetworkOperation : Operation {
         let para:[String : AnyObject] = ["check":check,
                                      "timestamp":timestamp,
                                            "cmd":cmd,
+                                       "version":"v1.0.1",
                                         "tokens":unwarpToken(),
                                           "para":apiParameters()]
         print("\n\n***Network Check String For CMD:" + cmd)

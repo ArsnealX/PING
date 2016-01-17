@@ -71,8 +71,8 @@ class MainPageViewController: UIViewController, UIPageViewControllerDataSource, 
         loadSwitchView()
         let pageViewContainerView = UIView(frame: CGRectMake(0, 40, SCREEN_WIDTH!, SCREEN_HEIGHT! - 40))
         self.view.addSubview(pageViewContainerView)
-        pageVC.delegate = self;
-        pageVC.dataSource = self;
+        pageVC.delegate = self
+        pageVC.dataSource = self
         pageVC.view.backgroundColor = UIColor.clearColor()
         let startViewControllers = [viewControllersArray[0]]
         self.addChildViewController(pageVC)
@@ -87,13 +87,13 @@ class MainPageViewController: UIViewController, UIPageViewControllerDataSource, 
         sender.selected = true;
         currentButtonIndex = sender.tag - 100;
         let startViewControllers = [viewControllersArray[currentButtonIndex]]
-        pageVC.setViewControllers(startViewControllers, direction: .Reverse, animated: true, completion: nil)
+        pageVC.setViewControllers(startViewControllers, direction: .Reverse , animated: false, completion: nil)
     }
     
     func loadSwitchView() {
-        let createdButton = UIButton(frame: CGRectMake(0 ,0 , 50 , 25))
-        let reviewButton = UIButton(frame: CGRectMake(0 ,0 , 50 , 25))
-        let ccButton = UIButton(frame: CGRectMake(0 ,0 , 50 , 25))
+        let createdButton = UIButton(frame: CGRectMake(0 ,0 , 50 , 30))
+        let reviewButton = UIButton(frame: CGRectMake(0 ,0 , 50 , 30))
+        let ccButton = UIButton(frame: CGRectMake(0 ,0 , 50 , 30))
         let fontSize:CGFloat = 14
         createdButton.setTitle("创建", forState: .Normal)
         createdButton.titleLabel?.font = UIFont.systemFontOfSize(fontSize)
@@ -103,7 +103,7 @@ class MainPageViewController: UIViewController, UIPageViewControllerDataSource, 
         createdButton.setBackgroundImage(JXTools.getImageWithColor(UIColor.clearColor(), size: CGSizeMake(50, 20)), forState: .Normal)
         createdButton.center = CGPointMake(SCREEN_WIDTH! * 0.15, 20)
         createdButton.tag = 100;
-        createdButton.layer.cornerRadius = 5
+        createdButton.layer.cornerRadius = 6
         createdButton.layer.masksToBounds = true
         createdButton.addTarget(self, action: "switchButton:", forControlEvents: UIControlEvents.TouchUpInside)
         
@@ -116,7 +116,7 @@ class MainPageViewController: UIViewController, UIPageViewControllerDataSource, 
         reviewButton.setBackgroundImage(JXTools.getImageWithColor(UIColor.clearColor(), size: CGSizeMake(50, 20)), forState: .Normal)
         reviewButton.center = CGPointMake(SCREEN_WIDTH! / 2, 20)
         reviewButton.tag = 101
-        reviewButton.layer.cornerRadius = 5
+        reviewButton.layer.cornerRadius = 6
         reviewButton.layer.masksToBounds = true
         reviewButton.addTarget(self, action: "switchButton:", forControlEvents: UIControlEvents.TouchUpInside)
         
@@ -130,7 +130,7 @@ class MainPageViewController: UIViewController, UIPageViewControllerDataSource, 
         ccButton.setBackgroundImage(JXTools.getImageWithColor(UIColor.clearColor(), size: CGSizeMake(50, 20)), forState: .Normal)
         ccButton.center = CGPointMake(SCREEN_WIDTH! * 0.85, 20)
         ccButton.tag = 102;
-        ccButton.layer.cornerRadius = 5
+        ccButton.layer.cornerRadius = 6
         ccButton.layer.masksToBounds = true
         ccButton.addTarget(self, action: "switchButton:", forControlEvents: UIControlEvents.TouchUpInside)
         

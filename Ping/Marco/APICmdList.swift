@@ -11,6 +11,7 @@ import Foundation
 let CMD_CHECK_ACCOUNT_STATUS = "account_is_reg"
 let CMD_USER_LOGIN = "user_login"
 let CMD_USER_REGISTER = "user_reg"
+let CMD_GET_TEAM_NAME = "get_team_name"
 let CMD_QUERY_TEAM_MEMBER = "query_team_member"
 let CMD_FETCH_TASK_LIST = "task_list"
 let CMD_FETCH_TASK_DETAIL = "task_detail"

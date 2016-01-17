@@ -78,20 +78,21 @@ class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollVie
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         //复制粘贴时隐藏占位文字
-        if (text as NSString).length > 0 {
+        if textView.text.characters.count > 0 {
             textViewPlaceholderLabel.hidden = true
         }
         //----textView字数限制（支持粘帖）
         //将textView已有字符与新增字符拼接成新字符串
         let newString = (textView.text as NSString).stringByReplacingCharactersInRange(range, withString: text)
+        
         //计算新字符串长度与最大字符数限制的差值
-        let res = maxWords - (newString as NSString).length
+        let res = maxWords - newString.characters.count
         if res >= 0 {
             return true
         }else {
             //超出字数限制
             //计算新字符串从开始到达到限制的范围时的index
-            let endIndex: String.Index = text.startIndex.advancedBy((text as NSString).length + res)
+            let endIndex: String.Index = text.startIndex.advancedBy(text.characters.count + res)
             //按照范围截取新字符串
             let newReplacementText = text.substringToIndex(endIndex)
             //将新截取字符串添加到textView中
@@ -105,13 +106,18 @@ class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollVie
     
     func textViewDidChange(textView: UITextView) {
         //暴力添加textView的placeholder
-        if (textView.text as NSString).length == 0 {
+        if textView.text.characters.count == 0 {
             textViewPlaceholderLabel.hidden = false
         }else {
             textViewPlaceholderLabel.hidden = true
         }
         //剩余字数统计
-        let leftWords = maxWords - (textView.text as NSString).length
+        
+        if textView.text.characters.count > maxWords {
+            JXTools.shakeAnimationForView(textView as UIView)
+            textView.text = textView.text.substringToIndex(textView.text.startIndex.advancedBy(maxWords))
+        }
+        let leftWords = maxWords - textView.text.characters.count
         wordsCountLabel.text = String(leftWords)
     }
     
@@ -132,6 +138,7 @@ class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollVie
     }
     
     func didCompleteRating(state: String, innovation: String) {
+        
         let createTaskOperation = CreateTaskAPIOperation(userAuditId: reviewerIDString, taskCopyTo: ccNamesStringArray, taskContent: contentTextView.text, workState: state, workInnovate: innovation)
         createTaskOperation.delegate = self
         mainQueue.addOperation(createTaskOperation)

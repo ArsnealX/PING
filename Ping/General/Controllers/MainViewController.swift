@@ -49,12 +49,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         tasksTableView.dataSource = self
         tasksTableView.delegate = self
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        configUI()
-        showNetworkStatus()
         let pacmanAnimator = PacmanAnimator(frame: CGRectMake(0, 0, SCREEN_WIDTH!, 80))
         tasksTableView.addPullToRefreshWithAction ({
             let fetchTaskListOperation = TaskListAPIOperation(withTaskRoleState: self.taskType, startIndex: "0", endIndex: "99");
@@ -62,7 +56,21 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.mainQueue.addOperation(fetchTaskListOperation)
             
             }, withAnimator: pacmanAnimator)
-        tasksTableView.startPullToRefresh()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("refreshData"), name: "detailDisappearing", object: nil)
+
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        configUI()
+        reloadTableView()
+        showNetworkStatus()
+    }
+    
+    func refreshData() {
+        let fetchTaskListOperation = TaskListAPIOperation(withTaskRoleState: self.taskType, startIndex: "0", endIndex: "99");
+        fetchTaskListOperation.delegate = self
+        self.mainQueue.addOperation(fetchTaskListOperation)
     }
     
     //MARK:DELEGATE AND DATASOURCE
@@ -165,10 +173,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func configUI() {
         self.navigationItem.title = "PING"
         self.edgesForExtendedLayout = UIRectEdge.None
+        self.automaticallyAdjustsScrollViewInsets = false
         tasksTableView.registerNib(UINib(nibName: "tasksTableViewCell", bundle: nil), forCellReuseIdentifier: "tasksTableViewCell")
         tasksTableView.separatorInset = UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 10)
         //hide rest separate lines
-        tasksTableView.tableFooterView = UIView()
+        tasksTableView.tableFooterView = UIView(frame: CGRectMake(0,0,SCREEN_WIDTH!,76 + 76))
         showEmptyStatusView()
     }
     
@@ -185,6 +194,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         emptyImageView.kf_setImageWithURL(NSURL(), placeholderImage: UIImage(named: "emtpyStatus"))
         emptyImageView.center = CGPointMake(SCREEN_WIDTH! / 2, SCREEN_HEIGHT! / 2 - 85);
         emptyImageView.hidden = true
+        
         self.view.addSubview(emptyImageView)
     }
     

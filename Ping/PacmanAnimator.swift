@@ -35,23 +35,27 @@ class PacmanAnimator: UIView, PullToRefreshViewDelegate {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.backgroundColor = APP_GREY_COLCR
+        self.backgroundColor = UIColor.clearColor()
         
         layerLoader.lineWidth = 8
         layerLoader.strokeColor = APP_THEME_COLOR.CGColor
         layerLoader.strokeEnd = 0
-        layerLoader.fillColor = UIColor.clearColor().CGColor
+        layerLoader.fillColor = APP_GREY_COLCR.CGColor
         
         layerSeparator.lineWidth = 8
         layerSeparator.strokeColor = UIColor(red: 0.7, green: 0.7, blue: 0.7, alpha: 1).CGColor
-        layerSeparator.fillColor = UIColor.clearColor().CGColor
+        layerSeparator.fillColor = APP_GREY_COLCR.CGColor
         
-        titleLabel.frame = CGRectMake(0, 0, 200, 20)
+        titleLabel.frame = CGRectMake(0, 0, 150, 20)
         titleLabel.textColor = UIColor(red:0.59, green:0.59, blue:0.59, alpha:1)
         titleLabel.font = UIFont.systemFontOfSize(14)
-        titleLabel.center = CGPointMake(frame.size.width / 2, frame.size.height / 2)
         titleLabel.textAlignment = .Center
-        self.addSubview(titleLabel)
+        
+        let titleLabelContainerView = UIView(frame: CGRectMake(0, 0, 150, 20))
+        titleLabelContainerView.backgroundColor = UIColor.init(colorLiteralRed: 0.937, green: 0.937, blue: 0.937, alpha: 1)
+        titleLabelContainerView.center = CGPointMake(frame.size.width / 2, frame.size.height / 2)
+        titleLabelContainerView.addSubview(titleLabel)
+        self.addSubview(titleLabelContainerView)
     }
 
     required init(coder aDecoder: NSCoder) {
@@ -68,9 +72,9 @@ class PacmanAnimator: UIView, PullToRefreshViewDelegate {
         case .Loading:
             self.titleLabel.text = "加载中"
         case .PullToRefresh:
-            self.titleLabel.text = "下拉进行刷新"
+            self.titleLabel.text = "下拉可刷新"
         case .ReleaseToRefresh:
-            self.titleLabel.text = ""
+            self.titleLabel.text = "松开以刷新"
         }
     }
     
@@ -105,7 +109,7 @@ class PacmanAnimator: UIView, PullToRefreshViewDelegate {
             if layerLoader.superlayer == nil {
                 superview.layer.addSublayer(layerLoader)
             }
-            let center = CGPoint(x: 30, y: superview.frame.size.height / 2)
+            let center = CGPoint(x: 33, y: superview.frame.size.height / 2)
             let bezierPathLoader = UIBezierPath(arcCenter: center, radius: CGFloat(10), startAngle: CGFloat(0), endAngle: CGFloat(2 * M_PI), clockwise: true)
             let bezierPathSeparator = UIBezierPath()
             bezierPathSeparator.moveToPoint(CGPointMake(0, superview.frame.height - 1))

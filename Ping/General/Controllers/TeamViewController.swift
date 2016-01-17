@@ -40,18 +40,24 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
         teamRankingTableView?.delegate = self
 //        teamRankingTableView?.separatorStyle = .None
         teamRankingTableView.separatorInset = UIEdgeInsets(top: 0,left: 65,bottom: 0,right: 0)
-        let pacmanAnimator = PacmanAnimator(frame: CGRectMake(0, 0, SCREEN_WIDTH!, 80))
-        teamRankingTableView.addPullToRefreshWithAction ({
-            let fetchTeamRankingOperation = TeamRankAPIOperation()
-            fetchTeamRankingOperation.delegate = self
-            self.mainQueue.addOperation(fetchTeamRankingOperation)
-        }, withAnimator: pacmanAnimator)
-        teamRankingTableView.startPullToRefresh()
+        
+        let getTeamNameOperation = GetTeamNameAPIOperation();
+        getTeamNameOperation.delegate = self;
+        self.mainQueue.addOperation(getTeamNameOperation)
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.configUI()
+        let pacmanAnimator = PacmanAnimator(frame: CGRectMake(0, 0, SCREEN_WIDTH!, 80))
+        self.verticalGreenLine.hidden = true
+        teamRankingTableView.addPullToRefreshWithAction ({
+            let fetchTeamRankingOperation = TeamRankAPIOperation()
+            fetchTeamRankingOperation.delegate = self
+            self.mainQueue.addOperation(fetchTeamRankingOperation)
+            }, withAnimator: pacmanAnimator)
+        teamRankingTableView.startPullToRefresh()
     }
     
     //MARK:DATASOURCE AND DELEGATE
@@ -62,6 +68,19 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
             teamRankingArray = teamRankingArray.sort{Int($0.yearPoint) > Int($1.yearPoint)}
             teamRankingTableView.stopPullToRefresh()
             reloadTableView()
+        }
+        
+        if Operation.isKindOfClass(GetTeamNameAPIOperation) {
+            let op = Operation as! GetTeamNameAPIOperation
+            if  let title = APP_DEFULT_STORE.objectForKey(kTeamName) {
+                if op.getTeamName() != title as? String {
+                    self.navigationItem.title = op.getTeamName()
+                    APP_DEFULT_STORE.setObject(op.getTeamName(), forKey: kTeamName)
+                }
+            }else  {
+                self.navigationItem.title = op.getTeamName()
+                APP_DEFULT_STORE.setObject(op.getTeamName(), forKey: kTeamName)
+            }
         }
     }
     
@@ -112,7 +131,11 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     func configUI() {
-        self.navigationItem.title = "客聚科技"
+        if  let title = APP_DEFULT_STORE.objectForKey(kTeamName) {
+            self.navigationItem.title = title as? String
+        }else {
+            self.navigationItem.title = "PING"
+        }
         self.edgesForExtendedLayout = UIRectEdge.None
         
         //v2.0 function
@@ -120,8 +143,9 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
 //        rightItem.image = UIImage(named: "add")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
 //        self.navigationItem.rightBarButtonItem = rightItem
         self.introductionView.hidden = true
-        self.verticalGreenLine.hidden = true
-        teamRankingTableView.tableFooterView = UIView()
+        let footView = UIView();
+        footView.backgroundColor = UIColor.clearColor()
+        teamRankingTableView.tableFooterView = footView
     }
     
     func reloadTableView() {
