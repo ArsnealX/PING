@@ -1,5 +1,8 @@
 #What
-This is a Swift 2.x Project I'm still working on.
+This is a Swift 2.x Project currrently developing by [MVCZZZ](https://github.com/MVCZZZ).
+
+#Requirements
+CocoaPods is required.
 
 #More
-Sensitive information have been removed, like API Infomation.(Deleted v0.5 Repository)
+Sensitive information have been removed, like API Infomation.
