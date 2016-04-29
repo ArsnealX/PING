@@ -129,7 +129,11 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         return 76
     }
-    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let storyBoard = UIStoryboard(name: "PTWorkDetailController",bundle: nil)
+        let newVC = storyBoard.instantiateViewControllerWithIdentifier("PTWorkDetailController") as! PTWorkDetailController
+        self.navigationController?.pushViewController(newVC, animated: true)
+    }
     func configUI() {
         if  let title = APP_DEFULT_STORE.objectForKey(kTeamName) {
             self.navigationItem.title = title as? String

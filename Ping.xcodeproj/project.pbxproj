@@ -66,6 +66,8 @@
 		42E28F561C3558C800333180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E28F551C3558C800333180 /* Assets.xcassets */; };
 		42E28F591C355C9D00333180 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E28F571C355C9D00333180 /* SettingsViewController.swift */; };
 		42E28F5A1C355C9D00333180 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E28F581C355C9D00333180 /* SettingsViewController.xib */; };
+		42E84CFB1CD353B9005A79F8 /* PTWorkDetailController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E84CFA1CD353B9005A79F8 /* PTWorkDetailController.storyboard */; };
+		42E84D021CD35406005A79F8 /* PTWorkDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E84D011CD35406005A79F8 /* PTWorkDetailController.swift */; };
 		42EAF4DA1C1DD603001D6597 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EAF4D91C1DD603001D6597 /* MainPageViewController.swift */; };
 		42EE17BE1C4A302800BE6D76 /* GetTeamNameAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE17BD1C4A302800BE6D76 /* GetTeamNameAPIOperation.swift */; };
 		42EF11C21BAAACFE00D6504A /* SSASwiftReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF11C11BAAACFE00D6504A /* SSASwiftReachability.swift */; };
@@ -140,6 +142,8 @@
 		42E28F551C3558C800333180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42E28F571C355C9D00333180 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		42E28F581C355C9D00333180 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		42E84CFA1CD353B9005A79F8 /* PTWorkDetailController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PTWorkDetailController.storyboard; sourceTree = "<group>"; };
+		42E84D011CD35406005A79F8 /* PTWorkDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTWorkDetailController.swift; sourceTree = "<group>"; };
 		42EAF4D91C1DD603001D6597 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		42EE17BD1C4A302800BE6D76 /* GetTeamNameAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTeamNameAPIOperation.swift; sourceTree = "<group>"; };
 		42EF11C11BAAACFE00D6504A /* SSASwiftReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSASwiftReachability.swift; sourceTree = "<group>"; };
@@ -217,6 +221,8 @@
 				422A343A1B786128003AB08E /* AvatarImagePickerViewController.swift */,
 				42E28F571C355C9D00333180 /* SettingsViewController.swift */,
 				42E28F581C355C9D00333180 /* SettingsViewController.xib */,
+				42E84D011CD35406005A79F8 /* PTWorkDetailController.swift */,
+				42E84CFA1CD353B9005A79F8 /* PTWorkDetailController.storyboard */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -472,6 +478,7 @@
 				426225B71B745F5A00DF1819 /* TeamViewController.xib in Resources */,
 				426225BB1B74697500DF1819 /* teamRankingTableViewCell.xib in Resources */,
 				42D80B901B6B742800898074 /* Launch Screen.xib in Resources */,
+				42E84CFB1CD353B9005A79F8 /* PTWorkDetailController.storyboard in Resources */,
 				42E28F5A1C355C9D00333180 /* SettingsViewController.xib in Resources */,
 				42C7B1011B82D52B00AF72F4 /* NotoSansHans-Regular.otf in Resources */,
 				429A5D781B6F729500384989 /* RatingViewController.xib in Resources */,
@@ -557,6 +564,7 @@
 				4289847B1BF5D48D0069679B /* UserInfoAPIOperation.swift in Sources */,
 				42801B351B8B0BC9008D4AC9 /* AuditTaskAPIOperation.swift in Sources */,
 				42EF11C51BAAC19600D6504A /* SwiftNotice.swift in Sources */,
+				42E84D021CD35406005A79F8 /* PTWorkDetailController.swift in Sources */,
 				428984751BF5C7340069679B /* TeamRankingModel.swift in Sources */,
 				426225B61B745F5A00DF1819 /* TeamViewController.swift in Sources */,
 				424980621B6B53EA00454858 /* ContactsSelectionViewController.swift in Sources */,
