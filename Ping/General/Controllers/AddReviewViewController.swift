@@ -55,8 +55,8 @@ class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let reviewerNameLabelTapGestrueRecognizer = UITapGestureRecognizer(target: self, action: "tapReviewerNameLabel")
-        let ccNameLabelTapGestrueRecognizer = UITapGestureRecognizer(target: self, action: "tapCCNameLabel")
+        let reviewerNameLabelTapGestrueRecognizer = UITapGestureRecognizer(target: self, action: #selector(addReviewViewController.tapReviewerNameLabel))
+        let ccNameLabelTapGestrueRecognizer = UITapGestureRecognizer(target: self, action: #selector(addReviewViewController.tapCCNameLabel))
         reviewerNameLabelContainer.addGestureRecognizer(reviewerNameLabelTapGestrueRecognizer)
         ccNameLabelContainer.addGestureRecognizer(ccNameLabelTapGestrueRecognizer)
         contentTextView?.delegate = self
@@ -198,11 +198,11 @@ class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollVie
         wordsCountLabel.layer.masksToBounds = true
         wordsCountLabel.layer.cornerRadius = 18
         //add send button to navigation bar
-        let rightItem = UIBarButtonItem(title: "send", style: UIBarButtonItemStyle.Plain, target: self, action: "sendReview")
+        let rightItem = UIBarButtonItem(title: "send", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(addReviewViewController.sendReview))
         rightItem.image = UIImage(named: "send")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         self.navigationItem.rightBarButtonItem = rightItem
         //add cancal button to navigation bar
-        let leftItem = UIBarButtonItem(title: "close", style: UIBarButtonItemStyle.Plain, target: self, action: "closeReview")
+        let leftItem = UIBarButtonItem(title: "close", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(addReviewViewController.closeReview))
         leftItem.image = UIImage(named: "close")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         self.navigationItem.leftBarButtonItem = leftItem
         
@@ -219,8 +219,8 @@ class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollVie
     }
     
     func setupNotifications() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWasShown:"), name: UIKeyboardDidShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillBeHidden:"), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(addReviewViewController.keyboardWasShown(_:)), name: UIKeyboardDidShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(addReviewViewController.keyboardWillBeHidden(_:)), name: UIKeyboardWillHideNotification, object: nil)
     }
     
     func removeNotifications() {

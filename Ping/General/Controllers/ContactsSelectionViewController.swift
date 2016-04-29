@@ -144,7 +144,7 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
     func configUI() {
         if !ifSingleSelection {
             self.title = "抄送人"
-            let rightItem = UIBarButtonItem(title: "confirm", style: UIBarButtonItemStyle.Plain, target: self, action: "confirmNames")
+            let rightItem = UIBarButtonItem(title: "confirm", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(contactsSelectionViewController.confirmNames))
             rightItem.image = UIImage(named: "check")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
             self.navigationItem.rightBarButtonItem = rightItem
         }else {

@@ -80,7 +80,7 @@ class SettingsViewController: UIViewController, APICallBackDelegate{
         self.title = "设置"
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.edgesForExtendedLayout = UIRectEdge.None
-        let rightItem = UIBarButtonItem(title: "confirm", style: UIBarButtonItemStyle.Plain, target: self, action: "confirm")
+        let rightItem = UIBarButtonItem(title: "confirm", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(SettingsViewController.confirm))
         rightItem.image = UIImage(named: "check")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         self.navigationItem.rightBarButtonItem = rightItem
     }

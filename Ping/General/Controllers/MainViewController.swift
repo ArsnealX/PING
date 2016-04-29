@@ -26,7 +26,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         taskListArray = [TaskDetailModel]()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reachabilityStatusChanged:", name: reachabilityDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.reachabilityStatusChanged(_:)), name: reachabilityDidChangeNotification, object: nil)
         isNetworkReachable = true
     }
     
@@ -56,7 +56,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.mainQueue.addOperation(fetchTaskListOperation)
             
             }, withAnimator: pacmanAnimator)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("refreshData"), name: "detailDisappearing", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.refreshData), name: "detailDisappearing", object: nil)
 
     }
     
@@ -158,7 +158,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func showNetworkErrorIndicator() {
         let networkErrorButton = UIButton(frame: CGRectMake(0, 0, 25, 25))
         networkErrorButton.setImage(UIImage(named: "disconnect")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal), forState:.Normal)
-        networkErrorButton.addTarget(self, action: "networkReachabilityTip", forControlEvents: UIControlEvents.TouchUpInside)
+        networkErrorButton.addTarget(self, action: #selector(MainViewController.networkReachabilityTip), forControlEvents: UIControlEvents.TouchUpInside)
         let leftItem = UIBarButtonItem(customView: networkErrorButton)
         self.navigationItem.leftBarButtonItem = leftItem
         UIView.animateKeyframesWithDuration(0.5, delay: 0.0, options: [UIViewKeyframeAnimationOptions.AllowUserInteraction, UIViewKeyframeAnimationOptions.Autoreverse, UIViewKeyframeAnimationOptions.Repeat] , animations: {

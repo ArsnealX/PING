@@ -41,7 +41,7 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let avatarImageViewTapRecognizer = UITapGestureRecognizer(target: self, action: "tapAvatarImageView")
+        let avatarImageViewTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(UserViewController.tapAvatarImageView))
         avatarImage.addGestureRecognizer(avatarImageViewTapRecognizer)
         self.refetchUserInfo()
     }
@@ -186,12 +186,12 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
         self.loadData()
         avatarImage.layer.masksToBounds = true
         avatarImage.layer.cornerRadius = 15
-        let rightItem = UIBarButtonItem(title: "logout", style: UIBarButtonItemStyle.Plain, target: self, action: "logout")
+        let rightItem = UIBarButtonItem(title: "logout", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(UserViewController.logout))
         rightItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.clearColor()], forState: .Normal)
         rightItem.image = UIImage(named: "exit")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         self.navigationItem.rightBarButtonItem = rightItem
         
-        let leftItem = UIBarButtonItem(title: "setting", style: UIBarButtonItemStyle.Plain, target: self, action: "setting")
+        let leftItem = UIBarButtonItem(title: "setting", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(UserViewController.setting))
         leftItem.setTitleTextAttributes([NSForegroundColorAttributeName:UIColor.clearColor()], forState: .Normal)
         leftItem.image = UIImage(named: "setting")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         self.navigationItem.leftBarButtonItem = leftItem

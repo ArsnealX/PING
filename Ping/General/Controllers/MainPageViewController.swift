@@ -105,7 +105,7 @@ class MainPageViewController: UIViewController, UIPageViewControllerDataSource, 
         createdButton.tag = 100;
         createdButton.layer.cornerRadius = 6
         createdButton.layer.masksToBounds = true
-        createdButton.addTarget(self, action: "switchButton:", forControlEvents: UIControlEvents.TouchUpInside)
+        createdButton.addTarget(self, action: #selector(MainPageViewController.switchButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         reviewButton.setTitle("审核", forState: .Normal)
         reviewButton.titleLabel?.font = UIFont.systemFontOfSize(fontSize)
@@ -118,7 +118,7 @@ class MainPageViewController: UIViewController, UIPageViewControllerDataSource, 
         reviewButton.tag = 101
         reviewButton.layer.cornerRadius = 6
         reviewButton.layer.masksToBounds = true
-        reviewButton.addTarget(self, action: "switchButton:", forControlEvents: UIControlEvents.TouchUpInside)
+        reviewButton.addTarget(self, action: #selector(MainPageViewController.switchButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         
         ccButton.setTitle("抄收", forState: .Normal)
@@ -132,8 +132,7 @@ class MainPageViewController: UIViewController, UIPageViewControllerDataSource, 
         ccButton.tag = 102;
         ccButton.layer.cornerRadius = 6
         ccButton.layer.masksToBounds = true
-        ccButton.addTarget(self, action: "switchButton:", forControlEvents: UIControlEvents.TouchUpInside)
-        
+        ccButton.addTarget(self, action: #selector(MainPageViewController.switchButton(_:)) , forControlEvents: UIControlEvents.TouchUpInside)
         let containerView = UIView(frame: CGRectMake(0, 0, SCREEN_WIDTH!, 40))
         containerView.backgroundColor = UIColor(red:0.93, green:0.93, blue:0.93, alpha:1)
         containerView.addSubview(createdButton)
@@ -147,10 +146,11 @@ class MainPageViewController: UIViewController, UIPageViewControllerDataSource, 
     }
     
     func configUI() {
+        self.navigationItem.title = "PING"
         self.edgesForExtendedLayout = .None
         self.automaticallyAdjustsScrollViewInsets = false
         //add write review button
-        let rightItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: "addReview")
+        let rightItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(MainPageViewController.addReview))
         rightItem.image = UIImage(named: "add")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         self.navigationItem.rightBarButtonItem = rightItem
         self.view.backgroundColor = APP_GREY_COLCR
