@@ -1,6 +1,6 @@
 //
 //  TeamViewController.swift
-//  
+//
 //
 //  Created by Joshua Xiong on 8/7/15.
 //
@@ -32,18 +32,19 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         teamRankingTableView?.registerNib(UINib(nibName: "teamRankingTableViewCell", bundle: nil), forCellReuseIdentifier: "teamRankingTableViewCell")
         teamRankingTableView?.dataSource = self
         teamRankingTableView?.delegate = self
-//        teamRankingTableView?.separatorStyle = .None
+        //        teamRankingTableView?.separatorStyle = .None
         teamRankingTableView.separatorInset = UIEdgeInsets(top: 0,left: 65,bottom: 0,right: 0)
         
         let getTeamNameOperation = GetTeamNameAPIOperation();
         getTeamNameOperation.delegate = self;
         self.mainQueue.addOperation(getTeamNameOperation)
+        
         
     }
     
@@ -58,6 +59,12 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.mainQueue.addOperation(fetchTeamRankingOperation)
             }, withAnimator: pacmanAnimator)
         teamRankingTableView.startPullToRefresh()
+        let  label = UILabel()
+        label.frame = CGRectMake(0, 0, PTScreenWidth, 30)
+        label.text = "工作分每周归零"
+        label.textAlignment = NSTextAlignment.Center
+        label.textColor = UIColor.grayColor()
+        teamRankingTableView?.tableFooterView = label
     }
     
     //MARK:DATASOURCE AND DELEGATE
@@ -97,7 +104,7 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return teamRankingArray.count
     }
-        
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellId = "teamRankingTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellId) as? teamRankingTableViewCell
@@ -114,14 +121,14 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
             cell?.rankingLabel.backgroundColor = rankingColor
             cell?.rankingLabel.textColor = UIColor(red:0, green:0.69, blue:0.45, alpha:1)
         }
-
+        
         cell?.setContent(teamRankingArray[indexPath.row])
         cell?.selectionStyle = UITableViewCellSelectionStyle.None
         cell?.rankingLabel.text = String(indexPath.row + 1)
         
         
         //demo code
-//        DemoCode.TeamViewControllerDemoCode(cell, indexPath: indexPath)
+        //        DemoCode.TeamViewControllerDemoCode(cell, indexPath: indexPath)
         
         return cell!
     }
@@ -130,9 +137,9 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return 76
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let storyBoard = UIStoryboard(name: "PTWorkDetailController",bundle: nil)
-        let newVC = storyBoard.instantiateViewControllerWithIdentifier("PTWorkDetailController") as! PTWorkDetailController
-        self.navigationController?.pushViewController(newVC, animated: true)
+//        let storyBoard = UIStoryboard(name: "PTWorkDetailController",bundle: nil)
+//        let newVC = storyBoard.instantiateViewControllerWithIdentifier("PTWorkDetailController") as! PTWorkDetailController
+//        self.navigationController?.pushViewController(newVC, animated: true)
     }
     func configUI() {
         if  let title = APP_DEFULT_STORE.objectForKey(kTeamName) {
@@ -143,9 +150,9 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.edgesForExtendedLayout = UIRectEdge.None
         
         //v2.0 function
-//        let rightItem = UIBarButtonItem(title: "add", style: UIBarButtonItemStyle.Plain, target: self, action: "addReview")
-//        rightItem.image = UIImage(named: "add")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-//        self.navigationItem.rightBarButtonItem = rightItem
+        //        let rightItem = UIBarButtonItem(title: "add", style: UIBarButtonItemStyle.Plain, target: self, action: "addReview")
+        //        rightItem.image = UIImage(named: "add")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+        //        self.navigationItem.rightBarButtonItem = rightItem
         self.introductionView.hidden = true
         let footView = UIView();
         footView.backgroundColor = UIColor.clearColor()

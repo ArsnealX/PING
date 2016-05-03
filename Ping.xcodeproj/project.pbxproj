@@ -14,6 +14,13 @@
 		422A343E1B787AEC003AB08E /* ReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A343C1B787AEC003AB08E /* ReviewDetailViewController.swift */; };
 		422A343F1B787AEC003AB08E /* ReviewDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 422A343D1B787AEC003AB08E /* ReviewDetailViewController.xib */; };
 		422CB7851C26D33900011A91 /* PacmanAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422CB7841C26D33900011A91 /* PacmanAnimator.swift */; };
+		423291891CD87742002C83C0 /* PTWorkcontentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291831CD87742002C83C0 /* PTWorkcontentController.swift */; };
+		4232918A1CD87742002C83C0 /* PTWorkDetailController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 423291841CD87742002C83C0 /* PTWorkDetailController.storyboard */; };
+		4232918B1CD87742002C83C0 /* PTWorkDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291851CD87742002C83C0 /* PTWorkDetailController.swift */; };
+		4232918C1CD87742002C83C0 /* PTWorkHardController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291861CD87742002C83C0 /* PTWorkHardController.swift */; };
+		4232918D1CD87742002C83C0 /* PTWorkNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291871CD87742002C83C0 /* PTWorkNameViewController.swift */; };
+		4232918E1CD87742002C83C0 /* PTWorkStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291881CD87742002C83C0 /* PTWorkStatusController.swift */; };
+		423291901CD877CC002C83C0 /* PTMessageDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4232918F1CD877CC002C83C0 /* PTMessageDefine.swift */; };
 		42423C9F1BAFDEEE00166839 /* PTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42423C9E1BAFDEEE00166839 /* PTools.swift */; };
 		42432B7A1BB0F2D2005F0B85 /* PNErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42432B791BB0F2D2005F0B85 /* PNErrorHandling.swift */; };
 		4245681E1B799DD6005E5AAD /* LoginAndRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245681C1B799DD6005E5AAD /* LoginAndRegisterViewController.swift */; };
@@ -66,8 +73,6 @@
 		42E28F561C3558C800333180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E28F551C3558C800333180 /* Assets.xcassets */; };
 		42E28F591C355C9D00333180 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E28F571C355C9D00333180 /* SettingsViewController.swift */; };
 		42E28F5A1C355C9D00333180 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E28F581C355C9D00333180 /* SettingsViewController.xib */; };
-		42E84CFB1CD353B9005A79F8 /* PTWorkDetailController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E84CFA1CD353B9005A79F8 /* PTWorkDetailController.storyboard */; };
-		42E84D021CD35406005A79F8 /* PTWorkDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E84D011CD35406005A79F8 /* PTWorkDetailController.swift */; };
 		42EAF4DA1C1DD603001D6597 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EAF4D91C1DD603001D6597 /* MainPageViewController.swift */; };
 		42EE17BE1C4A302800BE6D76 /* GetTeamNameAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE17BD1C4A302800BE6D76 /* GetTeamNameAPIOperation.swift */; };
 		42EF11C21BAAACFE00D6504A /* SSASwiftReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF11C11BAAACFE00D6504A /* SSASwiftReachability.swift */; };
@@ -89,6 +94,13 @@
 		422A343C1B787AEC003AB08E /* ReviewDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewDetailViewController.swift; sourceTree = "<group>"; };
 		422A343D1B787AEC003AB08E /* ReviewDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewDetailViewController.xib; sourceTree = "<group>"; };
 		422CB7841C26D33900011A91 /* PacmanAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacmanAnimator.swift; sourceTree = "<group>"; };
+		423291831CD87742002C83C0 /* PTWorkcontentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTWorkcontentController.swift; sourceTree = "<group>"; };
+		423291841CD87742002C83C0 /* PTWorkDetailController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PTWorkDetailController.storyboard; sourceTree = "<group>"; };
+		423291851CD87742002C83C0 /* PTWorkDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTWorkDetailController.swift; sourceTree = "<group>"; };
+		423291861CD87742002C83C0 /* PTWorkHardController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTWorkHardController.swift; sourceTree = "<group>"; };
+		423291871CD87742002C83C0 /* PTWorkNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTWorkNameViewController.swift; sourceTree = "<group>"; };
+		423291881CD87742002C83C0 /* PTWorkStatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTWorkStatusController.swift; sourceTree = "<group>"; };
+		4232918F1CD877CC002C83C0 /* PTMessageDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTMessageDefine.swift; sourceTree = "<group>"; };
 		42423C9E1BAFDEEE00166839 /* PTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTools.swift; sourceTree = "<group>"; };
 		42432B791BB0F2D2005F0B85 /* PNErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNErrorHandling.swift; sourceTree = "<group>"; };
 		4245681C1B799DD6005E5AAD /* LoginAndRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAndRegisterViewController.swift; sourceTree = "<group>"; };
@@ -142,8 +154,6 @@
 		42E28F551C3558C800333180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42E28F571C355C9D00333180 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		42E28F581C355C9D00333180 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
-		42E84CFA1CD353B9005A79F8 /* PTWorkDetailController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PTWorkDetailController.storyboard; sourceTree = "<group>"; };
-		42E84D011CD35406005A79F8 /* PTWorkDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTWorkDetailController.swift; sourceTree = "<group>"; };
 		42EAF4D91C1DD603001D6597 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		42EE17BD1C4A302800BE6D76 /* GetTeamNameAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTeamNameAPIOperation.swift; sourceTree = "<group>"; };
 		42EF11C11BAAACFE00D6504A /* SSASwiftReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSASwiftReachability.swift; sourceTree = "<group>"; };
@@ -189,6 +199,19 @@
 			name = Animator;
 			sourceTree = "<group>";
 		};
+		423291821CD87742002C83C0 /* 工作属性 */ = {
+			isa = PBXGroup;
+			children = (
+				423291831CD87742002C83C0 /* PTWorkcontentController.swift */,
+				423291841CD87742002C83C0 /* PTWorkDetailController.storyboard */,
+				423291851CD87742002C83C0 /* PTWorkDetailController.swift */,
+				423291861CD87742002C83C0 /* PTWorkHardController.swift */,
+				423291871CD87742002C83C0 /* PTWorkNameViewController.swift */,
+				423291881CD87742002C83C0 /* PTWorkStatusController.swift */,
+			);
+			path = "工作属性";
+			sourceTree = "<group>";
+		};
 		4249804C1B6B53EA00454858 /* General */ = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +224,7 @@
 		4249804D1B6B53EA00454858 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				423291821CD87742002C83C0 /* 工作属性 */,
 				4245681C1B799DD6005E5AAD /* LoginAndRegisterViewController.swift */,
 				4245681D1B799DD6005E5AAD /* LoginAndRegisterViewController.xib */,
 				42EAF4D91C1DD603001D6597 /* MainPageViewController.swift */,
@@ -221,8 +245,6 @@
 				422A343A1B786128003AB08E /* AvatarImagePickerViewController.swift */,
 				42E28F571C355C9D00333180 /* SettingsViewController.swift */,
 				42E28F581C355C9D00333180 /* SettingsViewController.xib */,
-				42E84D011CD35406005A79F8 /* PTWorkDetailController.swift */,
-				42E84CFA1CD353B9005A79F8 /* PTWorkDetailController.storyboard */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -243,6 +265,7 @@
 		4249805B1B6B53EA00454858 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				4232918F1CD877CC002C83C0 /* PTMessageDefine.swift */,
 				4249805C1B6B53EA00454858 /* JXTools.swift */,
 				42423C9E1BAFDEEE00166839 /* PTools.swift */,
 				42432B791BB0F2D2005F0B85 /* PNErrorHandling.swift */,
@@ -478,7 +501,7 @@
 				426225B71B745F5A00DF1819 /* TeamViewController.xib in Resources */,
 				426225BB1B74697500DF1819 /* teamRankingTableViewCell.xib in Resources */,
 				42D80B901B6B742800898074 /* Launch Screen.xib in Resources */,
-				42E84CFB1CD353B9005A79F8 /* PTWorkDetailController.storyboard in Resources */,
+				4232918A1CD87742002C83C0 /* PTWorkDetailController.storyboard in Resources */,
 				42E28F5A1C355C9D00333180 /* SettingsViewController.xib in Resources */,
 				42C7B1011B82D52B00AF72F4 /* NotoSansHans-Regular.otf in Resources */,
 				429A5D781B6F729500384989 /* RatingViewController.xib in Resources */,
@@ -564,8 +587,8 @@
 				4289847B1BF5D48D0069679B /* UserInfoAPIOperation.swift in Sources */,
 				42801B351B8B0BC9008D4AC9 /* AuditTaskAPIOperation.swift in Sources */,
 				42EF11C51BAAC19600D6504A /* SwiftNotice.swift in Sources */,
-				42E84D021CD35406005A79F8 /* PTWorkDetailController.swift in Sources */,
 				428984751BF5C7340069679B /* TeamRankingModel.swift in Sources */,
+				423291901CD877CC002C83C0 /* PTMessageDefine.swift in Sources */,
 				426225B61B745F5A00DF1819 /* TeamViewController.swift in Sources */,
 				424980621B6B53EA00454858 /* ContactsSelectionViewController.swift in Sources */,
 				42EAF4DA1C1DD603001D6597 /* MainPageViewController.swift in Sources */,
@@ -575,6 +598,8 @@
 				42801B2B1B8B0837008D4AC9 /* LoginAPIOperation.swift in Sources */,
 				422A343B1B786128003AB08E /* AvatarImagePickerViewController.swift in Sources */,
 				42801B431B8B0F54008D4AC9 /* SetUsernameAPIOperation.swift in Sources */,
+				4232918C1CD87742002C83C0 /* PTWorkHardController.swift in Sources */,
+				4232918E1CD87742002C83C0 /* PTWorkStatusController.swift in Sources */,
 				42801B331B8B0B62008D4AC9 /* CreateTaskAPIOperation.swift in Sources */,
 				42B0925D1B8AC1E0002F22E5 /* Operation.swift in Sources */,
 				CD0E8B501BE860E0003C2758 /* DemoCode.swift in Sources */,
@@ -599,15 +624,18 @@
 				42423C9F1BAFDEEE00166839 /* PTools.swift in Sources */,
 				42EF11C71BAAC50800D6504A /* APICmdList.swift in Sources */,
 				4249806C1B6B53EA00454858 /* JXTools.swift in Sources */,
+				4232918D1CD87742002C83C0 /* PTWorkNameViewController.swift in Sources */,
 				422CB7851C26D33900011A91 /* PacmanAnimator.swift in Sources */,
 				EBF21E3D1BE1BC8A00F6CF59 /* APIMarco.swift in Sources */,
 				42801B391B8B0D16008D4AC9 /* CompleteTaskAPIOperation.swift in Sources */,
 				EB42AFBD1BE0A69C006EE260 /* TaskDetailModel.swift in Sources */,
+				423291891CD87742002C83C0 /* PTWorkcontentController.swift in Sources */,
 				4203AEC21BA6C4B1006413A3 /* RegisterAPIOperation.swift in Sources */,
 				422A343E1B787AEC003AB08E /* ReviewDetailViewController.swift in Sources */,
 				42EF11C21BAAACFE00D6504A /* SSASwiftReachability.swift in Sources */,
 				42CFAEB81C0B5C90007C061A /* AvatarUploadOperation.swift in Sources */,
 				4203AEC01BA675B8006413A3 /* AccountIsRegAPIOperation.swift in Sources */,
+				4232918B1CD87742002C83C0 /* PTWorkDetailController.swift in Sources */,
 				42801B311B8B0ACE008D4AC9 /* TaskDetailAPIOperation.swift in Sources */,
 				42801B2F1B8B0A33008D4AC9 /* TaskListAPIOperation.swift in Sources */,
 				4245681E1B799DD6005E5AAD /* LoginAndRegisterViewController.swift in Sources */,

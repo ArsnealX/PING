@@ -40,7 +40,10 @@ class teamRankingTableViewCell: UITableViewCell {
         }else {
             addScoreLabel.text = "+"+model.monthPoint
         }
-        scoreLabel.text = model.yearPoint
+        scoreLabel.text = ""
+        if UserInfoModel .shared.userName == model.userName {
+            scoreLabel.text = model.yearPoint
+        }
     }
     
 }

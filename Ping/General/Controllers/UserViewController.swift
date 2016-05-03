@@ -1,6 +1,6 @@
 //
 //  UserViewController.swift
-//  
+//
 //
 //  Created by Joshua Xiong on 8/7/15.
 //
@@ -9,7 +9,7 @@
 import UIKit
 
 class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, ImageUploadCallBackDelegate, SettingsViewControllerDelegate {
-
+    
     @IBOutlet weak var avatarImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var pointLabel: UILabel!
@@ -22,7 +22,7 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
     var userPoint:String
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        userInfoDataModel = UserInfoModel(userTel: "", userName: "...", headImgUrl: "")
+        userInfoDataModel = UserInfoModel .shared
         userPoint = "-"
         imageActivityIndicator = UIActivityIndicatorView()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -36,7 +36,7 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,7 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
         avatarImage.addGestureRecognizer(avatarImageViewTapRecognizer)
         self.refetchUserInfo()
     }
-
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.configUI()
@@ -85,8 +85,8 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
     
     func didChangeUsername(username: String) {
         userInfoDataModel.userName = username
-    } 
-
+    }
+    
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         picker.dismissViewControllerAnimated(true, completion: nil)
         if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
@@ -137,7 +137,7 @@ class UserViewController: UIViewController, APICallBackDelegate, UIImagePickerCo
         
         self.navigationController!.presentViewController(alertController, animated: true, completion: nil)
     }
-
+    
     func logout() {
         APP_DEFULT_STORE.setObject(nil, forKey: kUserToken)
         goToMainVC()

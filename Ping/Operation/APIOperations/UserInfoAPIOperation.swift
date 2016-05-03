@@ -18,6 +18,8 @@ class UserInfoAPIOperation: NetworkOperation {
         let userTel = resultJSON?["my_tel"].stringValue
         let userName = resultJSON?["my_name"].stringValue
         let headImgUrl = resultJSON?["my_head_imgurl"].stringValue
-        return UserInfoModel(userTel: userTel!, userName: userName!, headImgUrl: headImgUrl!)
-    }
+        UserInfoModel.shared.userTel = userTel!
+        UserInfoModel.shared.userName = userName!
+        UserInfoModel.shared.headImgUrl = headImgUrl!
+        return UserInfoModel.shared    }
 }
