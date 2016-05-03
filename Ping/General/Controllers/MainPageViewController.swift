@@ -89,13 +89,16 @@ class MainPageViewController: UIViewController, UIPageViewControllerDataSource, 
         let startViewControllers = [viewControllersArray[currentButtonIndex]]
         pageVC.setViewControllers(startViewControllers, direction: .Reverse , animated: false, completion: nil)
     }
-    
+     func goHistoryClick() -> Void {
+        
+    }
     func loadSwitchView() {
+        self.addLeftButtonWithIcon(UIImage(named: "history"), actionClick: Selector(goHistoryClick()))
         let createdButton = UIButton(frame: CGRectMake(0 ,0 , 50 , 30))
         let reviewButton = UIButton(frame: CGRectMake(0 ,0 , 50 , 30))
         let ccButton = UIButton(frame: CGRectMake(0 ,0 , 50 , 30))
         let fontSize:CGFloat = 14
-        createdButton.setTitle("创建", forState: .Normal)
+        createdButton.setTitle("执办", forState: .Normal)
         createdButton.titleLabel?.font = UIFont.systemFontOfSize(fontSize)
         createdButton.setTitleColor(UIColor(red:0.59, green:0.59, blue:0.59, alpha:1), forState: .Normal)
         createdButton.setTitleColor(UIColor.whiteColor(), forState: .Selected)
@@ -121,7 +124,7 @@ class MainPageViewController: UIViewController, UIPageViewControllerDataSource, 
         reviewButton.addTarget(self, action: #selector(MainPageViewController.switchButton(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         
-        ccButton.setTitle("抄收", forState: .Normal)
+        ccButton.setTitle("@我", forState: .Normal)
         ccButton.titleLabel?.font = UIFont.systemFontOfSize(fontSize)
         ccButton.setTitleColor(UIColor(red:0.59, green:0.59, blue:0.59, alpha:1), forState: .Normal)
         ccButton.setTitleColor(UIColor.whiteColor(), forState: .Selected)

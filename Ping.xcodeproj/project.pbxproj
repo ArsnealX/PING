@@ -21,6 +21,7 @@
 		4232918D1CD87742002C83C0 /* PTWorkNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291871CD87742002C83C0 /* PTWorkNameViewController.swift */; };
 		4232918E1CD87742002C83C0 /* PTWorkStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291881CD87742002C83C0 /* PTWorkStatusController.swift */; };
 		423291901CD877CC002C83C0 /* PTMessageDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4232918F1CD877CC002C83C0 /* PTMessageDefine.swift */; };
+		423291931CD88032002C83C0 /* ExtendComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291921CD88032002C83C0 /* ExtendComponent.swift */; };
 		42423C9F1BAFDEEE00166839 /* PTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42423C9E1BAFDEEE00166839 /* PTools.swift */; };
 		42432B7A1BB0F2D2005F0B85 /* PNErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42432B791BB0F2D2005F0B85 /* PNErrorHandling.swift */; };
 		4245681E1B799DD6005E5AAD /* LoginAndRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245681C1B799DD6005E5AAD /* LoginAndRegisterViewController.swift */; };
@@ -70,7 +71,7 @@
 		42CFAEB61C0B575D007C061A /* ImageUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CFAEB51C0B575D007C061A /* ImageUploadOperation.swift */; };
 		42CFAEB81C0B5C90007C061A /* AvatarUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CFAEB71C0B5C90007C061A /* AvatarUploadOperation.swift */; };
 		42D80B901B6B742800898074 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D80B8F1B6B742800898074 /* Launch Screen.xib */; };
-		42E28F561C3558C800333180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E28F551C3558C800333180 /* Assets.xcassets */; };
+		42E28F561C3558C800333180 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E28F551C3558C800333180 /* images.xcassets */; };
 		42E28F591C355C9D00333180 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E28F571C355C9D00333180 /* SettingsViewController.swift */; };
 		42E28F5A1C355C9D00333180 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E28F581C355C9D00333180 /* SettingsViewController.xib */; };
 		42EAF4DA1C1DD603001D6597 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EAF4D91C1DD603001D6597 /* MainPageViewController.swift */; };
@@ -101,6 +102,7 @@
 		423291871CD87742002C83C0 /* PTWorkNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTWorkNameViewController.swift; sourceTree = "<group>"; };
 		423291881CD87742002C83C0 /* PTWorkStatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTWorkStatusController.swift; sourceTree = "<group>"; };
 		4232918F1CD877CC002C83C0 /* PTMessageDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTMessageDefine.swift; sourceTree = "<group>"; };
+		423291921CD88032002C83C0 /* ExtendComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendComponent.swift; sourceTree = "<group>"; };
 		42423C9E1BAFDEEE00166839 /* PTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTools.swift; sourceTree = "<group>"; };
 		42432B791BB0F2D2005F0B85 /* PNErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNErrorHandling.swift; sourceTree = "<group>"; };
 		4245681C1B799DD6005E5AAD /* LoginAndRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAndRegisterViewController.swift; sourceTree = "<group>"; };
@@ -151,7 +153,7 @@
 		42CFAEB51C0B575D007C061A /* ImageUploadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploadOperation.swift; sourceTree = "<group>"; };
 		42CFAEB71C0B5C90007C061A /* AvatarUploadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarUploadOperation.swift; sourceTree = "<group>"; };
 		42D80B8F1B6B742800898074 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
-		42E28F551C3558C800333180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		42E28F551C3558C800333180 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		42E28F571C355C9D00333180 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		42E28F581C355C9D00333180 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		42EAF4D91C1DD603001D6597 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +214,14 @@
 			path = "工作属性";
 			sourceTree = "<group>";
 		};
+		423291911CD87C99002C83C0 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				423291921CD88032002C83C0 /* ExtendComponent.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		4249804C1B6B53EA00454858 /* General */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +234,7 @@
 		4249804D1B6B53EA00454858 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				423291911CD87C99002C83C0 /* Common */,
 				423291821CD87742002C83C0 /* 工作属性 */,
 				4245681C1B799DD6005E5AAD /* LoginAndRegisterViewController.swift */,
 				4245681D1B799DD6005E5AAD /* LoginAndRegisterViewController.xib */,
@@ -417,7 +428,7 @@
 				42D80B8F1B6B742800898074 /* Launch Screen.xib */,
 				42801B291B8AE5AA008D4AC9 /* Ping-Bridging-Header.h */,
 				42FD093B1B60EDEE00046F40 /* AppDelegate.swift */,
-				42E28F551C3558C800333180 /* Assets.xcassets */,
+				42E28F551C3558C800333180 /* images.xcassets */,
 			);
 			path = Ping;
 			sourceTree = "<group>";
@@ -509,7 +520,7 @@
 				42C7B0FB1B82D52B00AF72F4 /* LICENSE in Resources */,
 				42C7B0FF1B82D52B00AF72F4 /* NotoSansHans-Light.otf in Resources */,
 				4245681F1B799DD6005E5AAD /* LoginAndRegisterViewController.xib in Resources */,
-				42E28F561C3558C800333180 /* Assets.xcassets in Resources */,
+				42E28F561C3558C800333180 /* images.xcassets in Resources */,
 				422A343F1B787AEC003AB08E /* ReviewDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -628,6 +639,7 @@
 				422CB7851C26D33900011A91 /* PacmanAnimator.swift in Sources */,
 				EBF21E3D1BE1BC8A00F6CF59 /* APIMarco.swift in Sources */,
 				42801B391B8B0D16008D4AC9 /* CompleteTaskAPIOperation.swift in Sources */,
+				423291931CD88032002C83C0 /* ExtendComponent.swift in Sources */,
 				EB42AFBD1BE0A69C006EE260 /* TaskDetailModel.swift in Sources */,
 				423291891CD87742002C83C0 /* PTWorkcontentController.swift in Sources */,
 				4203AEC21BA6C4B1006413A3 /* RegisterAPIOperation.swift in Sources */,
