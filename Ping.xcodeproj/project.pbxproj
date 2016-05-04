@@ -39,6 +39,8 @@
 		423291C71CD9893E002C83C0 /* TeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 423291B91CD9893E002C83C0 /* TeamViewController.xib */; };
 		423291CA1CD9896E002C83C0 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291C81CD9896E002C83C0 /* AddReviewViewController.swift */; };
 		423291CB1CD9896E002C83C0 /* AddReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 423291C91CD9896E002C83C0 /* AddReviewViewController.xib */; };
+		423291CE1CD98C3F002C83C0 /* PTHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291CC1CD98C3F002C83C0 /* PTHistoryCell.swift */; };
+		423291CF1CD98C3F002C83C0 /* PTHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 423291CD1CD98C3F002C83C0 /* PTHistoryCell.xib */; };
 		42423C9F1BAFDEEE00166839 /* PTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42423C9E1BAFDEEE00166839 /* PTools.swift */; };
 		42432B7A1BB0F2D2005F0B85 /* PNErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42432B791BB0F2D2005F0B85 /* PNErrorHandling.swift */; };
 		424980681B6B53EA00454858 /* contactSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424980571B6B53EA00454858 /* contactSelectionTableViewCell.swift */; };
@@ -121,6 +123,8 @@
 		423291B91CD9893E002C83C0 /* TeamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamViewController.xib; sourceTree = "<group>"; };
 		423291C81CD9896E002C83C0 /* AddReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
 		423291C91CD9896E002C83C0 /* AddReviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddReviewViewController.xib; sourceTree = "<group>"; };
+		423291CC1CD98C3F002C83C0 /* PTHistoryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTHistoryCell.swift; sourceTree = "<group>"; };
+		423291CD1CD98C3F002C83C0 /* PTHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PTHistoryCell.xib; sourceTree = "<group>"; };
 		42423C9E1BAFDEEE00166839 /* PTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTools.swift; sourceTree = "<group>"; };
 		42432B791BB0F2D2005F0B85 /* PNErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNErrorHandling.swift; sourceTree = "<group>"; };
 		424980571B6B53EA00454858 /* contactSelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = contactSelectionTableViewCell.swift; sourceTree = "<group>"; };
@@ -335,6 +339,8 @@
 				424980581B6B53EA00454858 /* contactSelectionTableViewCell.xib */,
 				424980591B6B53EA00454858 /* tasksTableViewCell.swift */,
 				4249805A1B6B53EA00454858 /* tasksTableViewCell.xib */,
+				423291CC1CD98C3F002C83C0 /* PTHistoryCell.swift */,
+				423291CD1CD98C3F002C83C0 /* PTHistoryCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -584,6 +590,7 @@
 				42C7B0FF1B82D52B00AF72F4 /* NotoSansHans-Light.otf in Resources */,
 				423291C71CD9893E002C83C0 /* TeamViewController.xib in Resources */,
 				42E28F561C3558C800333180 /* images.xcassets in Resources */,
+				423291CF1CD98C3F002C83C0 /* PTHistoryCell.xib in Resources */,
 				423291CB1CD9896E002C83C0 /* AddReviewViewController.xib in Resources */,
 				423291C31CD9893E002C83C0 /* RatingViewController.xib in Resources */,
 				423291BE1CD9893E002C83C0 /* ContactsSelectionViewController.xib in Resources */,
@@ -687,6 +694,7 @@
 				42B0925F1B8AC333002F22E5 /* NetworkOperation.swift in Sources */,
 				42432B7A1BB0F2D2005F0B85 /* PNErrorHandling.swift in Sources */,
 				42801B3F1B8B0E8B008D4AC9 /* SetReadStateAPIOperation.swift in Sources */,
+				423291CE1CD98C3F002C83C0 /* PTHistoryCell.swift in Sources */,
 				42801B371B8B0C8C008D4AC9 /* UpdateTaskAPIOperation.swift in Sources */,
 				CD6648C71BEA02570098FEE8 /* TaskMoreInfoModel.swift in Sources */,
 				42801B2D1B8B0924008D4AC9 /* QueryTeamMemberAPIOperation.swift in Sources */,
