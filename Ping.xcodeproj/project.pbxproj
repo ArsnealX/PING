@@ -10,9 +10,6 @@
 		00AF64F985FE8A7300F32883 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFCD60E232C4D260F17A0F3 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4203AEC01BA675B8006413A3 /* AccountIsRegAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4203AEBF1BA675B8006413A3 /* AccountIsRegAPIOperation.swift */; };
 		4203AEC21BA6C4B1006413A3 /* RegisterAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4203AEC11BA6C4B1006413A3 /* RegisterAPIOperation.swift */; };
-		422A343B1B786128003AB08E /* AvatarImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A343A1B786128003AB08E /* AvatarImagePickerViewController.swift */; };
-		422A343E1B787AEC003AB08E /* ReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422A343C1B787AEC003AB08E /* ReviewDetailViewController.swift */; };
-		422A343F1B787AEC003AB08E /* ReviewDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 422A343D1B787AEC003AB08E /* ReviewDetailViewController.xib */; };
 		422CB7851C26D33900011A91 /* PacmanAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422CB7841C26D33900011A91 /* PacmanAnimator.swift */; };
 		423291891CD87742002C83C0 /* PTWorkcontentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291831CD87742002C83C0 /* PTWorkcontentController.swift */; };
 		4232918A1CD87742002C83C0 /* PTWorkDetailController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 423291841CD87742002C83C0 /* PTWorkDetailController.storyboard */; };
@@ -22,27 +19,35 @@
 		4232918E1CD87742002C83C0 /* PTWorkStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291881CD87742002C83C0 /* PTWorkStatusController.swift */; };
 		423291901CD877CC002C83C0 /* PTMessageDefine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4232918F1CD877CC002C83C0 /* PTMessageDefine.swift */; };
 		423291931CD88032002C83C0 /* ExtendComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291921CD88032002C83C0 /* ExtendComponent.swift */; };
+		4232919F1CD988AE002C83C0 /* LoginAndRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291991CD988AE002C83C0 /* LoginAndRegisterViewController.swift */; };
+		423291A01CD988AE002C83C0 /* LoginAndRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4232919A1CD988AE002C83C0 /* LoginAndRegisterViewController.xib */; };
+		423291A11CD988AE002C83C0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4232919B1CD988AE002C83C0 /* SettingsViewController.swift */; };
+		423291A21CD988AE002C83C0 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4232919C1CD988AE002C83C0 /* SettingsViewController.xib */; };
+		423291A31CD988AE002C83C0 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4232919D1CD988AE002C83C0 /* UserViewController.swift */; };
+		423291A41CD988AE002C83C0 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4232919E1CD988AE002C83C0 /* UserViewController.xib */; };
+		423291BC1CD9893E002C83C0 /* AvatarImagePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291AB1CD9893E002C83C0 /* AvatarImagePickerViewController.swift */; };
+		423291BD1CD9893E002C83C0 /* ContactsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291AC1CD9893E002C83C0 /* ContactsSelectionViewController.swift */; };
+		423291BE1CD9893E002C83C0 /* ContactsSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 423291AD1CD9893E002C83C0 /* ContactsSelectionViewController.xib */; };
+		423291BF1CD9893E002C83C0 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291AE1CD9893E002C83C0 /* MainPageViewController.swift */; };
+		423291C01CD9893E002C83C0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291AF1CD9893E002C83C0 /* MainViewController.swift */; };
+		423291C11CD9893E002C83C0 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 423291B01CD9893E002C83C0 /* MainViewController.xib */; };
+		423291C21CD9893E002C83C0 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291B21CD9893E002C83C0 /* RatingViewController.swift */; };
+		423291C31CD9893E002C83C0 /* RatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 423291B31CD9893E002C83C0 /* RatingViewController.xib */; };
+		423291C41CD9893E002C83C0 /* ReviewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291B41CD9893E002C83C0 /* ReviewDetailViewController.swift */; };
+		423291C51CD9893E002C83C0 /* ReviewDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 423291B51CD9893E002C83C0 /* ReviewDetailViewController.xib */; };
+		423291C61CD9893E002C83C0 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291B81CD9893E002C83C0 /* TeamViewController.swift */; };
+		423291C71CD9893E002C83C0 /* TeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 423291B91CD9893E002C83C0 /* TeamViewController.xib */; };
+		423291CA1CD9896E002C83C0 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423291C81CD9896E002C83C0 /* AddReviewViewController.swift */; };
+		423291CB1CD9896E002C83C0 /* AddReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 423291C91CD9896E002C83C0 /* AddReviewViewController.xib */; };
 		42423C9F1BAFDEEE00166839 /* PTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42423C9E1BAFDEEE00166839 /* PTools.swift */; };
 		42432B7A1BB0F2D2005F0B85 /* PNErrorHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42432B791BB0F2D2005F0B85 /* PNErrorHandling.swift */; };
-		4245681E1B799DD6005E5AAD /* LoginAndRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4245681C1B799DD6005E5AAD /* LoginAndRegisterViewController.swift */; };
-		4245681F1B799DD6005E5AAD /* LoginAndRegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4245681D1B799DD6005E5AAD /* LoginAndRegisterViewController.xib */; };
-		424980601B6B53EA00454858 /* AddReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4249804E1B6B53EA00454858 /* AddReviewViewController.swift */; };
-		424980611B6B53EA00454858 /* AddReviewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4249804F1B6B53EA00454858 /* AddReviewViewController.xib */; };
-		424980621B6B53EA00454858 /* ContactsSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424980501B6B53EA00454858 /* ContactsSelectionViewController.swift */; };
-		424980631B6B53EA00454858 /* ContactsSelectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424980511B6B53EA00454858 /* ContactsSelectionViewController.xib */; };
-		424980641B6B53EA00454858 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424980521B6B53EA00454858 /* MainViewController.swift */; };
-		424980651B6B53EA00454858 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424980531B6B53EA00454858 /* MainViewController.xib */; };
 		424980681B6B53EA00454858 /* contactSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424980571B6B53EA00454858 /* contactSelectionTableViewCell.swift */; };
 		424980691B6B53EA00454858 /* contactSelectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 424980581B6B53EA00454858 /* contactSelectionTableViewCell.xib */; };
 		4249806A1B6B53EA00454858 /* tasksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424980591B6B53EA00454858 /* tasksTableViewCell.swift */; };
 		4249806B1B6B53EA00454858 /* tasksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4249805A1B6B53EA00454858 /* tasksTableViewCell.xib */; };
 		4249806C1B6B53EA00454858 /* JXTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4249805C1B6B53EA00454858 /* JXTools.swift */; };
-		426225B61B745F5A00DF1819 /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426225B41B745F5A00DF1819 /* TeamViewController.swift */; };
-		426225B71B745F5A00DF1819 /* TeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426225B51B745F5A00DF1819 /* TeamViewController.xib */; };
 		426225BA1B74697500DF1819 /* teamRankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426225B81B74697500DF1819 /* teamRankingTableViewCell.swift */; };
 		426225BB1B74697500DF1819 /* teamRankingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426225B91B74697500DF1819 /* teamRankingTableViewCell.xib */; };
-		426225BE1B74B8BE00DF1819 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 426225BC1B74B8BE00DF1819 /* UserViewController.swift */; };
-		426225BF1B74B8BE00DF1819 /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 426225BD1B74B8BE00DF1819 /* UserViewController.xib */; };
 		42801B2B1B8B0837008D4AC9 /* LoginAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42801B2A1B8B0837008D4AC9 /* LoginAPIOperation.swift */; };
 		42801B2D1B8B0924008D4AC9 /* QueryTeamMemberAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42801B2C1B8B0924008D4AC9 /* QueryTeamMemberAPIOperation.swift */; };
 		42801B2F1B8B0A33008D4AC9 /* TaskListAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42801B2E1B8B0A33008D4AC9 /* TaskListAPIOperation.swift */; };
@@ -58,8 +63,6 @@
 		428984751BF5C7340069679B /* TeamRankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428984741BF5C7340069679B /* TeamRankingModel.swift */; };
 		428984771BF5D2E10069679B /* UserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428984761BF5D2E10069679B /* UserInfoModel.swift */; };
 		4289847B1BF5D48D0069679B /* UserInfoAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4289847A1BF5D48D0069679B /* UserInfoAPIOperation.swift */; };
-		429A5D771B6F729500384989 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429A5D751B6F729500384989 /* RatingViewController.swift */; };
-		429A5D781B6F729500384989 /* RatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 429A5D761B6F729500384989 /* RatingViewController.xib */; };
 		42B0925A1B8ABF89002F22E5 /* PNAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B092591B8ABF89002F22E5 /* PNAPI.swift */; };
 		42B0925D1B8AC1E0002F22E5 /* Operation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B0925C1B8AC1E0002F22E5 /* Operation.swift */; };
 		42B0925F1B8AC333002F22E5 /* NetworkOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B0925E1B8AC333002F22E5 /* NetworkOperation.swift */; };
@@ -72,9 +75,6 @@
 		42CFAEB81C0B5C90007C061A /* AvatarUploadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42CFAEB71C0B5C90007C061A /* AvatarUploadOperation.swift */; };
 		42D80B901B6B742800898074 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42D80B8F1B6B742800898074 /* Launch Screen.xib */; };
 		42E28F561C3558C800333180 /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E28F551C3558C800333180 /* images.xcassets */; };
-		42E28F591C355C9D00333180 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E28F571C355C9D00333180 /* SettingsViewController.swift */; };
-		42E28F5A1C355C9D00333180 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42E28F581C355C9D00333180 /* SettingsViewController.xib */; };
-		42EAF4DA1C1DD603001D6597 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EAF4D91C1DD603001D6597 /* MainPageViewController.swift */; };
 		42EE17BE1C4A302800BE6D76 /* GetTeamNameAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EE17BD1C4A302800BE6D76 /* GetTeamNameAPIOperation.swift */; };
 		42EF11C21BAAACFE00D6504A /* SSASwiftReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF11C11BAAACFE00D6504A /* SSASwiftReachability.swift */; };
 		42EF11C51BAAC19600D6504A /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42EF11C41BAAC19600D6504A /* SwiftNotice.swift */; };
@@ -91,9 +91,6 @@
 		2FC692EEC973751214B71A95 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4203AEBF1BA675B8006413A3 /* AccountIsRegAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountIsRegAPIOperation.swift; sourceTree = "<group>"; };
 		4203AEC11BA6C4B1006413A3 /* RegisterAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterAPIOperation.swift; sourceTree = "<group>"; };
-		422A343A1B786128003AB08E /* AvatarImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImagePickerViewController.swift; sourceTree = "<group>"; };
-		422A343C1B787AEC003AB08E /* ReviewDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewDetailViewController.swift; sourceTree = "<group>"; };
-		422A343D1B787AEC003AB08E /* ReviewDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewDetailViewController.xib; sourceTree = "<group>"; };
 		422CB7841C26D33900011A91 /* PacmanAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PacmanAnimator.swift; sourceTree = "<group>"; };
 		423291831CD87742002C83C0 /* PTWorkcontentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTWorkcontentController.swift; sourceTree = "<group>"; };
 		423291841CD87742002C83C0 /* PTWorkDetailController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PTWorkDetailController.storyboard; sourceTree = "<group>"; };
@@ -103,27 +100,36 @@
 		423291881CD87742002C83C0 /* PTWorkStatusController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTWorkStatusController.swift; sourceTree = "<group>"; };
 		4232918F1CD877CC002C83C0 /* PTMessageDefine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTMessageDefine.swift; sourceTree = "<group>"; };
 		423291921CD88032002C83C0 /* ExtendComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtendComponent.swift; sourceTree = "<group>"; };
+		423291991CD988AE002C83C0 /* LoginAndRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAndRegisterViewController.swift; sourceTree = "<group>"; };
+		4232919A1CD988AE002C83C0 /* LoginAndRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginAndRegisterViewController.xib; sourceTree = "<group>"; };
+		4232919B1CD988AE002C83C0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		4232919C1CD988AE002C83C0 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		4232919D1CD988AE002C83C0 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		4232919E1CD988AE002C83C0 /* UserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
+		423291AB1CD9893E002C83C0 /* AvatarImagePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImagePickerViewController.swift; sourceTree = "<group>"; };
+		423291AC1CD9893E002C83C0 /* ContactsSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsSelectionViewController.swift; sourceTree = "<group>"; };
+		423291AD1CD9893E002C83C0 /* ContactsSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsSelectionViewController.xib; sourceTree = "<group>"; };
+		423291AE1CD9893E002C83C0 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		423291AF1CD9893E002C83C0 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		423291B01CD9893E002C83C0 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		423291B11CD9893E002C83C0 /* Ping-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Ping-Bridging-Header.h"; sourceTree = "<group>"; };
+		423291B21CD9893E002C83C0 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		423291B31CD9893E002C83C0 /* RatingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingViewController.xib; sourceTree = "<group>"; };
+		423291B41CD9893E002C83C0 /* ReviewDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewDetailViewController.swift; sourceTree = "<group>"; };
+		423291B51CD9893E002C83C0 /* ReviewDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReviewDetailViewController.xib; sourceTree = "<group>"; };
+		423291B81CD9893E002C83C0 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
+		423291B91CD9893E002C83C0 /* TeamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamViewController.xib; sourceTree = "<group>"; };
+		423291C81CD9896E002C83C0 /* AddReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
+		423291C91CD9896E002C83C0 /* AddReviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddReviewViewController.xib; sourceTree = "<group>"; };
 		42423C9E1BAFDEEE00166839 /* PTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTools.swift; sourceTree = "<group>"; };
 		42432B791BB0F2D2005F0B85 /* PNErrorHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNErrorHandling.swift; sourceTree = "<group>"; };
-		4245681C1B799DD6005E5AAD /* LoginAndRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAndRegisterViewController.swift; sourceTree = "<group>"; };
-		4245681D1B799DD6005E5AAD /* LoginAndRegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginAndRegisterViewController.xib; sourceTree = "<group>"; };
-		4249804E1B6B53EA00454858 /* AddReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddReviewViewController.swift; sourceTree = "<group>"; };
-		4249804F1B6B53EA00454858 /* AddReviewViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddReviewViewController.xib; sourceTree = "<group>"; };
-		424980501B6B53EA00454858 /* ContactsSelectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsSelectionViewController.swift; sourceTree = "<group>"; };
-		424980511B6B53EA00454858 /* ContactsSelectionViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsSelectionViewController.xib; sourceTree = "<group>"; };
-		424980521B6B53EA00454858 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		424980531B6B53EA00454858 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		424980571B6B53EA00454858 /* contactSelectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = contactSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		424980581B6B53EA00454858 /* contactSelectionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = contactSelectionTableViewCell.xib; sourceTree = "<group>"; };
 		424980591B6B53EA00454858 /* tasksTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tasksTableViewCell.swift; sourceTree = "<group>"; };
 		4249805A1B6B53EA00454858 /* tasksTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tasksTableViewCell.xib; sourceTree = "<group>"; };
 		4249805C1B6B53EA00454858 /* JXTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JXTools.swift; sourceTree = "<group>"; };
-		426225B41B745F5A00DF1819 /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
-		426225B51B745F5A00DF1819 /* TeamViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamViewController.xib; sourceTree = "<group>"; };
 		426225B81B74697500DF1819 /* teamRankingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = teamRankingTableViewCell.swift; sourceTree = "<group>"; };
 		426225B91B74697500DF1819 /* teamRankingTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = teamRankingTableViewCell.xib; sourceTree = "<group>"; };
-		426225BC1B74B8BE00DF1819 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
-		426225BD1B74B8BE00DF1819 /* UserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
 		42801B291B8AE5AA008D4AC9 /* Ping-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ping-Bridging-Header.h"; sourceTree = "<group>"; };
 		42801B2A1B8B0837008D4AC9 /* LoginAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginAPIOperation.swift; sourceTree = "<group>"; };
 		42801B2C1B8B0924008D4AC9 /* QueryTeamMemberAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueryTeamMemberAPIOperation.swift; sourceTree = "<group>"; };
@@ -140,8 +146,6 @@
 		428984741BF5C7340069679B /* TeamRankingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamRankingModel.swift; sourceTree = "<group>"; };
 		428984761BF5D2E10069679B /* UserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoModel.swift; sourceTree = "<group>"; };
 		4289847A1BF5D48D0069679B /* UserInfoAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoAPIOperation.swift; sourceTree = "<group>"; };
-		429A5D751B6F729500384989 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
-		429A5D761B6F729500384989 /* RatingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RatingViewController.xib; sourceTree = "<group>"; };
 		42B092591B8ABF89002F22E5 /* PNAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PNAPI.swift; sourceTree = "<group>"; };
 		42B0925C1B8AC1E0002F22E5 /* Operation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operation.swift; sourceTree = "<group>"; };
 		42B0925E1B8AC333002F22E5 /* NetworkOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOperation.swift; sourceTree = "<group>"; };
@@ -154,9 +158,6 @@
 		42CFAEB71C0B5C90007C061A /* AvatarUploadOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarUploadOperation.swift; sourceTree = "<group>"; };
 		42D80B8F1B6B742800898074 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		42E28F551C3558C800333180 /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
-		42E28F571C355C9D00333180 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		42E28F581C355C9D00333180 /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
-		42EAF4D91C1DD603001D6597 /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		42EE17BD1C4A302800BE6D76 /* GetTeamNameAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetTeamNameAPIOperation.swift; sourceTree = "<group>"; };
 		42EF11C11BAAACFE00D6504A /* SSASwiftReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SSASwiftReachability.swift; sourceTree = "<group>"; };
 		42EF11C41BAAC19600D6504A /* SwiftNotice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
@@ -222,6 +223,87 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		423291971CD98799002C83C0 /* 备忘:计划 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "备忘:计划";
+			sourceTree = "<group>";
+		};
+		423291981CD988AE002C83C0 /* 我的 */ = {
+			isa = PBXGroup;
+			children = (
+				423291991CD988AE002C83C0 /* LoginAndRegisterViewController.swift */,
+				4232919A1CD988AE002C83C0 /* LoginAndRegisterViewController.xib */,
+				4232919B1CD988AE002C83C0 /* SettingsViewController.swift */,
+				4232919C1CD988AE002C83C0 /* SettingsViewController.xib */,
+				4232919D1CD988AE002C83C0 /* UserViewController.swift */,
+				4232919E1CD988AE002C83C0 /* UserViewController.xib */,
+			);
+			path = "我的";
+			sourceTree = "<group>";
+		};
+		423291A51CD9893E002C83C0 /* 工作页 */ = {
+			isa = PBXGroup;
+			children = (
+				423291A81CD9893E002C83C0 /* 工作主页 */,
+				423291A61CD9893E002C83C0 /* 历史执办 */,
+				423291A71CD9893E002C83C0 /* 工作IM */,
+				423291B61CD9893E002C83C0 /* 新建工作 */,
+			);
+			path = "工作页";
+			sourceTree = "<group>";
+		};
+		423291A61CD9893E002C83C0 /* 历史执办 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "历史执办";
+			sourceTree = "<group>";
+		};
+		423291A71CD9893E002C83C0 /* 工作IM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "工作IM";
+			sourceTree = "<group>";
+		};
+		423291A81CD9893E002C83C0 /* 工作主页 */ = {
+			isa = PBXGroup;
+			children = (
+				423291AB1CD9893E002C83C0 /* AvatarImagePickerViewController.swift */,
+				423291AC1CD9893E002C83C0 /* ContactsSelectionViewController.swift */,
+				423291AD1CD9893E002C83C0 /* ContactsSelectionViewController.xib */,
+				423291AE1CD9893E002C83C0 /* MainPageViewController.swift */,
+				423291AF1CD9893E002C83C0 /* MainViewController.swift */,
+				423291B01CD9893E002C83C0 /* MainViewController.xib */,
+				423291B11CD9893E002C83C0 /* Ping-Bridging-Header.h */,
+				423291B21CD9893E002C83C0 /* RatingViewController.swift */,
+				423291B31CD9893E002C83C0 /* RatingViewController.xib */,
+				423291B41CD9893E002C83C0 /* ReviewDetailViewController.swift */,
+				423291B51CD9893E002C83C0 /* ReviewDetailViewController.xib */,
+			);
+			path = "工作主页";
+			sourceTree = "<group>";
+		};
+		423291B61CD9893E002C83C0 /* 新建工作 */ = {
+			isa = PBXGroup;
+			children = (
+				423291C81CD9896E002C83C0 /* AddReviewViewController.swift */,
+				423291C91CD9896E002C83C0 /* AddReviewViewController.xib */,
+			);
+			path = "新建工作";
+			sourceTree = "<group>";
+		};
+		423291B71CD9893E002C83C0 /* 团队 */ = {
+			isa = PBXGroup;
+			children = (
+				423291B81CD9893E002C83C0 /* TeamViewController.swift */,
+				423291B91CD9893E002C83C0 /* TeamViewController.xib */,
+			);
+			path = "团队";
+			sourceTree = "<group>";
+		};
 		4249804C1B6B53EA00454858 /* General */ = {
 			isa = PBXGroup;
 			children = (
@@ -235,27 +317,11 @@
 			isa = PBXGroup;
 			children = (
 				423291911CD87C99002C83C0 /* Common */,
+				423291A51CD9893E002C83C0 /* 工作页 */,
+				423291B71CD9893E002C83C0 /* 团队 */,
+				423291981CD988AE002C83C0 /* 我的 */,
+				423291971CD98799002C83C0 /* 备忘:计划 */,
 				423291821CD87742002C83C0 /* 工作属性 */,
-				4245681C1B799DD6005E5AAD /* LoginAndRegisterViewController.swift */,
-				4245681D1B799DD6005E5AAD /* LoginAndRegisterViewController.xib */,
-				42EAF4D91C1DD603001D6597 /* MainPageViewController.swift */,
-				424980521B6B53EA00454858 /* MainViewController.swift */,
-				424980531B6B53EA00454858 /* MainViewController.xib */,
-				4249804E1B6B53EA00454858 /* AddReviewViewController.swift */,
-				4249804F1B6B53EA00454858 /* AddReviewViewController.xib */,
-				424980501B6B53EA00454858 /* ContactsSelectionViewController.swift */,
-				424980511B6B53EA00454858 /* ContactsSelectionViewController.xib */,
-				429A5D751B6F729500384989 /* RatingViewController.swift */,
-				429A5D761B6F729500384989 /* RatingViewController.xib */,
-				422A343C1B787AEC003AB08E /* ReviewDetailViewController.swift */,
-				422A343D1B787AEC003AB08E /* ReviewDetailViewController.xib */,
-				426225B41B745F5A00DF1819 /* TeamViewController.swift */,
-				426225B51B745F5A00DF1819 /* TeamViewController.xib */,
-				426225BC1B74B8BE00DF1819 /* UserViewController.swift */,
-				426225BD1B74B8BE00DF1819 /* UserViewController.xib */,
-				422A343A1B786128003AB08E /* AvatarImagePickerViewController.swift */,
-				42E28F571C355C9D00333180 /* SettingsViewController.swift */,
-				42E28F581C355C9D00333180 /* SettingsViewController.xib */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -504,24 +570,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				426225BF1B74B8BE00DF1819 /* UserViewController.xib in Resources */,
-				424980631B6B53EA00454858 /* ContactsSelectionViewController.xib in Resources */,
+				423291A41CD988AE002C83C0 /* UserViewController.xib in Resources */,
 				4249806B1B6B53EA00454858 /* tasksTableViewCell.xib in Resources */,
-				424980651B6B53EA00454858 /* MainViewController.xib in Resources */,
 				424980691B6B53EA00454858 /* contactSelectionTableViewCell.xib in Resources */,
-				426225B71B745F5A00DF1819 /* TeamViewController.xib in Resources */,
 				426225BB1B74697500DF1819 /* teamRankingTableViewCell.xib in Resources */,
+				423291C51CD9893E002C83C0 /* ReviewDetailViewController.xib in Resources */,
 				42D80B901B6B742800898074 /* Launch Screen.xib in Resources */,
 				4232918A1CD87742002C83C0 /* PTWorkDetailController.storyboard in Resources */,
-				42E28F5A1C355C9D00333180 /* SettingsViewController.xib in Resources */,
+				423291C11CD9893E002C83C0 /* MainViewController.xib in Resources */,
+				423291A21CD988AE002C83C0 /* SettingsViewController.xib in Resources */,
 				42C7B1011B82D52B00AF72F4 /* NotoSansHans-Regular.otf in Resources */,
-				429A5D781B6F729500384989 /* RatingViewController.xib in Resources */,
-				424980611B6B53EA00454858 /* AddReviewViewController.xib in Resources */,
 				42C7B0FB1B82D52B00AF72F4 /* LICENSE in Resources */,
 				42C7B0FF1B82D52B00AF72F4 /* NotoSansHans-Light.otf in Resources */,
-				4245681F1B799DD6005E5AAD /* LoginAndRegisterViewController.xib in Resources */,
+				423291C71CD9893E002C83C0 /* TeamViewController.xib in Resources */,
 				42E28F561C3558C800333180 /* images.xcassets in Resources */,
-				422A343F1B787AEC003AB08E /* ReviewDetailViewController.xib in Resources */,
+				423291CB1CD9896E002C83C0 /* AddReviewViewController.xib in Resources */,
+				423291C31CD9893E002C83C0 /* RatingViewController.xib in Resources */,
+				423291BE1CD9893E002C83C0 /* ContactsSelectionViewController.xib in Resources */,
+				423291A01CD988AE002C83C0 /* LoginAndRegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,28 +659,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				424980601B6B53EA00454858 /* AddReviewViewController.swift in Sources */,
 				424980681B6B53EA00454858 /* contactSelectionTableViewCell.swift in Sources */,
 				4289847B1BF5D48D0069679B /* UserInfoAPIOperation.swift in Sources */,
 				42801B351B8B0BC9008D4AC9 /* AuditTaskAPIOperation.swift in Sources */,
+				4232919F1CD988AE002C83C0 /* LoginAndRegisterViewController.swift in Sources */,
+				423291BC1CD9893E002C83C0 /* AvatarImagePickerViewController.swift in Sources */,
 				42EF11C51BAAC19600D6504A /* SwiftNotice.swift in Sources */,
+				423291A31CD988AE002C83C0 /* UserViewController.swift in Sources */,
+				423291C01CD9893E002C83C0 /* MainViewController.swift in Sources */,
 				428984751BF5C7340069679B /* TeamRankingModel.swift in Sources */,
 				423291901CD877CC002C83C0 /* PTMessageDefine.swift in Sources */,
-				426225B61B745F5A00DF1819 /* TeamViewController.swift in Sources */,
-				424980621B6B53EA00454858 /* ContactsSelectionViewController.swift in Sources */,
-				42EAF4DA1C1DD603001D6597 /* MainPageViewController.swift in Sources */,
 				42CFAEB61C0B575D007C061A /* ImageUploadOperation.swift in Sources */,
 				4249806A1B6B53EA00454858 /* tasksTableViewCell.swift in Sources */,
 				428984771BF5D2E10069679B /* UserInfoModel.swift in Sources */,
 				42801B2B1B8B0837008D4AC9 /* LoginAPIOperation.swift in Sources */,
-				422A343B1B786128003AB08E /* AvatarImagePickerViewController.swift in Sources */,
 				42801B431B8B0F54008D4AC9 /* SetUsernameAPIOperation.swift in Sources */,
+				423291C21CD9893E002C83C0 /* RatingViewController.swift in Sources */,
 				4232918C1CD87742002C83C0 /* PTWorkHardController.swift in Sources */,
 				4232918E1CD87742002C83C0 /* PTWorkStatusController.swift in Sources */,
+				423291C41CD9893E002C83C0 /* ReviewDetailViewController.swift in Sources */,
 				42801B331B8B0B62008D4AC9 /* CreateTaskAPIOperation.swift in Sources */,
 				42B0925D1B8AC1E0002F22E5 /* Operation.swift in Sources */,
 				CD0E8B501BE860E0003C2758 /* DemoCode.swift in Sources */,
-				429A5D771B6F729500384989 /* RatingViewController.swift in Sources */,
+				423291A11CD988AE002C83C0 /* SettingsViewController.swift in Sources */,
 				42801B3D1B8B0DA6008D4AC9 /* MyPointAPIOperation.swift in Sources */,
 				CDC1F8FF1BF0863C00891C36 /* TeamMemberModel.swift in Sources */,
 				42B0925F1B8AC333002F22E5 /* NetworkOperation.swift in Sources */,
@@ -624,13 +691,11 @@
 				CD6648C71BEA02570098FEE8 /* TaskMoreInfoModel.swift in Sources */,
 				42801B2D1B8B0924008D4AC9 /* QueryTeamMemberAPIOperation.swift in Sources */,
 				426225BA1B74697500DF1819 /* teamRankingTableViewCell.swift in Sources */,
-				426225BE1B74B8BE00DF1819 /* UserViewController.swift in Sources */,
-				42E28F591C355C9D00333180 /* SettingsViewController.swift in Sources */,
 				42C3C8CA1B7456030091237F /* appMarco.swift in Sources */,
+				423291BF1CD9893E002C83C0 /* MainPageViewController.swift in Sources */,
 				42801B3B1B8B0D5F008D4AC9 /* TeamRankAPIOperation.swift in Sources */,
 				42FD093C1B60EDEE00046F40 /* AppDelegate.swift in Sources */,
 				42B0925A1B8ABF89002F22E5 /* PNAPI.swift in Sources */,
-				424980641B6B53EA00454858 /* MainViewController.swift in Sources */,
 				42BD004B1B8AE19600E56669 /* Swift+MD5.swift in Sources */,
 				42423C9F1BAFDEEE00166839 /* PTools.swift in Sources */,
 				42EF11C71BAAC50800D6504A /* APICmdList.swift in Sources */,
@@ -642,15 +707,16 @@
 				423291931CD88032002C83C0 /* ExtendComponent.swift in Sources */,
 				EB42AFBD1BE0A69C006EE260 /* TaskDetailModel.swift in Sources */,
 				423291891CD87742002C83C0 /* PTWorkcontentController.swift in Sources */,
+				423291CA1CD9896E002C83C0 /* AddReviewViewController.swift in Sources */,
+				423291C61CD9893E002C83C0 /* TeamViewController.swift in Sources */,
 				4203AEC21BA6C4B1006413A3 /* RegisterAPIOperation.swift in Sources */,
-				422A343E1B787AEC003AB08E /* ReviewDetailViewController.swift in Sources */,
 				42EF11C21BAAACFE00D6504A /* SSASwiftReachability.swift in Sources */,
 				42CFAEB81C0B5C90007C061A /* AvatarUploadOperation.swift in Sources */,
 				4203AEC01BA675B8006413A3 /* AccountIsRegAPIOperation.swift in Sources */,
 				4232918B1CD87742002C83C0 /* PTWorkDetailController.swift in Sources */,
+				423291BD1CD9893E002C83C0 /* ContactsSelectionViewController.swift in Sources */,
 				42801B311B8B0ACE008D4AC9 /* TaskDetailAPIOperation.swift in Sources */,
 				42801B2F1B8B0A33008D4AC9 /* TaskListAPIOperation.swift in Sources */,
-				4245681E1B799DD6005E5AAD /* LoginAndRegisterViewController.swift in Sources */,
 				42EE17BE1C4A302800BE6D76 /* GetTeamNameAPIOperation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
