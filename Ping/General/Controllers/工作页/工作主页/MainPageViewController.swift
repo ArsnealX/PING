@@ -62,9 +62,7 @@ class MainPageViewController: UIViewController, UIPageViewControllerDataSource, 
     
     func addReview() {
         let addReviewVC = addReviewViewController()
-        let reviewNav = UINavigationController(rootViewController: addReviewVC)
-        PTools.configNavigationController(reviewNav, tabBarIconName: nil, needTabBar: false)
-        self.presentViewController(reviewNav, animated: true, completion: nil)
+         self.navigationController!.pushViewController(addReviewVC, animated: true)
     }
     
     func loadPageViewController() {

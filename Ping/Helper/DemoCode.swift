@@ -24,7 +24,7 @@ class DemoCode: NSObject {
             cell?.dateLabel.text = "07.23"
             cell?.statusLabel.text = "已通过"
             cell?.statusLabel.textColor = APP_PASS_COLOR
-            cell?.isReadImageView.hidden = true
+            cell?.readView.hidden = true
         }else if indexPath.row == 2 {
             cell?.topLeftImgView.image = UIImage(named: "testAvatar_3")
             cell?.nameLabel.text = "钱三"
@@ -32,7 +32,7 @@ class DemoCode: NSObject {
             cell?.dateLabel.text = "07.23"
             cell?.statusLabel.text = "已通过"
             cell?.statusLabel.textColor = APP_PASS_COLOR
-            cell?.isReadImageView.hidden = true
+            cell?.readView.hidden = true
         }else if indexPath.row == 3 {
             cell?.topLeftImgView.image = UIImage(named: "testAvatar_4")
             cell?.nameLabel.text = "孙四"
@@ -47,7 +47,7 @@ class DemoCode: NSObject {
             cell?.dateLabel.text = "07.23"
             cell?.statusLabel.text = "未通过"
             cell?.statusLabel.textColor = APP_ALERT_COLOR
-            cell?.isReadImageView.hidden = true
+            cell?.readView.hidden = true
         }else if indexPath.row == 5 {
             cell?.topLeftImgView.image = UIImage(named: "testAvatar_6")
             cell?.nameLabel.text = "周六"
@@ -55,7 +55,7 @@ class DemoCode: NSObject {
             cell?.dateLabel.text = "07.23"
             cell?.statusLabel.text = "审核中"
             cell?.statusLabel.textColor = APP_THEME_COLOR
-            cell?.isReadImageView.hidden = true
+            cell?.readView.hidden = true
         }else if indexPath.row == 6 {
             cell?.topLeftImgView.image = UIImage(named: "testAvatar_7")
             cell?.nameLabel.text = "吴七"
@@ -63,7 +63,7 @@ class DemoCode: NSObject {
             cell?.dateLabel.text = "07.23"
             cell?.statusLabel.text = "审核中"
             cell?.statusLabel.textColor = APP_THEME_COLOR
-            cell?.isReadImageView.hidden = true
+            cell?.readView.hidden = true
         }else if indexPath.row == 7 {
             cell?.topLeftImgView.image = UIImage(named: "testAvatar_8")
             cell?.nameLabel.text = "郑八"
@@ -78,7 +78,7 @@ class DemoCode: NSObject {
             cell?.dateLabel.text = "07.23"
             cell?.statusLabel.text = "审核中"
             cell?.statusLabel.textColor = APP_THEME_COLOR
-            cell?.isReadImageView.hidden = true
+            cell?.readView.hidden = true
         }else {
             cell?.topLeftImgView.image = UIImage(named: "testAvatar_10")
             cell?.nameLabel.text = "冯十"
@@ -86,7 +86,7 @@ class DemoCode: NSObject {
             cell?.dateLabel.text = "07.24"
             cell?.statusLabel.text = "已通过"
             cell?.statusLabel.textColor = APP_PASS_COLOR
-            cell?.isReadImageView.hidden = true
+            cell?.readView.hidden = true
         }
     }
     

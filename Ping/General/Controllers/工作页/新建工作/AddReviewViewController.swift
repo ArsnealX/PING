@@ -11,7 +11,7 @@ import UIKit
 //    func addReviewComplete()
 //}
 
-class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollViewDelegate, contactsSelectionDelegate, ratingViewControllerDelegate, APICallBackDelegate {
+class addReviewViewController: PTViewController, UITextViewDelegate, UIScrollViewDelegate, contactsSelectionDelegate, ratingViewControllerDelegate, APICallBackDelegate {
     //审核人label
     @IBOutlet weak var reviewerNameLabel: UILabel!
     @IBOutlet weak var reviewerNameLabelContainer: UIView!
@@ -192,7 +192,7 @@ class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollVie
     
     //MARK:PRIVATE METHOD
     func configUI() {
-        self.title = "工作结果"
+        self.title = "新建工作"
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.edgesForExtendedLayout = UIRectEdge.None
         wordsCountLabel.layer.masksToBounds = true
@@ -201,10 +201,10 @@ class addReviewViewController: UIViewController, UITextViewDelegate, UIScrollVie
         let rightItem = UIBarButtonItem(title: "send", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(addReviewViewController.sendReview))
         rightItem.image = UIImage(named: "send")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
         self.navigationItem.rightBarButtonItem = rightItem
-        //add cancal button to navigation bar
-        let leftItem = UIBarButtonItem(title: "close", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(addReviewViewController.closeReview))
-        leftItem.image = UIImage(named: "close")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-        self.navigationItem.leftBarButtonItem = leftItem
+//        //add cancal button to navigation bar
+//        let leftItem = UIBarButtonItem(title: "close", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(addReviewViewController.closeReview))
+//        leftItem.image = UIImage(named: "close")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+//        self.navigationItem.leftBarButtonItem = leftItem
         
         //scrollView setting
         //键盘隐藏模式(.Interactive和.Drag)

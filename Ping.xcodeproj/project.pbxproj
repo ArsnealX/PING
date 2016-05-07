@@ -233,11 +233,11 @@
 			isa = PBXGroup;
 			children = (
 				423291831CD87742002C83C0 /* PTWorkcontentController.swift */,
-				423291841CD87742002C83C0 /* PTWorkDetailController.storyboard */,
 				423291851CD87742002C83C0 /* PTWorkDetailController.swift */,
 				423291861CD87742002C83C0 /* PTWorkHardController.swift */,
 				423291871CD87742002C83C0 /* PTWorkNameViewController.swift */,
 				423291881CD87742002C83C0 /* PTWorkStatusController.swift */,
+				423291841CD87742002C83C0 /* PTWorkDetailController.storyboard */,
 			);
 			path = "工作属性";
 			sourceTree = "<group>";
