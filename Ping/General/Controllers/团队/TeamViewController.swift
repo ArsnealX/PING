@@ -137,6 +137,9 @@ class TeamViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return 76
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let a  = PTHistoryController()
+        self.navigationController?.pushViewController(a, animated: true)
+
 //        let storyBoard = UIStoryboard(name: "PTWorkDetailController",bundle: nil)
 //        let newVC = storyBoard.instantiateViewControllerWithIdentifier("PTWorkDetailController") as! PTWorkDetailController
 //        self.navigationController?.pushViewController(newVC, animated: true)

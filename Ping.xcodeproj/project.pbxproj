@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		00AF64F985FE8A7300F32883 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFCD60E232C4D260F17A0F3 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2CEE91AE1CDD8E89004CE829 /* PTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEE91AC1CDD8E89004CE829 /* PTViewController.swift */; };
+		2CEE91AF1CDD8E89004CE829 /* PTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEE91AD1CDD8E89004CE829 /* PTTableViewController.swift */; };
+		2CEE91B51CDD8F2C004CE829 /* PTHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEE91B41CDD8F2C004CE829 /* PTHistoryController.swift */; };
+		2CEE91B71CDD8F5C004CE829 /* PTColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEE91B61CDD8F5C004CE829 /* PTColor.swift */; };
 		4203AEC01BA675B8006413A3 /* AccountIsRegAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4203AEBF1BA675B8006413A3 /* AccountIsRegAPIOperation.swift */; };
 		4203AEC21BA6C4B1006413A3 /* RegisterAPIOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4203AEC11BA6C4B1006413A3 /* RegisterAPIOperation.swift */; };
 		422CB7851C26D33900011A91 /* PacmanAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 422CB7841C26D33900011A91 /* PacmanAnimator.swift */; };
@@ -90,6 +94,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2CEE91AC1CDD8E89004CE829 /* PTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTViewController.swift; sourceTree = "<group>"; };
+		2CEE91AD1CDD8E89004CE829 /* PTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTTableViewController.swift; sourceTree = "<group>"; };
+		2CEE91B41CDD8F2C004CE829 /* PTHistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTHistoryController.swift; sourceTree = "<group>"; };
+		2CEE91B61CDD8F5C004CE829 /* PTColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTColor.swift; sourceTree = "<group>"; };
 		2FC692EEC973751214B71A95 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4203AEBF1BA675B8006413A3 /* AccountIsRegAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountIsRegAPIOperation.swift; sourceTree = "<group>"; };
 		4203AEC11BA6C4B1006413A3 /* RegisterAPIOperation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterAPIOperation.swift; sourceTree = "<group>"; };
@@ -198,6 +206,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2CEE91B21CDD8F2C004CE829 /* 工作IM */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "工作IM";
+			sourceTree = "<group>";
+		};
+		2CEE91B31CDD8F2C004CE829 /* 历史执办 */ = {
+			isa = PBXGroup;
+			children = (
+				2CEE91B41CDD8F2C004CE829 /* PTHistoryController.swift */,
+			);
+			path = "历史执办";
+			sourceTree = "<group>";
+		};
 		422CB7831C26D32B00011A91 /* Animator */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +246,8 @@
 			isa = PBXGroup;
 			children = (
 				423291921CD88032002C83C0 /* ExtendComponent.swift */,
+				2CEE91AC1CDD8E89004CE829 /* PTViewController.swift */,
+				2CEE91AD1CDD8E89004CE829 /* PTTableViewController.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -250,19 +275,13 @@
 		423291A51CD9893E002C83C0 /* 工作页 */ = {
 			isa = PBXGroup;
 			children = (
+				2CEE91B21CDD8F2C004CE829 /* 工作IM */,
+				2CEE91B31CDD8F2C004CE829 /* 历史执办 */,
 				423291A81CD9893E002C83C0 /* 工作主页 */,
-				423291A61CD9893E002C83C0 /* 历史执办 */,
 				423291A71CD9893E002C83C0 /* 工作IM */,
 				423291B61CD9893E002C83C0 /* 新建工作 */,
 			);
 			path = "工作页";
-			sourceTree = "<group>";
-		};
-		423291A61CD9893E002C83C0 /* 历史执办 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "历史执办";
 			sourceTree = "<group>";
 		};
 		423291A71CD9893E002C83C0 /* 工作IM */ = {
@@ -348,6 +367,7 @@
 		4249805B1B6B53EA00454858 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				2CEE91B61CDD8F5C004CE829 /* PTColor.swift */,
 				4232918F1CD877CC002C83C0 /* PTMessageDefine.swift */,
 				4249805C1B6B53EA00454858 /* JXTools.swift */,
 				42423C9E1BAFDEEE00166839 /* PTools.swift */,
@@ -672,9 +692,12 @@
 				4232919F1CD988AE002C83C0 /* LoginAndRegisterViewController.swift in Sources */,
 				423291BC1CD9893E002C83C0 /* AvatarImagePickerViewController.swift in Sources */,
 				42EF11C51BAAC19600D6504A /* SwiftNotice.swift in Sources */,
+				2CEE91AE1CDD8E89004CE829 /* PTViewController.swift in Sources */,
+				2CEE91AF1CDD8E89004CE829 /* PTTableViewController.swift in Sources */,
 				423291A31CD988AE002C83C0 /* UserViewController.swift in Sources */,
 				423291C01CD9893E002C83C0 /* MainViewController.swift in Sources */,
 				428984751BF5C7340069679B /* TeamRankingModel.swift in Sources */,
+				2CEE91B71CDD8F5C004CE829 /* PTColor.swift in Sources */,
 				423291901CD877CC002C83C0 /* PTMessageDefine.swift in Sources */,
 				42CFAEB61C0B575D007C061A /* ImageUploadOperation.swift in Sources */,
 				4249806A1B6B53EA00454858 /* tasksTableViewCell.swift in Sources */,
@@ -689,6 +712,7 @@
 				42B0925D1B8AC1E0002F22E5 /* Operation.swift in Sources */,
 				CD0E8B501BE860E0003C2758 /* DemoCode.swift in Sources */,
 				423291A11CD988AE002C83C0 /* SettingsViewController.swift in Sources */,
+				2CEE91B51CDD8F2C004CE829 /* PTHistoryController.swift in Sources */,
 				42801B3D1B8B0DA6008D4AC9 /* MyPointAPIOperation.swift in Sources */,
 				CDC1F8FF1BF0863C00891C36 /* TeamMemberModel.swift in Sources */,
 				42B0925F1B8AC333002F22E5 /* NetworkOperation.swift in Sources */,

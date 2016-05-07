@@ -11,15 +11,19 @@ import UIKit
 
 extension UIViewController {
     
+    func addNavTitle(title:String) ->Void{
+        self.navigationItem.title = title
+    }
+    
     func addLeftReturnButton() ->Void{
-        self.addLeftButtonWithMessage(UIImage(named:"backIcon"), title: nil, actionClick: Selector(leftButtonClick()))
+        self.addLeftButtonWithMessage(UIImage(named:"backIcon"), title: nil, actionClick: #selector(UIViewController.leftButtonClick))
     }
     
     func addLeftButtonWithIcon(image:UIImage?,actionClick:Selector?) ->Void{
         self.addLeftButtonWithMessage(image, title: nil, actionClick: actionClick)
     }
 
-    private func leftButtonClick() -> Void {
+     func leftButtonClick() -> Void {
         self.navigationController!.popViewControllerAnimated(true)
     }
     
@@ -51,7 +55,7 @@ extension UIViewController {
             button.titleEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 0)
             button.setTitle(title, forState: UIControlState.Normal)
             button.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-            button.addTarget(self, action: actionClick!, forControlEvents:  UIControlEvents.TouchUpInside)
+            button.addTarget(self, action: actionClick!, forControlEvents:  UIControlEvents.TouchDown)
             let leftItem = UIBarButtonItem(customView:button)
             self.navigationItem.leftBarButtonItem = leftItem
         } else {
