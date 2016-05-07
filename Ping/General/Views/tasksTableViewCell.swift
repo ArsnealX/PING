@@ -10,20 +10,28 @@ import UIKit
 import Kingfisher
 
 class tasksTableViewCell: UITableViewCell {
-    @IBOutlet weak var avatarImageView: UIImageView!
+//    @IBOutlet weak var avatarImageView: UIImageView!
+    @IBOutlet weak var imageBgView: UIView!
+    
+    @IBOutlet weak var bottomRightImgView: UIImageView!
+    @IBOutlet weak var bottomLeftImgView: UIImageView!
+    @IBOutlet weak var topRightImgView: UIImageView!
+    @IBOutlet weak var topLeftImgView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var cellBackgroundView: UIView!
     @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var isReadImageView: UIImageView!
+    @IBOutlet weak var readView: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        avatarImageView.layer.masksToBounds = true
-        avatarImageView.layer.cornerRadius = 10
+          imageBgView.layer.borderColor = UIColor.colorWithRGB(210, green: 210, blue: 210).CGColor
+        imageBgView.layer.borderWidth = 0.5
+        readView.layer.masksToBounds = true
+        readView.layer.cornerRadius = 6
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
@@ -34,11 +42,11 @@ class tasksTableViewCell: UITableViewCell {
         nameLabel.text = model.userName
         contentLabel.text = model.taskContent
         dateLabel.text = JXTools.timestampToReadableDate(model.createTimeStamp)
-        avatarImageView.kf_setImageWithURL(NSURL(string: model.headsImgURL)!, placeholderImage: UIImage(named: "Image_Placeholder"))
+        topLeftImgView.kf_setImageWithURL(NSURL(string: model.headsImgURL)!, placeholderImage: UIImage(named: "Image_Placeholder"))
         if model.isRead {
-            isReadImageView.hidden = true
+            readView.hidden = true
         }else {
-            isReadImageView.hidden = false
+            readView.hidden = false
         }
         
         if model.taskState == "1" {
