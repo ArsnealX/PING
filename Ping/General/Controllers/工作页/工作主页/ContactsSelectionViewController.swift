@@ -148,7 +148,7 @@ class contactsSelectionViewController: UIViewController,UITableViewDataSource, U
             rightItem.image = UIImage(named: "check")?.imageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
             self.navigationItem.rightBarButtonItem = rightItem
         }else {
-            self.title = "审核人"
+            self.title = "选择执办人"
         }
         contactsSelectionTableView.tableFooterView = UIView()
         self.edgesForExtendedLayout = UIRectEdge.None

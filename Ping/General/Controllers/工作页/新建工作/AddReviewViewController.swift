@@ -77,6 +77,10 @@ class addReviewViewController: PTViewController, UITextViewDelegate, UIScrollVie
     //MARK:DELEGATE AND DATASOURCE
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            textView.resignFirstResponder()
+            return false
+        }
         //复制粘贴时隐藏占位文字
         if textView.text.characters.count > 0 {
             textViewPlaceholderLabel.hidden = true
@@ -179,11 +183,11 @@ class addReviewViewController: PTViewController, UITextViewDelegate, UIScrollVie
         self.hidesBottomBarWhenPushed = true;
         self.navigationController?.pushViewController(contactsSelectionVC, animated: true)
     }
-    
+   
     func keyboardWasShown(aNotification:NSNotification) {
         self.moveTextViewForKeyboard(aNotification, up: true)
         //将scrollView滑动到输入焦点位置
-        scrollView.setContentOffset(CGPointMake(0, textViewContainer.frame.origin.y + contentTextView.caretRectForPosition(contentTextView.selectedTextRange!.start).origin.y - 16.0), animated: false)
+//        scrollView.setContentOffset(CGPointMake(0, textViewContainer.frame.origin.y + contentTextView.caretRectForPosition(contentTextView.selectedTextRange!.start).origin.y - 16.0), animated: false)
     }
     
     func keyboardWillBeHidden(aNotification:NSNotification) {
@@ -234,7 +238,7 @@ class addReviewViewController: PTViewController, UITextViewDelegate, UIScrollVie
         let keyboardEndFrame = keyboardEndFrameValue.CGRectValue()
         let keyboardFrame = self.view.convertRect(keyboardEndFrame, toView: nil)
         //字符统计标签位置
-        wordsCountLabelSpaceToBottomConstraint.constant = (up ? keyboardFrame.size.height + 8 : 8)
+        wordsCountLabelSpaceToBottomConstraint.constant = (up ? keyboardFrame.size.height + 58 : 84)
         //将scrollview缩小至键盘与navigationbar之间
         scrollViewSpaceToBottomConstraint.constant = (up ? keyboardFrame.size.height : 8)
     }
