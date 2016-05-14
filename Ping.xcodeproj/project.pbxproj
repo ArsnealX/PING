@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		00AF64F985FE8A7300F32883 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDFCD60E232C4D260F17A0F3 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		2CE688A71CE71BAB0086F519 /* PTIMViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE688A61CE71BAB0086F519 /* PTIMViewController.swift */; };
+		2CE688A91CE71BC90086F519 /* PTChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE688A81CE71BC90086F519 /* PTChatModel.swift */; };
+		2CE688AB1CE71DB20086F519 /* PTChatFrameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE688AA1CE71DB20086F519 /* PTChatFrameModel.swift */; };
+		2CE688AD1CE71E6F0086F519 /* PTInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE688AC1CE71E6F0086F519 /* PTInputView.swift */; };
+		2CE688AF1CE71E870086F519 /* PTChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE688AE1CE71E870086F519 /* PTChatCell.swift */; };
+		2CE688B11CE722190086F519 /* NSObject+ZZModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE688B01CE722190086F519 /* NSObject+ZZModel.swift */; };
+		2CE688B31CE722450086F519 /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE688B21CE722450086F519 /* messages.plist */; };
 		2CEE91AE1CDD8E89004CE829 /* PTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEE91AC1CDD8E89004CE829 /* PTViewController.swift */; };
 		2CEE91AF1CDD8E89004CE829 /* PTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEE91AD1CDD8E89004CE829 /* PTTableViewController.swift */; };
 		2CEE91B51CDD8F2C004CE829 /* PTHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEE91B41CDD8F2C004CE829 /* PTHistoryController.swift */; };
@@ -94,6 +101,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2CE688A61CE71BAB0086F519 /* PTIMViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTIMViewController.swift; sourceTree = "<group>"; };
+		2CE688A81CE71BC90086F519 /* PTChatModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTChatModel.swift; sourceTree = "<group>"; };
+		2CE688AA1CE71DB20086F519 /* PTChatFrameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTChatFrameModel.swift; sourceTree = "<group>"; };
+		2CE688AC1CE71E6F0086F519 /* PTInputView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTInputView.swift; sourceTree = "<group>"; };
+		2CE688AE1CE71E870086F519 /* PTChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTChatCell.swift; sourceTree = "<group>"; };
+		2CE688B01CE722190086F519 /* NSObject+ZZModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ZZModel.swift"; sourceTree = "<group>"; };
+		2CE688B21CE722450086F519 /* messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = messages.plist; sourceTree = "<group>"; };
 		2CEE91AC1CDD8E89004CE829 /* PTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTViewController.swift; sourceTree = "<group>"; };
 		2CEE91AD1CDD8E89004CE829 /* PTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTTableViewController.swift; sourceTree = "<group>"; };
 		2CEE91B41CDD8F2C004CE829 /* PTHistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTHistoryController.swift; sourceTree = "<group>"; };
@@ -206,9 +220,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		2CE688A41CE71B920086F519 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2CE688A81CE71BC90086F519 /* PTChatModel.swift */,
+				2CE688AA1CE71DB20086F519 /* PTChatFrameModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2CE688A51CE71B920086F519 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2CE688AE1CE71E870086F519 /* PTChatCell.swift */,
+				2CE688AC1CE71E6F0086F519 /* PTInputView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2CEE91B21CDD8F2C004CE829 /* 工作IM */ = {
 			isa = PBXGroup;
 			children = (
+				2CE688A41CE71B920086F519 /* Model */,
+				2CE688A51CE71B920086F519 /* View */,
+				2CE688A61CE71BAB0086F519 /* PTIMViewController.swift */,
 			);
 			path = "工作IM";
 			sourceTree = "<group>";
@@ -368,6 +403,7 @@
 		4249805B1B6B53EA00454858 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				2CE688B01CE722190086F519 /* NSObject+ZZModel.swift */,
 				2CEE91B61CDD8F5C004CE829 /* PTColor.swift */,
 				4232918F1CD877CC002C83C0 /* PTMessageDefine.swift */,
 				4249805C1B6B53EA00454858 /* JXTools.swift */,
@@ -518,6 +554,7 @@
 				42C7B0F11B82D52B00AF72F4 /* Resources */,
 				42BD00481B8AD35F00E56669 /* Utilities */,
 				42FD09471B60EDEF00046F40 /* Info.plist */,
+				2CE688B21CE722450086F519 /* messages.plist */,
 				42D80B8F1B6B742800898074 /* Launch Screen.xib */,
 				42801B291B8AE5AA008D4AC9 /* Ping-Bridging-Header.h */,
 				42FD093B1B60EDEE00046F40 /* AppDelegate.swift */,
@@ -609,6 +646,7 @@
 				42C7B1011B82D52B00AF72F4 /* NotoSansHans-Regular.otf in Resources */,
 				42C7B0FB1B82D52B00AF72F4 /* LICENSE in Resources */,
 				42C7B0FF1B82D52B00AF72F4 /* NotoSansHans-Light.otf in Resources */,
+				2CE688B31CE722450086F519 /* messages.plist in Resources */,
 				423291C71CD9893E002C83C0 /* TeamViewController.xib in Resources */,
 				42E28F561C3558C800333180 /* images.xcassets in Resources */,
 				423291CF1CD98C3F002C83C0 /* PTHistoryCell.xib in Resources */,
@@ -697,9 +735,11 @@
 				2CEE91AF1CDD8E89004CE829 /* PTTableViewController.swift in Sources */,
 				423291A31CD988AE002C83C0 /* UserViewController.swift in Sources */,
 				423291C01CD9893E002C83C0 /* MainViewController.swift in Sources */,
+				2CE688AB1CE71DB20086F519 /* PTChatFrameModel.swift in Sources */,
 				428984751BF5C7340069679B /* TeamRankingModel.swift in Sources */,
 				2CEE91B71CDD8F5C004CE829 /* PTColor.swift in Sources */,
 				423291901CD877CC002C83C0 /* PTMessageDefine.swift in Sources */,
+				2CE688AF1CE71E870086F519 /* PTChatCell.swift in Sources */,
 				42CFAEB61C0B575D007C061A /* ImageUploadOperation.swift in Sources */,
 				4249806A1B6B53EA00454858 /* tasksTableViewCell.swift in Sources */,
 				428984771BF5D2E10069679B /* UserInfoModel.swift in Sources */,
@@ -710,8 +750,10 @@
 				4232918E1CD87742002C83C0 /* PTWorkStatusController.swift in Sources */,
 				423291C41CD9893E002C83C0 /* ReviewDetailViewController.swift in Sources */,
 				42801B331B8B0B62008D4AC9 /* CreateTaskAPIOperation.swift in Sources */,
+				2CE688A91CE71BC90086F519 /* PTChatModel.swift in Sources */,
 				42B0925D1B8AC1E0002F22E5 /* Operation.swift in Sources */,
 				CD0E8B501BE860E0003C2758 /* DemoCode.swift in Sources */,
+				2CE688AD1CE71E6F0086F519 /* PTInputView.swift in Sources */,
 				423291A11CD988AE002C83C0 /* SettingsViewController.swift in Sources */,
 				2CEE91B51CDD8F2C004CE829 /* PTHistoryController.swift in Sources */,
 				42801B3D1B8B0DA6008D4AC9 /* MyPointAPIOperation.swift in Sources */,
@@ -720,6 +762,7 @@
 				42432B7A1BB0F2D2005F0B85 /* PNErrorHandling.swift in Sources */,
 				42801B3F1B8B0E8B008D4AC9 /* SetReadStateAPIOperation.swift in Sources */,
 				423291CE1CD98C3F002C83C0 /* PTHistoryCell.swift in Sources */,
+				2CE688B11CE722190086F519 /* NSObject+ZZModel.swift in Sources */,
 				42801B371B8B0C8C008D4AC9 /* UpdateTaskAPIOperation.swift in Sources */,
 				CD6648C71BEA02570098FEE8 /* TaskMoreInfoModel.swift in Sources */,
 				42801B2D1B8B0924008D4AC9 /* QueryTeamMemberAPIOperation.swift in Sources */,
@@ -748,6 +791,7 @@
 				4203AEC01BA675B8006413A3 /* AccountIsRegAPIOperation.swift in Sources */,
 				4232918B1CD87742002C83C0 /* PTWorkDetailController.swift in Sources */,
 				423291BD1CD9893E002C83C0 /* ContactsSelectionViewController.swift in Sources */,
+				2CE688A71CE71BAB0086F519 /* PTIMViewController.swift in Sources */,
 				42801B311B8B0ACE008D4AC9 /* TaskDetailAPIOperation.swift in Sources */,
 				42801B2F1B8B0A33008D4AC9 /* TaskListAPIOperation.swift in Sources */,
 				42EE17BE1C4A302800BE6D76 /* GetTeamNameAPIOperation.swift in Sources */,
