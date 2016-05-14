@@ -15,6 +15,7 @@
 		2CE688AF1CE71E870086F519 /* PTChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE688AE1CE71E870086F519 /* PTChatCell.swift */; };
 		2CE688B11CE722190086F519 /* NSObject+ZZModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE688B01CE722190086F519 /* NSObject+ZZModel.swift */; };
 		2CE688B31CE722450086F519 /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE688B21CE722450086F519 /* messages.plist */; };
+		2CE688B51CE785CA0086F519 /* YTInputViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE688B41CE785CA0086F519 /* YTInputViewDelegate.swift */; };
 		2CEE91AE1CDD8E89004CE829 /* PTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEE91AC1CDD8E89004CE829 /* PTViewController.swift */; };
 		2CEE91AF1CDD8E89004CE829 /* PTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEE91AD1CDD8E89004CE829 /* PTTableViewController.swift */; };
 		2CEE91B51CDD8F2C004CE829 /* PTHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEE91B41CDD8F2C004CE829 /* PTHistoryController.swift */; };
@@ -108,6 +109,7 @@
 		2CE688AE1CE71E870086F519 /* PTChatCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTChatCell.swift; sourceTree = "<group>"; };
 		2CE688B01CE722190086F519 /* NSObject+ZZModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ZZModel.swift"; sourceTree = "<group>"; };
 		2CE688B21CE722450086F519 /* messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = messages.plist; sourceTree = "<group>"; };
+		2CE688B41CE785CA0086F519 /* YTInputViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTInputViewDelegate.swift; sourceTree = "<group>"; };
 		2CEE91AC1CDD8E89004CE829 /* PTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTViewController.swift; sourceTree = "<group>"; };
 		2CEE91AD1CDD8E89004CE829 /* PTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTTableViewController.swift; sourceTree = "<group>"; };
 		2CEE91B41CDD8F2C004CE829 /* PTHistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTHistoryController.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 			children = (
 				2CE688AE1CE71E870086F519 /* PTChatCell.swift */,
 				2CE688AC1CE71E6F0086F519 /* PTInputView.swift */,
+				2CE688B41CE785CA0086F519 /* YTInputViewDelegate.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				42801B2B1B8B0837008D4AC9 /* LoginAPIOperation.swift in Sources */,
 				42801B431B8B0F54008D4AC9 /* SetUsernameAPIOperation.swift in Sources */,
 				423291C21CD9893E002C83C0 /* RatingViewController.swift in Sources */,
+				2CE688B51CE785CA0086F519 /* YTInputViewDelegate.swift in Sources */,
 				4232918C1CD87742002C83C0 /* PTWorkHardController.swift in Sources */,
 				4232918E1CD87742002C83C0 /* PTWorkStatusController.swift in Sources */,
 				423291C41CD9893E002C83C0 /* ReviewDetailViewController.swift in Sources */,

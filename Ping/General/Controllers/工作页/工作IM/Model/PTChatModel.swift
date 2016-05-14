@@ -9,5 +9,8 @@
 import UIKit
 
 class PTChatModel: NSObject {
-
+    var text:String = ""
+    var time:String = ""
+    var type:NSNumber = 0.0
+    var hiddenTime:Bool = false
 }
