@@ -87,11 +87,15 @@ class MainPageViewController: UIViewController, UIPageViewControllerDataSource, 
         let startViewControllers = [viewControllersArray[currentButtonIndex]]
         pageVC.setViewControllers(startViewControllers, direction: .Reverse , animated: false, completion: nil)
     }
-     func goHistoryClick() -> Void {
+     func goPlanClick() -> Void {
+        let planViewController = PTPlanViewController()
+        self.presentViewController(planViewController, animated: true) { 
+            
+        }
         
     }
     func loadSwitchView() {
-        self.addLeftButtonWithIcon(UIImage(named: "history"), actionClick: Selector(goHistoryClick()))
+        self.addLeftButtonWithIcon(UIImage(named: "history"), actionClick: #selector(MainPageViewController.goPlanClick))
         let createdButton = UIButton(frame: CGRectMake(0 ,0 , 50 , 30))
         let reviewButton = UIButton(frame: CGRectMake(0 ,0 , 50 , 30))
         let ccButton = UIButton(frame: CGRectMake(0 ,0 , 50 , 30))

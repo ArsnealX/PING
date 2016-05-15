@@ -16,6 +16,7 @@
 		2CE688B11CE722190086F519 /* NSObject+ZZModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE688B01CE722190086F519 /* NSObject+ZZModel.swift */; };
 		2CE688B31CE722450086F519 /* messages.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CE688B21CE722450086F519 /* messages.plist */; };
 		2CE688B51CE785CA0086F519 /* YTInputViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE688B41CE785CA0086F519 /* YTInputViewDelegate.swift */; };
+		2CE688B71CE8B12B0086F519 /* PTPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE688B61CE8B12B0086F519 /* PTPlanViewController.swift */; };
 		2CEE91AE1CDD8E89004CE829 /* PTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEE91AC1CDD8E89004CE829 /* PTViewController.swift */; };
 		2CEE91AF1CDD8E89004CE829 /* PTTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEE91AD1CDD8E89004CE829 /* PTTableViewController.swift */; };
 		2CEE91B51CDD8F2C004CE829 /* PTHistoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEE91B41CDD8F2C004CE829 /* PTHistoryController.swift */; };
@@ -110,6 +111,7 @@
 		2CE688B01CE722190086F519 /* NSObject+ZZModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+ZZModel.swift"; sourceTree = "<group>"; };
 		2CE688B21CE722450086F519 /* messages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = messages.plist; sourceTree = "<group>"; };
 		2CE688B41CE785CA0086F519 /* YTInputViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YTInputViewDelegate.swift; sourceTree = "<group>"; };
+		2CE688B61CE8B12B0086F519 /* PTPlanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PTPlanViewController.swift; path = "Ping/General/Controllers/工作页/工作IM/View/PTPlanViewController.swift"; sourceTree = SOURCE_ROOT; };
 		2CEE91AC1CDD8E89004CE829 /* PTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTViewController.swift; sourceTree = "<group>"; };
 		2CEE91AD1CDD8E89004CE829 /* PTTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTTableViewController.swift; sourceTree = "<group>"; };
 		2CEE91B41CDD8F2C004CE829 /* PTHistoryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PTHistoryController.swift; sourceTree = "<group>"; };
@@ -293,6 +295,7 @@
 		423291971CD98799002C83C0 /* 备忘/计划 */ = {
 			isa = PBXGroup;
 			children = (
+				2CE688B61CE8B12B0086F519 /* PTPlanViewController.swift */,
 			);
 			name = "备忘/计划";
 			path = "备忘:计划";
@@ -771,6 +774,7 @@
 				CD6648C71BEA02570098FEE8 /* TaskMoreInfoModel.swift in Sources */,
 				42801B2D1B8B0924008D4AC9 /* QueryTeamMemberAPIOperation.swift in Sources */,
 				426225BA1B74697500DF1819 /* teamRankingTableViewCell.swift in Sources */,
+				2CE688B71CE8B12B0086F519 /* PTPlanViewController.swift in Sources */,
 				42C3C8CA1B7456030091237F /* appMarco.swift in Sources */,
 				423291BF1CD9893E002C83C0 /* MainPageViewController.swift in Sources */,
 				42801B3B1B8B0D5F008D4AC9 /* TeamRankAPIOperation.swift in Sources */,
