@@ -31,7 +31,8 @@ class PTChatCell: UITableViewCell {
         noticeLabel.textAlignment = NSTextAlignment.Center
         noticeLabel.font = UIFont.systemFontOfSize(15)
         noticeLabel.numberOfLines = 0
-        noticeLabel.backgroundColor = UIColor.lightGrayColor()
+        noticeLabel.textColor = UIColor.whiteColor()
+        noticeLabel.backgroundColor = UIColor.colorWithRGB(181.0, green: 181.0, blue: 181.0)
         self.contentView.addSubview(noticeLabel);
         self.noticeLabel = noticeLabel
         

@@ -12,23 +12,51 @@ class PTIMViewController: PTViewController,UITableViewDelegate,UITableViewDataSo
     
     var inputView1:PTInputView!
     var tableView:UITableView!
+    var topLabel:UILabel!
     
     var dataArray:Array<PTChatFrameModel> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.addNavTitle("工作XXX(3)")
-        
+        self.addRifhtButtonWithIcon(UIImage.init(named: "white"), actionClick: #selector(PTIMViewController.rightButtonClick))
         self.automaticallyAdjustsScrollViewInsets = false
         self.createTableView()
         self.createBottomView()
+        self.creatTopView()
+    }
+    
+    func rightButtonClick() -> Void {
+        let storyBoard = UIStoryboard(name: "PTWorkDetailController",bundle: nil)
+        let newVC = storyBoard.instantiateViewControllerWithIdentifier("PTWorkDetailController") as! PTWorkDetailController
+        self.navigationController?.pushViewController(newVC, animated: true)
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    
+    func creatTopView() -> Void {
+        let topView = UILabel.init(frame: CGRect(x: 0,y: 64,width: PTScreenWidth,height: 30))
+        topView.backgroundColor = UIColor.colorWithRGB(243, green: 215, blue: 187)
+        topView.alpha = 0.4
+        topView.textAlignment = NSTextAlignment.Center
+        topView.textColor = UIColor.whiteColor()
+        self.topLabel = topView
+        self.view .addSubview(topView)
+        topView.hidden = true
+    }
+    func showTopToast(text:String) -> Void {
+        topLabel.text = text
+        topLabel.hidden = false
+        let delayInSeconds = 3.0
+        let popTime = dispatch_time(DISPATCH_TIME_NOW,
+                                    Int64(delayInSeconds * Double(NSEC_PER_SEC))) // 1
+        dispatch_after(popTime, dispatch_get_main_queue()) {
+            self.topLabel.hidden = true
+        }
+    }
     func createBottomView() -> Void {
         let bottom = PTInputView.init(frame: CGRectMake(0, PTScreenHeight - 44, PTScreenWidth, 44))
         self.inputView1 = bottom
@@ -61,13 +89,14 @@ class PTIMViewController: PTViewController,UITableViewDelegate,UITableViewDataSo
         UIView.animateWithDuration(0.25, animations: {
             self.tableView.frame = CGRectMake(0, 64 + CGFloat(height), PTScreenWidth, PTScreenHeight - 88 - 20 - CGFloat(height))
             self.view.frame = CGRectMake(0, CGFloat(-height), PTScreenWidth,PTScreenHeight)
+            self.topLabel.frame = CGRect(x: 0,y: 64 + CGFloat(height),width: PTScreenWidth,height: 30)
         })
     }
     
     func willHideKeyboardWithInputView(inputView: PTInputView, time: NSNumber) {
         UIView.animateWithDuration(0.25, animations: {
             self.tableView.frame =  CGRectMake(0, 64, PTScreenWidth, PTScreenHeight - 88 - 20)
-
+            self.topLabel.frame = CGRect(x: 0,y: 64,width: PTScreenWidth,height: 30)
             self.view.frame = CGRectMake(0, 0, PTScreenWidth, PTScreenHeight);
         })
     }
@@ -77,8 +106,8 @@ class PTIMViewController: PTViewController,UITableViewDelegate,UITableViewDataSo
         self.sendText(text, type: number)
         let num1:NSNumber = 1
         let num2:NSNumber = 2
-        self.sendText("我也爱你", type: num1)
-        self.sendText("轰动告白", type: num2)
+        self.sendText("好的", type: num1)
+        self.sendText("好的啊", type: num2)
         
     }
     

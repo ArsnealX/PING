@@ -117,7 +117,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let taskId = taskListArray[indexPath.row].taskID
-        let reviewDetailVC = reviewDetailViewController(taskId: taskId)
+        let reviewDetailVC = PTIMViewController()
         reviewDetailVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(reviewDetailVC, animated: true)
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
