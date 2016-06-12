@@ -9,6 +9,6 @@
 import Foundation
 
 let REACHABILITY_CHECK_URL = "http://www.baidu.com"
-let SERVER_BASE_API = "http://115.159.34.60/cgi-bin/"
+let SERVER_BASE_API = "http://115.159.34.60/v2/api/test/"
 let SERVER_IMAGE_BASE_API = "http://115.159.34.60/upload/"
-let SERVER_PROTOCOL_STRING = "ping20150813"
+let SERVER_PROTOCOL_STRING = "pingv2_20160323"

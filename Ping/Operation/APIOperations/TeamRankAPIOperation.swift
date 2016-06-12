@@ -16,8 +16,8 @@ class TeamRankAPIOperation: NetworkOperation {
     
     func getTemaRank() -> Array<TeamRankingModel> {
         let teamRankingArray = resultJSON?.arrayValue.map{singleRank -> TeamRankingModel in
-            let headImgUrl = singleRank["heads_img"].stringValue
-            let userName = singleRank["user_name"].stringValue
+            let headImgUrl = singleRank["header_img"].stringValue
+            let userName = singleRank["account_name"].stringValue
             let yearPoint = singleRank["year_point"].stringValue
             let monthPoint = singleRank["month_point"].stringValue
             let weekPoint = singleRank["week_point"].stringValue

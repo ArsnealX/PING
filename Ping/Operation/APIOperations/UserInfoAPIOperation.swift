@@ -14,10 +14,14 @@ class UserInfoAPIOperation: NetworkOperation {
         self.cmd = CMD_USER_INFO
     }
     
+    override func apiParameters() -> [String : AnyObject] {
+        return ["get_key" : "all"]
+    }
+    
     func getUserInfo() -> UserInfoModel {
         let userTel = resultJSON?["my_tel"].stringValue
-        let userName = resultJSON?["my_name"].stringValue
-        let headImgUrl = resultJSON?["my_head_imgurl"].stringValue
+        let userName = resultJSON?["account_name"].stringValue
+        let headImgUrl = resultJSON?["header_img"].stringValue
         UserInfoModel.shared.userTel = userTel!
         UserInfoModel.shared.userName = userName!
         UserInfoModel.shared.headImgUrl = headImgUrl!

@@ -28,7 +28,7 @@ class NetworkOperation : Operation {
 
     let URLString: String
     var cmd: String
-    var timestamp: String
+    var timestamp:Int
     var resultJSON: JSON?
 
     private var hasError: Bool
@@ -43,7 +43,7 @@ class NetworkOperation : Operation {
     
     override init() {
         self.cmd = String()
-        self.timestamp = String()
+        self.timestamp = 0
         self.URLString = SERVER_BASE_API
         self.hasError = false
         super.init()
@@ -120,8 +120,9 @@ class NetworkOperation : Operation {
     
     //project exclusive
     func apiParametersWrapper() -> [String : AnyObject] {
-        timestamp = JXTools.timestampGenerator()
-        let checkString = cmd + SERVER_PROTOCOL_STRING + timestamp
+        let  aaa:String = JXTools.timestampGenerator()
+        timestamp = Int(aaa)!
+        let checkString = cmd + SERVER_PROTOCOL_STRING + aaa
         let check = checkString.md5
         let para:[String : AnyObject] = ["check":check,
                                      "timestamp":timestamp,

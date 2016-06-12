@@ -24,6 +24,6 @@ class AccountIsRegAPIOperation: NetworkOperation {
     
     func isReg() -> Bool {
         
-        return (resultJSON?.boolValue)!
+        return (resultJSON?["ret"] == 0)
     }
 }

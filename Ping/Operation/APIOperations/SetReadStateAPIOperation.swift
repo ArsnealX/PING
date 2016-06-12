@@ -9,8 +9,14 @@
 import Foundation
 
 class SetReadStateAPIOperation: NetworkOperation {
-    override init() {
+    private var taskId:String
+     init(withTaskId taskId:String) {
+        self.taskId = taskId
         super.init()
         self.cmd = CMD_SET_READ_STATUS
+    }
+    
+    override func apiParameters() -> [String : AnyObject] {
+        return ["set_key":1, "set_value":taskId]
     }
 }

@@ -17,6 +17,6 @@ class SetUsernameAPIOperation: NetworkOperation {
     }
     
     override func apiParameters() -> [String : AnyObject] {
-        return ["user_name" : userName]
+        return ["set_key":0,"set_value" : userName]
     }
 }

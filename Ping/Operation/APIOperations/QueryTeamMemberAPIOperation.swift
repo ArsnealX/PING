@@ -17,8 +17,8 @@ class QueryTeamMemberAPIOperation: NetworkOperation {
     func getTeamMemberList() -> Array<TeamMemberModel> {
         let teamMemberListArray = resultJSON?.arrayValue.map{singleMemberJSON -> TeamMemberModel in
             let accountId = singleMemberJSON["account_id"].stringValue
-            let userName = singleMemberJSON["user_name"].stringValue
-            let headImgUrl = singleMemberJSON["heads_img"].stringValue
+            let userName = singleMemberJSON["account_name"].stringValue
+            let headImgUrl = singleMemberJSON["header_img"].stringValue
             return TeamMemberModel(accountId: accountId, userName: userName, headImgUrl: headImgUrl)
         }
         
